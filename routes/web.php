@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\admin\LoginController;
+use App\Http\Controllers\admin\AdminController;
+use App\Http\Controllers\admin\EnquiryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +22,8 @@ Route::get('/', function () {
 
 Route::get('admin-login',[LoginController::class,'adminLogin'])->name('adminLogin');
 //Route::post('admin-login',[LoginController::class,'adminLoginPost'])->name('adminLoginPost');
+// Route::get('add-new-enquiry', [EnquiryController::class, 'addNewEnquiry'])->name('addNewEnquiry');
+// Route::get('list-enquiry', [EnquiryController::class, 'listEnquiry'])->name('listEnquiry');
 
 Route::group(['prefix'=>'admin'],function(){
     Route::post('login',[LoginController::class,'adminLoginPost'])->name('adminLoginPost');
