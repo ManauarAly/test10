@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>welcome 2 ffd f  manaur to sujayat </h1>
+    <h1>welcome 2 ffd f  manaur</h1>
 </body>
 </html>
