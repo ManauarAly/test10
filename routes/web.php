@@ -16,3 +16,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('admin-login',[LoginController::class,'adminLogin'])->name('adminLogin');
+//Route::post('admin-login',[LoginController::class,'adminLoginPost'])->name('adminLoginPost');
+
+Route::group(['prefix'=>'admin'],function(){
+    Route::post('login',[LoginController::class,'adminLoginPost'])->name('adminLoginPost');
+
+    Route::group(['middleware'=>'AdminAuth'],function(){
+        Route::get('/dashboard', [AdminController::class, 'adminDashboard'])->name('admin.dashboard');
+
+        //Add Enqiry Details
+        Route::get('add-new-enquiry', [EnquiryController::class, 'addNewEnquiry'])->name('addNewEnquiry');
+        Route::get('list-enquiry', [EnquiryController::class, 'listEnquiry'])->name('listEnquiry');
+
+    });
+});
