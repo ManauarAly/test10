@@ -81,6 +81,7 @@ class StudentController extends Controller
     {
         $student = StudentModel::find($userId);
         return view('admin.pages.admission_print')->with('student', $student);
+<<<<<<< HEAD
     }
 
     public function studentEdit($userId=null)
@@ -147,5 +148,7 @@ class StudentController extends Controller
             $status = 400;
         }
         return response()->json(array('type'=>$type, 'msg'=>$msg), $status);
+=======
+>>>>>>> d4781c1 (worked on student section)
     }
 }
