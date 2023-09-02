@@ -44,7 +44,7 @@
                 <li>
                     <a href="{{route('newStudent')}}"><i class="bx bx-right-arrow-alt"></i>New Admission</a>
                 </li>
-                <li>
+                <li> 
                     <a href="#"><i class="bx bx-right-arrow-alt"></i>Student List</a>
                 </li>
                 <li>

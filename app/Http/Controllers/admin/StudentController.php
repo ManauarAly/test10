@@ -66,8 +66,21 @@ class StudentController extends Controller
         }
     }
 
-    public function listStudent()
+    public function studentList()
     {
-        return view('admin.pages.list_student');
+        $stuDatas = StudentModel::all();
+        return view('admin.pages.list_student')->with('stuDatas', $stuDatas);
+    }
+
+    public function studentProfile($userId)
+    {
+        $student = StudentModel::find($userId);
+        return view('admin.pages.student_profile')->with('student', $student);
+    }
+
+    public function admissionPrint($userId)
+    {
+        $student = StudentModel::find($userId);
+        return view('admin.pages.admission_print')->with('student', $student);
     }
 }
