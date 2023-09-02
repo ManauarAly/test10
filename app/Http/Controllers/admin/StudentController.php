@@ -65,4 +65,9 @@ class StudentController extends Controller
             return redirect('insert')->with('failed',"operation failed");
         }
     }
+
+    public function listStudent()
+    {
+        return view('admin.pages.list_student');
+    }
 }
