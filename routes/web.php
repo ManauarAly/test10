@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 
 Route::get('admin-login',[LoginController::class,'adminLogin'])->name('adminLogin');
-//Route::post('admin-login',[LoginController::class,'adminLoginPost'])->name('adminLoginPost');
+Route::post('admin-login',[LoginController::class,'adminLoginPost'])->name('adminLoginPost');
 // Route::get('add-new-enquiry', [EnquiryController::class, 'addNewEnquiry'])->name('addNewEnquiry');
 // Route::get('list-enquiry', [EnquiryController::class, 'listEnquiry'])->name('listEnquiry');
 
@@ -33,7 +33,10 @@ Route::group(['prefix'=>'admin'],function(){
 
         //Add Enqiry Details
         Route::get('add-new-enquiry', [EnquiryController::class, 'addNewEnquiry'])->name('addNewEnquiry');
+        Route::post('add-new-enquiry', [EnquiryController::class, 'storeNewEnquiry'])->name('storeNewEnquiry');
+
         Route::get('list-enquiry', [EnquiryController::class, 'listEnquiry'])->name('listEnquiry');
 
+        Route::post('del-enquiry', [EnquiryController::class, 'delEnquiry'])->name('delEnquiry');
     });
 });
