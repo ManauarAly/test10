@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\LoginController;
 use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\EnquiryController;
+use App\Http\Controllers\admin\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,5 +39,8 @@ Route::group(['prefix'=>'admin'],function(){
         Route::get('list-enquiry', [EnquiryController::class, 'listEnquiry'])->name('listEnquiry');
 
         Route::post('del-enquiry', [EnquiryController::class, 'delEnquiry'])->name('delEnquiry');
+
+        Route::get('new-student', [StudentController::class, 'newStudent'])->name('newStudent');
+        Route::post('new-student', [StudentController::class, 'storeNewStudent'])->name('storeNewStudent');
     });
 });

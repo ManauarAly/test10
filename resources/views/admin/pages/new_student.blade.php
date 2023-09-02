@@ -9,13 +9,13 @@
                     <ol class="breadcrumb mb-0 p-0">
                         <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Enquiry</li>
+                        <li class="breadcrumb-item active" aria-current="page">Student</li>
                     </ol>
                 </nav>
             </div>
             <div class="ms-auto">
                 <div class="btn-group">
-                    <a href="{{route('listEnquiry')}}" class="btn btn-primary">List Enquiry</a> 
+                    <a href="" class="btn btn-primary">List Students</a> 
                 </div>
             </div>
         </div>
@@ -31,16 +31,49 @@
             {{ session('failed') }}
         </div>
         @endif
+
+        @php 
+            if(!empty($students)){
+                $ad_reg_no = $students['reg'];
+                $stu_name  = $students['name'];
+                $stu_course = $students['class'];
+                $stu_fee = $students['fee'];
+                $stu_father = $students['father'];
+                $stu_gender = $students['gender'];
+                $stu_dob = $students['dob'];
+                $stu_gardian = $students['gardian'];
+                $stu_school = $students['last_school'];
+                $stu_board = $students['last_board'];
+                $stu_city = $students['city'];
+                $stu_mob = $students['mob'];
+                $stu_adrs = $students['address'];
+            }else{
+                $ad_reg_no = '';
+                $stu_name = '';
+                $stu_course = '';
+                $stu_fee = '';
+                $stu_father = '';
+                $stu_gender = '';
+                $stu_dob = '';
+                $stu_gardian = '';
+                $stu_school = '';
+                $stu_board = '';
+                $stu_city = '';
+                $stu_mob = '';
+                $stu_adrs = '';
+            }
+        @endphp
+        
         <div class="row">
             <div class="col-xl-12 mx-auto">
                 <div class="card">
                     <div class="card-body">
                         <div class="p-4 border rounded"> 
-                        <form class="row g-3 needs-validation bv-form" method="post" id="enq_form" enctype="multipart/form-data" action="{{route('storeNewEnquiry')}}" novalidate="novalidate"><button type="submit" class="bv-hidden-submit" style="display: none; width: 0px; height: 0px;"></button>
+                        <form class="row g-3 needs-validation bv-form" method="post" id="enq_form" enctype="multipart/form-data" action="{{route('storeNewStudent')}}" novalidate="novalidate"><button type="submit" class="bv-hidden-submit" style="display: none; width: 0px; height: 0px;"></button>
                             @csrf
                             <div class="col-md-3">
-                                <label for="enq_session" class="form-label">Session:  </label>
-                                <select class="single-select" name="enq_session" id="enq_session">
+                                <label for="ad_session" class="form-label">Session:  </label>
+                                <select class="single-select" name="ad_session" id="ad_session">
                                     <option value="">Select </option>
                                     @for ($i = 2012; $i <= 2024; $i++)
                                         <option value="2016-2017">{{ $i }} </option>
@@ -49,13 +82,34 @@
                             </div>
                                
                                 <div class="col-md-3">
-                                    <label for="enq_no" class="form-label">Enq No *</label>
-                                    <input type="text" class="form-control" name="enq_no" id="enq_no" value="ENQ_NO_12345" data-bv-field="enq_no">
+                                    <label for="ad_reg_no" class="form-label">Reg No *</label>
+                                    <input type="text" class="form-control" name="ad_reg_no" id="ad_reg_no" value="{{$ad_reg_no}}" data-bv-field="reg_no">
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label for="ad_date" class="form-label">Admission Date *</label>
+                                    <input type="date" class="form-control" name="ad_date" id="ad_date" value="" placeholder="Enter student" data-bv-field="enq_stu_name">
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label for="ad_regular" class="form-label">Regular /Note Rg *</label>  
+                                    <select class="form-control" name="ad_regular" data-bv-field="ad_regular">
+                                        <option value="">Select</option>
+                                        <option value="regular">Regular</option>
+                                        <option value="not regular">Not Regular</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label for="ad_branch" class="form-label">Select Branch *</label>  
+                                    <select class="form-control" name="ad_branch" data-bv-field="ad_branch">
+                                        <option value="RTI BHATHAT">RTI BHATHAT</option>
+                                    </select>
                                 </div>
                                 
                                 <div class="col-md-3">
                                     <label for="enq_stu_name" class="form-label">Student Name *</label>
-                                    <input type="text" class="form-control" name="enq_stu_name" id="enq_stu_name" value="" placeholder="Enter student" data-bv-field="enq_stu_name">
+                                    <input type="text" class="form-control" name="enq_stu_name" id="enq_stu_name" value="{{$stu_name}}" placeholder="Enter student" data-bv-field="enq_stu_name">
                                 </div>
 
                                 <div class="col-md-3">
@@ -68,61 +122,69 @@
 
                                 <div class="col-md-3">
                                     <label for="enq_fee" class="form-label">Fee *</label>
-                                    <input type="text" class="form-control" name="enq_fee" id="enq_fee" value="" placeholder="Fee" data-bv-field="enq_fee">
+                                    <input type="text" class="form-control" name="enq_fee" id="enq_fee" value="{{$stu_fee}}" placeholder="Fee" data-bv-field="enq_fee">
                                 </div>
                                 
                                 <div class="col-md-3">
                                     <label for="enq_father_name" class="form-label">Father's Name *</label>
-                                    <input type="text" class="form-control" name="enq_father_name" id="enq_father_name" value="" placeholder="Enter father name" data-bv-field="enq_father_name">
+                                    <input type="text" class="form-control" name="enq_father_name" id="enq_father_name" value="{{$stu_father}}" placeholder="Enter father name" data-bv-field="enq_father_name">
                                 </div>
 
                                 <div class="col-md-3">
                                     <label for="enq_gender" class="form-label">Gender *</label>
                                     <select class="form-control" name="enq_gender" data-bv-field="enq_gender">
-                                        <option value="male">Male</option>
-                                        <option value="female">Female</option>
+                                        <option value="male" {{ ($stu_gender == 'male')?'selected':''}}>Male</option>
+                                        <option value="female" {{ ($stu_gender == 'female')?'selected':''}}>Female</option>
                                         <option value="Other">Other</option>
                                     </select>
                                 </div>
 
                                 <div class="col-md-3">
                                     <label for="enq_dob" class="form-label">DOB *</label>
-                                    <input type="date" class="form-control" name="enq_dob" id="enq_dob" value="" placeholder="Enter student" data-bv-field="enq_dob">
+                                    <input type="date" class="form-control" name="enq_dob" id="enq_dob" value="{{$stu_dob}}" placeholder="Enter student" data-bv-field="enq_dob">
                                 </div>
 
                                 <div class="col-md-3">
                                     <label for="enq_gua_mobile_no" class="form-label">Guardian's Mobile Number *</label>
-                                    <input type="text" class="form-control" name="enq_gua_mobile_no" id="enq_gua_mobile_no" value="" placeholder="Enter guardian's mobile number" data-bv-field="enq_gua_mobile_no">
+                                    <input type="text" class="form-control" name="enq_gua_mobile_no" id="enq_gua_mobile_no" value="{{$stu_gardian}}" placeholder="Enter guardian's mobile number" data-bv-field="enq_gua_mobile_no">
                                 </div>
 
                                 <div class="col-md-3">
                                     <label for="enq_school_name" class="form-label">School Name *</label>
-                                    <input type="text" class="form-control" name="enq_school_name" id="enq_school_name" value="" placeholder="Enter school name" data-bv-field="enq_school_name">
+                                    <input type="text" class="form-control" name="enq_school_name" id="enq_school_name" value="{{$stu_school}}" placeholder="Enter school name" data-bv-field="enq_school_name">
                                 </div>
 
                                 <div class="col-md-3">
                                     <label for="enq_board" class="form-label">Board *</label>
                                     <select class="form-control" name="enq_board" id="enq_board" data-bv-field="enq_board">
                                         <option value="">--- SELECT ---</option>
-                                        <option value="UP">UP</option>
-                                        <option value="CBSE">CBSE</option>
-                                        <option value="ICSE">ICSE</option>
+                                        <option value="UP" {{ ($stu_board == 'UP')?'selected':''}}>UP</option>
+                                        <option value="CBSE" {{ ($stu_board == 'CBSE')?'selected':''}}>CBSE</option>
+                                        <option value="ICSE" {{ ($stu_board == 'ICSE')?'selected':''}}>ICSE</option>
                                     </select>
                                 </div>
 
                                 <div class="col-md-3">
                                     <label for="enq_city" class="form-label">City *</label>
-                                    <input type="text" class="form-control" name="enq_city" id="enq_city" value="" placeholder="Enter city" data-bv-field="enq_city">
+                                    <input type="text" class="form-control" name="enq_city" id="enq_city" value="{{$stu_city}}" placeholder="Enter city" data-bv-field="enq_city">
                                 </div>
 
                                 <div class="col-md-3">
                                     <label for="enq_mobile_no" class="form-label">Mobile Number *</label>
-                                    <input type="text" class="form-control" name="enq_mobile_no" id="enq_mobile_no" value="" placeholder="Enter guardian's mobile number" data-bv-field="enq_mobile_no">
+                                    <input type="text" class="form-control" name="enq_mobile_no" id="enq_mobile_no" value="{{$stu_mob}}" placeholder="Enter mobile number" data-bv-field="enq_mobile_no">
                                 </div>
 
-                                <div class="col-md-9">
+                                <div class="col-md-8">
                                     <label for="enq_address" class="form-label">Address *</label>
-                                    <textarea class="form-control" id="enq_address" placeholder="Full Address..." name="enq_address" rows="2" spellcheck="false" data-bv-field="enq_address"></textarea>
+                                    <textarea class="form-control" id="enq_address" placeholder="Full Address..." name="enq_address" rows="2" spellcheck="false" data-bv-field="enq_address">{{$stu_adrs}}</textarea>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <img src="{{URL::asset('/assets/images/no-image-icon.jpg')}}" class="img-responsive" id="blah" style="height:135px; width:120px; border-radius:2px; border: double;" alt="No image">
+                                    <input type="file" class="form-control" title="xyz" name="file" onchange="readURL(this);" accept="image/jpg, image/JPG,image/JPEG, image/jpeg, image/png, image/PNG" required="">
+                                    <p style="color:red;">Note:- Please upload file less than 150KB. Only !! 
+                                    <br>image width should be equal to 100px &amp;&amp; height 100px only
+                                    <br> कृपया इमेज का साइज 150 केबी से कम रखें</p>
                                 </div>
 
                                 <div class="col-md-12 text-end">
@@ -137,128 +199,25 @@
         </div>
         <!--end row-->
     </div>
-    
+
+    @php
+    print_r($students);
+    @endphp
+
     @section('script')
         <script>
-            $(document).ready(function() {
-                $('#enq_form').bootstrapValidator({
-                    fields: {
-                        enq_session: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'Session is requred.'
-                                }
-                            }
-                        },
-                        enq_no: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'Enq No is requred.'
-                                }
-                            }
-                        },
-                        enq_stu_name: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'Student Name is requred.'
-                                }
-                            }
-                        },
-                        enq_course: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'Course is requred.'
-                                }
-                            }
-                        },
-                        enq_course: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'Course is requred.'
-                                }
-                            }
-                        },
-                        enq_fee: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'Fee is requred.'
-                                }
-                            }
-                        },
-                        enq_fee: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'Fee is requred.'
-                                }
-                            }
-                        },
-                        enq_father_name: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'Father name is requred.'
-                                }
-                            }
-                        },
-                        enq_gender: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'Gender name is requred.'
-                                }
-                            }
-                        },
-                        enq_dob: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'DOB is requred.'
-                                }
-                            }
-                        },
-                        enq_gua_mobile_no: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'Guardian`s Mobile Number is requred.'
-                                }
-                            }
-                        },
-                        enq_school_name: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'School Name is requred.'
-                                }
-                            }
-                        },
-                        enq_board: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'Board is requred.'
-                                }
-                            }
-                        },
-                        enq_city: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'City is requred.'
-                                }
-                            }
-                        },
-                        enq_mobile_no: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'Mobile no. is requred.'
-                                }
-                            }
-                        },
-                        enq_address: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'Address is requred.'
-                                }
-                            }
-                        }
-                    }
-                });
-            });
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        $('#blah')
+                            .attr('src', e.target.result)
+                            .width(120)
+                            .height(135);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+             }
         </script>
     @endsection
-@endsection
-
+    @endsection

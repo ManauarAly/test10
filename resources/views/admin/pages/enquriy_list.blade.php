@@ -53,14 +53,22 @@
                                 <td>{{$stuEnqData->mob}}</td>
                                 <td>
                                     <a href="javascript:void(0)" data-id="{{$stuEnqData->id}}" class="btn btn-danger del-enq-stu"><i class="bx bx-trash-alt"></i></a>
-                                    <a href="?confirm={{$stuEnqData->id}}" class="btn btn-success"><i class="bx bx-plus"></i></a>
+                                    <a href="{{route('newStudent')}}?id={{$stuEnqData->id}}" class="btn btn-success"><i class="bx bx-plus"></i></a>
                                 </td>
                             </tr>
                             @endforeach
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th>Travel Name</th>
+                                <th>Enq No</th>
+                                <th>Name</th>
+                                <th>Class</th>
+                                <th>Fee</th>
+                                <th>Father</th>
+                                <th>City</th>
+                                <th>School & Board</th>
+                                <th>Mobile</th>
+                                <th>Action</th>
                             </tr>
                         </tfoot>
                     </table>
