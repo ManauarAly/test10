@@ -26,13 +26,23 @@
 </head>
 
 <body class="bg-login">
+	@if (session('error'))
+		<div class="alert alert-success" role="alert">
+			<button type="button" class="close" data-dismiss="alert">×</button>
+			{{ session('error') }}
+		</div>
+	@elseif(session('failed'))
+		<div class="alert alert-danger" role="alert">
+			<button type="button" class="close" data-dismiss="alert">×</button>
+			{{ session('failed') }}
+		</div>
+	@endif
 	<!--wrapper-->
 	<div class="wrapper">
 		<div class="section-authentication-signin d-flex align-items-center justify-content-center my-5 my-lg-0">
 			<div class="container-fluid">
 				<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
 					<div class="col mx-auto">
-					
 						<div class="card shadow-none">
 							<div class="card-body">
 								<div class="border p-4 rounded">
