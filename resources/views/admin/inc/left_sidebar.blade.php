@@ -46,7 +46,7 @@
                     <a href="{{route('newStudent')}}"><i class="bx bx-right-arrow-alt"></i>New Admission</a>
                 </li>
                 <li> 
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Student List</a>
+                    <a href="{{route('studentList')}}"><i class="bx bx-right-arrow-alt"></i>Student List</a>
                 </li>
                 <li> 
                     <a href="#"><i class="bx bx-right-arrow-alt"></i>Student Bday</a>

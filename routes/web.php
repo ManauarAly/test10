@@ -44,5 +44,9 @@ Route::group(['prefix'=>'admin'],function(){
         Route::get('new-student', [StudentController::class, 'newStudent'])->name('newStudent');
         Route::post('new-student', [StudentController::class, 'storeNewStudent'])->name('storeNewStudent');
         Route::get('new-blog', [BlogController::class, 'addblog'])->name('addblog');
+
+        Route::get('student-list', [StudentController::class, 'studentList'])->name('studentList');
+        Route::get('student-profile/{userId}', [StudentController::class, 'studentProfile'])->name('studentProfile');
+        Route::get('admission-print/{userId}', [StudentController::class, 'admissionPrint'])->name('admissionPrint');
     });
 });
