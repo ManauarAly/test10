@@ -5,6 +5,7 @@ use App\Http\Controllers\admin\LoginController;
 use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\EnquiryController;
 use App\Http\Controllers\admin\StudentController;
+use App\Http\Controllers\admin\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,5 +43,6 @@ Route::group(['prefix'=>'admin'],function(){
 
         Route::get('new-student', [StudentController::class, 'newStudent'])->name('newStudent');
         Route::post('new-student', [StudentController::class, 'storeNewStudent'])->name('storeNewStudent');
+        Route::get('new-blog', [BlogController::class, 'addblog'])->name('addblog');
     });
 });
