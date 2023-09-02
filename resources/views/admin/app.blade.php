@@ -27,6 +27,9 @@
 		</footer>
 	</div>
 	<!--end wrapper-->
+	
 	@include('admin.inc.js_script')
+	@yield('script')
+	<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.bootstrapvalidator/0.5.1/js/bootstrapValidator.min.js"></script>
 </body>
 </html>

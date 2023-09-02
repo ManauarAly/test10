@@ -4,7 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\AdminModels;
+use App\Models\AdminModel;
 use Validator;
 use Hash;
 use Session;
@@ -15,22 +15,25 @@ class LoginController extends Controller
     {
         return view('admin.pages.login');
     }
+
     public function adminLoginPost(Request $request) 
     {
         $validate = $request->validate([
-            'username'        => 'required|min:3',
-            'password'      => 'required|min:8',
-            ]);
-        if($validate == true)
-        {
-            $dbData = AdminModels::where('username',$request->username)->first();
-            //dd($dbData);
-            if(\Hash::check($request->password,$dbData->password))
-            {
+                        'username' => 'required|min:3',
+                        'password' => 'required|min:8',
+                    ]);
+
+        if($validate == true){
+            $dbData = AdminModel::whereusername($request->username)
+                ->wherepswd(md5($request->password))
+                ->first();
+
+                // dd($dbData);
+            if($dbData){
                 
-                if($dbData->user_type == 'Admin'){
+                if($dbData->typ == 'Administrator'){
                    
-                    if($dbData->status == '1'){
+                    if($dbData->status == 'active'){
 
                         Session::put('adminId',$dbData->id);
                         //Session::put('userName',$dbData->username);
@@ -52,9 +55,7 @@ class LoginController extends Controller
                     ->with('error','Only admin login');
                 }
                 
-            }
-            else
-            {
+            }else{
                 return redirect()->back()->with('error','Oops! You have entered invalid credentials');
             }
         }
