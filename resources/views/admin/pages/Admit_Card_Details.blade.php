@@ -20,6 +20,21 @@
         </div>
     </div>
 
+
+    <div class="box-header">
+        <form action="admitCardPrint.php" target="_blank" method="post">
+
+            <div class="row mb-3">
+                <div class="col-md-8">
+                    <input type="submit" name="submit" value="Print" class="btn btn-primary btn-md pull-left" onclick="return confirm('Are you sure you want to print?');">
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" id="myInput" onkeyup="myFunction()" placeholder="Search for Reg Number..">
+                </div>
+            </div>
+        </form>
+    </div>
+
     <div class="card">
         <div class="card-body">
             <table class="table table-striped">
@@ -46,12 +61,12 @@
                         <td>SATURDAY</td>
                         <td>
                             <div class="d-flex">
-                            <i class="bi-trash"></i>
-                            <i class="bi-plus-lg"></i>
-                            <i class="bi-printer-fill"></i>
+                                <i class="bi-trash"></i>
+                                <i class="bi-plus-lg"></i>
+                                <i class="bi-printer-fill"></i>
                             </div>
                         </td>
-                    </tr> 
+                    </tr>
 
                     <tr>
                         <td><input type="checkbox" class="checkbox" name="ids[]" value="1"></td>
@@ -63,12 +78,12 @@
                         <td>SATURDAY</td>
                         <td>
                             <div class="d-flex">
-                            <i class="bi-trash"></i>
-                            <i class="bi-plus-lg"></i>
-                            <i class="bi-printer-fill"></i>
+                                <i class="bi-trash"></i>
+                                <i class="bi-plus-lg"></i>
+                                <i class="bi-printer-fill"></i>
                             </div>
                         </td>
-                    </tr> 
+                    </tr>
 
                     <tr>
                         <td><input type="checkbox" class="checkbox" name="ids[]" value="1"></td>
@@ -80,12 +95,12 @@
                         <td>SATURDAY</td>
                         <td>
                             <div class="d-flex">
-                            <i class="bi-trash"></i>
-                            <i class="bi-plus-lg"></i>
-                            <i class="bi-printer-fill"></i>
+                                <i class="bi-trash"></i>
+                                <i class="bi-plus-lg"></i>
+                                <i class="bi-printer-fill"></i>
                             </div>
                         </td>
-                    </tr> 
+                    </tr>
                 </tbody>
             </table>
         </div>
