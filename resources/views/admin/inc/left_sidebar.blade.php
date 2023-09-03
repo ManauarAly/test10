@@ -74,10 +74,10 @@
             </a>
             <ul>
                 <li> 
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Add Blog</a>
+                    <a href="{{route('addblog')}}"><i class="bx bx-right-arrow-alt"></i>Add Blog</a>
                 </li>
                 <li> 
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Blog List</a>
+                    <a href="{{route('bloglist')}}"><i class="bx bx-right-arrow-alt"></i>Blog List</a>
                 </li>
             </ul>
         </li>
@@ -90,16 +90,16 @@
             </a>
             <ul>
                 <li> 
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Create Admit Card</a>
+                    <a href="{{route('CreateAdmitCard')}}"><i class="bx bx-right-arrow-alt"></i>Create Admit Card</a>
                 </li>
                 <li> 
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Admit Card Details</a>
+                    <a href="{{route('AdmitCardDetails')}}"><i class="bx bx-right-arrow-alt"></i>Admit Card Details</a>
                 </li>
                 <li> 
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Result</a>
+                    <a href="{{route('Result')}}"><i class="bx bx-right-arrow-alt"></i>Result</a>
                 </li>
                 <li> 
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Branch Admit Card</a>
+                    <a href="{{route('BranchAdmitCard')}}"><i class="bx bx-right-arrow-alt"></i>Branch Admit Card</a>
                 </li>
             </ul>
         </li>
@@ -112,19 +112,19 @@
             </a>
             <ul>
                 <li> 
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Fee Submission</a>
+                    <a href="{{route('FeeSubmission')}}"><i class="bx bx-right-arrow-alt"></i>Fee Submission</a>
                 </li>
                 <li> 
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Fee Details</a>
+                    <a href="{{route('FeeDetails')}}"><i class="bx bx-right-arrow-alt"></i>Fee Details</a>
                 </li>
                 <li> 
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Today Fee Collection</a>
+                    <a href="{{route('TodayFeeCollection')}}"><i class="bx bx-right-arrow-alt"></i>Today Fee Collection</a>
                 </li>
                 <li> 
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Due Fee Report</a>
+                    <a href="{{route('DueFeeReport')}}"><i class="bx bx-right-arrow-alt"></i>Due Fee Report</a>
                 </li>
                 <li> 
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Fee Reminder</a>
+                    <a href="{{route('FeeReminder')}}"><i class="bx bx-right-arrow-alt"></i>Fee Reminder</a>
                 </li>
             </ul>
         </li>
