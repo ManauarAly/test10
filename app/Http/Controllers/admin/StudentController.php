@@ -60,8 +60,7 @@ class StudentController extends Controller
                 StuEnqModel::where('id', $comfirm_id)->update(['status' => 'Confirm']);
             }
             return redirect('admin/new-student')->with('status',"Insert successfully");
-        }
-        catch(Exception $e){
+        }catch(Exception $e){
             return redirect('insert')->with('failed',"operation failed");
         }
     }
@@ -82,5 +81,71 @@ class StudentController extends Controller
     {
         $student = StudentModel::find($userId);
         return view('admin.pages.admission_print')->with('student', $student);
+    }
+
+    public function studentEdit($userId=null)
+    {
+        $student = StudentModel::find($userId);
+        return view('admin.pages.student_edit')->with('students', $student);
+    }
+
+    public function saveStudentEdit(request $request, $userId=null)
+    {
+        $data = $request->input();
+        try{
+
+            if(!empty($request->file) && $request->file != ''){
+                $fileName = time() . '.' . $request->file->extension();
+                $moveFile = $request->file->move(public_path('assets/images/studentImgs'), $fileName);
+                $_data['img']  = $fileName;
+            }
+            
+            $_data['reg']    = $data['ad_reg_no'];
+            $_data['admission_date']   = $data['ad_date'];
+            $_data['regular']  = $data['ad_regular'];
+            $_data['select_branch']  = $data['ad_branch'];
+            $_data['name']  = $data['enq_stu_name'];
+            $_data['gender']  = $data['enq_gender'];
+            $_data['dob']  = $data['enq_dob'];
+            $_data['class']  = $data['enq_course'];
+            $_data['gardian']  = $data['enq_gua_mobile_no'];
+            $_data['father']  = $data['enq_father_name'];
+            $_data['city'] = $data['enq_city'];
+            $_data['mob'] = $data['enq_mobile_no'];
+            $_data['address']  = $data['enq_address'];
+            $_data['last_school']  = $data['enq_school_name'];
+            $_data['board']  = $data['enq_board'];
+            $_data['board']  = $data['enq_board'];
+            $_data['date']  = date('Y-m-d');
+            $_data['time']  = date('H:i:s');
+            $_data['by']  = $data['enq_stu_name'];
+            $_data['session']  = $data['ad_session'];
+            $_data['fee']  = $data['enq_fee'];
+            // 'course_id '  => 10,
+            $_data['updated_at']  = date('Y-m-d H:i:s');
+
+            StudentModel::where('id', $userId)->update($_data);
+
+            return redirect('admin/student-edit/'.$userId)->with('status',"Update successfully");
+
+        }catch(Exception $e){
+            return redirect('insert')->with('failed',"operation failed");
+        }
+    }
+
+    public function delStudent(request $request)
+    {
+        $data = $request->input();
+        $delData = StudentModel::where('id', $data['stuId'])->delete();
+        if($delData){
+            $msg = "Successfully deleted student";
+            $type = 1;
+            $status = 200;
+        }else{
+            $msg = "There are some issue, please try some time";
+            $type = 0;
+            $status = 400;
+        }
+        return response()->json(array('type'=>$type, 'msg'=>$msg), $status);
     }
 }

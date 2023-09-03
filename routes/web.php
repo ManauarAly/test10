@@ -45,8 +45,12 @@ Route::group(['prefix'=>'admin'],function(){
         Route::post('new-student', [StudentController::class, 'storeNewStudent'])->name('storeNewStudent');
         Route::get('new-blog', [BlogController::class, 'addblog'])->name('addblog');
 
+        Route::post('del-student', [StudentController::class, 'delStudent'])->name('delStudent');
+
         Route::get('student-list', [StudentController::class, 'studentList'])->name('studentList');
         Route::get('student-profile/{userId}', [StudentController::class, 'studentProfile'])->name('studentProfile');
+        Route::get('student-edit/{userId?}', [StudentController::class, 'studentEdit'])->name('studentEdit');
+        Route::post('student-edit/{userId?}', [StudentController::class, 'saveStudentEdit'])->name('saveStudentEdit');
         Route::get('admission-print/{userId}', [StudentController::class, 'admissionPrint'])->name('admissionPrint');
     });
 });
