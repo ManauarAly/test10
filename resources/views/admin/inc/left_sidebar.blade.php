@@ -55,7 +55,7 @@
                     <a href="#"><i class="bx bx-right-arrow-alt"></i>Print Student List</a>
                 </li>
                 <li> 
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Course Management</a>
+                    <a href="{{route('courseManage')}}"><i class="bx bx-right-arrow-alt"></i>Course Management</a>
                 </li>
                 <li> 
                     <a href="#"><i class="bx bx-right-arrow-alt"></i>Head Office ID Card</a>
