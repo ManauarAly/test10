@@ -38,7 +38,7 @@
                         </thead>
                         <tbody>
                             @foreach ($stuDatas as $stuData)
-                            <tr>
+                            <tr id="stu-id-{{$stuData->id}}">
                                 <td>{{$stuData->reg}}</td>
                                 <td>{{$stuData->class}}</td>
                                 <td>{{$stuData->name}}</td>
@@ -51,7 +51,7 @@
                                     <a href="marksheet_create?ncid={{$stuData->id}}" title="Marksheet Create"><i class="bx bx-book" style="color:#2A5A74;"></i></a>
                                     <a href="javascript:void(0)" data-id="{{$stuData->id}}" class="delAdmStu" title="Delete Student Data"><i class="bx bx-trash" style="color:#FF0000;"></i></a>
                                     <a href="admission-print/{{$stuData->id}}" target="_blank" title="View Details"><i class="bx bx-printer" style="color:#0066FF;"></i></a><br>
-                                    <a href="edit_student?ncid={{$stuData->id}}" title="Edit Student Data"><i class="bx bx-edit" style="color:#009966;"></i></a>                                
+                                    <a href="student-edit/{{$stuData->id}}" title="Edit Student Data"><i class="bx bx-edit" style="color:#009966;"></i></a>                                
                                     <a href="admitCardCreate?ncid={{$stuData->id}}" title="Admit Card Print" class="text-dark"><i class="bx bx-credit-card-front"></i></a>
                                     <a href="student_id_card?ncid={{$stuData->id}}" title="Print ID Card"><i class="bx bx-book"></i></a> 
                                 </td>
@@ -95,20 +95,20 @@
                     if (willDelete) {
                         console.log('true');
                         // console.log(delStuId);
-                        // $.ajax({
-                        //     type:'POST',
-                        //     url:'{{route("delEnquiry")}}',
-                        //     data: {'_token':'<?php echo csrf_token() ?>', 'stuEnqId':delStuId},
-                        //     success:function(data) {
-                        //         if(data.type==1){
-                        //             console.log(data.msg);
-                        //             $('.enqStu-'+delStuId).hide();
-                        //         }else if(data.type==0){
-                        //             console.log(data.msg);
-                        //         }
+                        $.ajax({
+                            type:'POST',
+                            url:'{{route("delStudent")}}',
+                            data: {'_token':'<?php echo csrf_token() ?>', 'stuId':delStuId},
+                            success:function(data) {
+                                if(data.type==1){
+                                    console.log(data.msg);
+                                    $('#stu-id-'+delStuId).hide();
+                                }else if(data.type==0){
+                                    console.log(data.msg);
+                                }
                                 
-                        //     }
-                        // });
+                            }
+                        });
 
                     } else {
                         console.log('false');

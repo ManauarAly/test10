@@ -6,7 +6,6 @@ use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\EnquiryController;
 use App\Http\Controllers\admin\StudentController;
 use App\Http\Controllers\admin\BlogController;
-use App\Http\Controllers\admin\bloglistController;
 use App\Http\Controllers\admin\CreateAdmitCardController;
 use App\Http\Controllers\admin\AdmitCardDetailsController;
 use App\Http\Controllers\admin\resultController;
