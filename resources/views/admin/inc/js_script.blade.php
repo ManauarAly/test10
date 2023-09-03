@@ -1,4 +1,4 @@
-<script src="{{ asset('assets/js/bootstrap.bundle.min.js')}}"></script>
+	<script src="{{ asset('assets/js/bootstrap.bundle.min.js')}}"></script>
 	<!--plugins-->
 	<script src="{{ asset('assets/js/jquery.min.js')}}"></script>
 	<script src="{{ asset('assets/plugins/simplebar/js/simplebar.min.js')}}"></script>
@@ -14,6 +14,7 @@
 	<script src="{{ asset('assets/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>
 	<script src="{{ asset('assets/plugins/datatable/js/dataTables.bootstrap5.min.js')}}"></script>
 	<script src="{{ asset('assets/plugins/select2/js/select2.min.js')}}"></script>
+	<script src="{{ asset('assets/plugins/form-repeater/repeater.js')}}"></script>
 
 	<script>
 		$(document).ready(function() {
@@ -47,6 +48,6 @@
 			allowClear: Boolean($(this).data('allow-clear')),
 		});
 	</script>
-	  <script src="{{ asset('assets/js/index.js')}}"></script>
+	<script src="{{ asset('assets/js/index.js')}}"></script>
 	<!--app JS-->
-<script src="{{ asset('assets/js/app.js')}}"></script>
+	<script src="{{ asset('assets/js/app.js')}}"></script>

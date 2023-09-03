@@ -1,41 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\admin\LoginController;
-use App\Http\Controllers\admin\AdminController;
-use App\Http\Controllers\admin\EnquiryController;
-use App\Http\Controllers\admin\StudentController;
-use App\Http\Controllers\admin\BlogController;
-use App\Http\Controllers\admin\CreateAdmitCardController;
-use App\Http\Controllers\admin\AdmitCardDetailsController;
-use App\Http\Controllers\admin\resultController;
-use App\Http\Controllers\admin\BranchAdmitCardController;
-use App\Http\Controllers\admin\FeeSubmissionController;
-use App\Http\Controllers\admin\FeeDetailsController;
-use App\Http\Controllers\admin\TodayFeeCollectionController;
-use App\Http\Controllers\admin\DueFeeReportController;
-use App\Http\Controllers\admin\FeeReminderController;
-use App\Http\Controllers\admin\AddDepartmentController;
-use App\Http\Controllers\admin\AddEmployeeController;
-use App\Http\Controllers\admin\EmployeeDetailsController;
-use App\Http\Controllers\admin\AttendanceController;
-use App\Http\Controllers\admin\AttendanceDetailsController;
-use App\Http\Controllers\admin\LeaveTypeController;
-use App\Http\Controllers\admin\NewsUpdateController;
-use App\Http\Controllers\admin\EnquiryDetailsController;
-use App\Http\Controllers\admin\AddCourseController;
-use App\Http\Controllers\admin\CourseDetailsController;
-use App\Http\Controllers\admin\DirectMarksheetCreateController;
-use App\Http\Controllers\admin\MarksheetDetailsController;
-use App\Http\Controllers\admin\MarksheetPendingController;
-use App\Http\Controllers\admin\CertificateDetailsController;
-use App\Http\Controllers\admin\NewTeacherImageuploadController;
-use App\Http\Controllers\admin\TeacherImageDetailsController;
-use App\Http\Controllers\admin\NewImageUploadGalleryController;
-use App\Http\Controllers\admin\GalleryImageDetailsController;
-use App\Http\Controllers\admin\NewStudentImageuploadController;
-use App\Http\Controllers\admin\StudentImageDetailsController;
-
 
 
 /*
@@ -75,5 +40,13 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('new-student', [StudentController::class, 'newStudent'])->name('newStudent');
         Route::post('new-student', [StudentController::class, 'storeNewStudent'])->name('storeNewStudent');
         Route::get('new-blog', [BlogController::class, 'addblog'])->name('addblog');
+
+        Route::post('del-student', [StudentController::class, 'delStudent'])->name('delStudent');
+
+        Route::get('student-list', [StudentController::class, 'studentList'])->name('studentList');
+        Route::get('student-profile/{userId}', [StudentController::class, 'studentProfile'])->name('studentProfile');
+        Route::get('student-edit/{userId?}', [StudentController::class, 'studentEdit'])->name('studentEdit');
+        Route::post('student-edit/{userId?}', [StudentController::class, 'saveStudentEdit'])->name('saveStudentEdit');
+        Route::get('admission-print/{userId}', [StudentController::class, 'admissionPrint'])->name('admissionPrint');
     });
 });
