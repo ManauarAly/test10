@@ -26,6 +26,17 @@ use App\Http\Controllers\admin\NewsUpdateController;
 use App\Http\Controllers\admin\EnquiryDetailsController;
 use App\Http\Controllers\admin\AddCourseController;
 use App\Http\Controllers\admin\CourseDetailsController;
+use App\Http\Controllers\admin\DirectMarksheetCreateController;
+use App\Http\Controllers\admin\MarksheetDetailsController;
+use App\Http\Controllers\admin\MarksheetPendingController;
+use App\Http\Controllers\admin\CertificateDetailsController;
+use App\Http\Controllers\admin\NewTeacherImageuploadController;
+use App\Http\Controllers\admin\TeacherImageDetailsController;
+use App\Http\Controllers\admin\NewImageUploadGalleryController;
+use App\Http\Controllers\admin\GalleryImageDetailsController;
+use App\Http\Controllers\admin\NewStudentImageuploadController;
+use App\Http\Controllers\admin\StudentImageDetailsController;
+
 
 
 /*
@@ -85,5 +96,15 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('Enquiry_Details', [EnquiryDetailsController::class, 'EnquiryDetails'])->name('EnquiryDetails');
         Route::get('Add_Course', [AddCourseController::class, 'AddCourse'])->name('AddCourse');
         Route::get('Course_Details', [CourseDetailsController::class, 'CourseDetails'])->name('CourseDetails');
+        Route::get('Direct_Marksheet_Create', [DirectMarksheetCreateController::class, 'DirectMarksheetCreate'])->name('DirectMarksheetCreate');
+        Route::get('Marksheet_Details', [MarksheetDetailsController::class, 'MarksheetDetails'])->name('MarksheetDetails');
+        Route::get('Marksheet_Pending', [MarksheetPendingController::class, 'MarksheetPending'])->name('MarksheetPending');
+        Route::get('Certificate_Details', [CertificateDetailsController::class, 'CertificateDetails'])->name('CertificateDetails');
+        Route::get('New_Teacher_Image_upload', [NewTeacherImageuploadController::class, 'NewTeacherImageupload'])->name('NewTeacherImageupload');
+        Route::get('Teacher_Image_Details', [TeacherImageDetailsController::class, 'TeacherImageDetails'])->name('TeacherImageDetails');
+        Route::get('New_Image_Upload_Gallery', [NewImageUploadGalleryController::class, 'NewImageUploadGallery'])->name('NewImageUploadGallery');
+        Route::get('Gallery_Image_Details', [GalleryImageDetailsController::class, 'GalleryImageDetails'])->name('GalleryImageDetails');
+        Route::get('New_Student_Image_upload', [NewStudentImageuploadController::class, 'NewStudentImageupload'])->name('NewStudentImageupload');
+        Route::get('Student_Image_Details', [StudentImageDetailsController::class, 'StudentImageDetails'])->name('StudentImageDetails');
     });
 });

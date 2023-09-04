@@ -196,16 +196,16 @@
             </a>
             <ul>
                 <li>
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Direct Marksheet Create</a>
+                    <a href="{{route('DirectMarksheetCreate')}}"><i class="bx bx-right-arrow-alt"></i>Direct Marksheet Create</a>
                 </li>
                 <li>
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Marksheet Details</a>
+                    <a href="{{route('MarksheetDetails')}}"><i class="bx bx-right-arrow-alt"></i>Marksheet Details</a>
                 </li>
                 <li>
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Marksheet Pending</a>
+                    <a href="{{route('MarksheetPending')}}"><i class="bx bx-right-arrow-alt"></i>Marksheet Pending</a>
                 </li>
                 <li>
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Certificate Details</a>
+                    <a href="{{route('CertificateDetails')}}"><i class="bx bx-right-arrow-alt"></i>Certificate Details</a>
                 </li>
             </ul>
         </li>
@@ -218,10 +218,10 @@
             </a>
             <ul>
                 <li>
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>New Teacher Image upload</a>
+                    <a href="{{route('NewTeacherImageupload')}}"><i class="bx bx-right-arrow-alt"></i>New Teacher Image upload</a>
                 </li>
                 <li>
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Teacher Image Details</a>
+                    <a href="{{route('TeacherImageDetails')}}"><i class="bx bx-right-arrow-alt"></i>Teacher Image Details</a>
                 </li>
             </ul>
         </li>
@@ -234,10 +234,10 @@
             </a>
             <ul>
                 <li>
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>New Image Upload Gallery</a>
+                    <a href="{{route('NewImageUploadGallery')}}"><i class="bx bx-right-arrow-alt"></i>New Image Upload Gallery</a>
                 </li>
                 <li>
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Gallery Image Details</a>
+                    <a href="{{route('GalleryImageDetails')}}"><i class="bx bx-right-arrow-alt"></i>Gallery Image Details</a>
                 </li>
             </ul>
         </li>
@@ -250,10 +250,10 @@
             </a>
             <ul>
                 <li>
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>New Student Image upload</a>
+                    <a href="{{route('NewStudentImageupload')}}"><i class="bx bx-right-arrow-alt"></i>New Student Image upload</a>
                 </li>
                 <li>
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Student Image Details</a>
+                    <a href="{{route('StudentImageDetails')}}"><i class="bx bx-right-arrow-alt"></i>Student Image Details</a>
                 </li>
             </ul>
         </li>
