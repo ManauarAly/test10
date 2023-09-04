@@ -48,5 +48,8 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('student-edit/{userId?}', [StudentController::class, 'studentEdit'])->name('studentEdit');
         Route::post('student-edit/{userId?}', [StudentController::class, 'saveStudentEdit'])->name('saveStudentEdit');
         Route::get('admission-print/{userId}', [StudentController::class, 'admissionPrint'])->name('admissionPrint');
+
+        Route::get('course-management', [CourseMangController::class, 'courseManage'])->name('courseManage');
+        Route::post('course-management', [CourseMangController::class, 'storeCourseManage'])->name('storeCourseManage');
     });
 });
