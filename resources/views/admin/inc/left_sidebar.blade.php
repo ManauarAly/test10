@@ -266,10 +266,10 @@
             </a>
             <ul>
                 <li>
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>New Branch Add</a>
+                    <a href="{{route('NewBranchAdd')}}"><i class="bx bx-right-arrow-alt"></i>New Branch Add</a>
                 </li>
                 <li>
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Branch Details</a>
+                    <a href="{{route('BranchDetails')}}"><i class="bx bx-right-arrow-alt"></i>Branch Details</a>
                 </li>
             </ul>
         </li>
@@ -282,13 +282,13 @@
             </a>
             <ul>
                 <li>
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Extra Expenese</a>
+                    <a href="{{route('ExtraExpenese')}}"><i class="bx bx-right-arrow-alt"></i>Extra Expenese</a>
                 </li>
                 <li>
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Expenese Details</a>
+                    <a href="{{route('ExpeneseDetails')}}"><i class="bx bx-right-arrow-alt"></i>Expenese Details</a>
                 </li>
                 <li>
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Account Balance</a>
+                    <a href="{{route('AccountBalance')}}"><i class="bx bx-right-arrow-alt"></i>Account Balance</a>
                 </li>
             </ul>
         </li>
@@ -301,7 +301,7 @@
             </a>
             <ul>
                 <li>
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Fee Collection Report</a>
+                    <a href="{{route('FeeCollectionReport')}}"><i class="bx bx-right-arrow-alt"></i>Fee Collection Report</a>
                 </li>
             </ul>
         </li>
