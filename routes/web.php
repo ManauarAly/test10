@@ -61,5 +61,6 @@ Route::group(['prefix'=>'admin'],function(){
         // TESTING 
         Route::get('TESTING2', [CourseMangController::class, 'TESTING'])->name('TESTING');
         Route::get('ali', [CourseMangController::class, 'ali'])->name('ali');
+        Route::get('ali3', [CourseMangController::class, 'ali3'])->name('ali3');
     });
 });
