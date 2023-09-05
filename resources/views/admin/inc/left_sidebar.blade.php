@@ -53,21 +53,10 @@
                 <li>
                     <a href="#"><i class="bx bx-right-arrow-alt"></i>Print Student List</a>
                 </li>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                <li>
+                <li> 
                     <a href="#"><i class="bx bx-right-arrow-alt"></i>Course Management</a>
-=======
-=======
-                <li> 
-                    <a href="{{route('courseManage')}}"><i class="bx bx-right-arrow-alt"></i>Course Management</a>
                 </li>
->>>>>>> ee96b80 (update dev_aly branch)
                 <li> 
-                    <a href="{{route('courseManage')}}"><i class="bx bx-right-arrow-alt"></i>Course Management</a>
->>>>>>> ee96b80 (update dev_aly branch)
-                </li>
-                <li>
                     <a href="#"><i class="bx bx-right-arrow-alt"></i>Head Office ID Card</a>
                 </li>
                 <li>
