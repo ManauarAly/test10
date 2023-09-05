@@ -36,6 +36,12 @@ use App\Http\Controllers\admin\NewImageUploadGalleryController;
 use App\Http\Controllers\admin\GalleryImageDetailsController;
 use App\Http\Controllers\admin\NewStudentImageuploadController;
 use App\Http\Controllers\admin\StudentImageDetailsController;
+use App\Http\Controllers\admin\NewBranchAddController;
+use App\Http\Controllers\admin\BranchDetailsController;
+use App\Http\Controllers\admin\ExtraExpeneseController;
+use App\Http\Controllers\admin\ExpeneseDetailsController;
+use App\Http\Controllers\admin\AccountBalanceController;
+use App\Http\Controllers\admin\FeeCollectionReportController;
 
 
 
@@ -106,5 +112,11 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('Gallery_Image_Details', [GalleryImageDetailsController::class, 'GalleryImageDetails'])->name('GalleryImageDetails');
         Route::get('New_Student_Image_upload', [NewStudentImageuploadController::class, 'NewStudentImageupload'])->name('NewStudentImageupload');
         Route::get('Student_Image_Details', [StudentImageDetailsController::class, 'StudentImageDetails'])->name('StudentImageDetails');
+        Route::get('New_Branch_Add', [NewBranchAddController::class, 'NewBranchAdd'])->name('NewBranchAdd');
+        Route::get('Branch_Details', [BranchDetailsController::class, 'BranchDetails'])->name('BranchDetails');
+        Route::get('Extra_Expenese', [ExtraExpeneseController::class, 'ExtraExpenese'])->name('ExtraExpenese');
+        Route::get('Expenese_Details', [ExpeneseDetailsController::class, 'ExpeneseDetails'])->name('ExpeneseDetails');
+        Route::get('Account_Balance', [AccountBalanceController::class, 'AccountBalance'])->name('AccountBalance');
+        Route::get('Fee_Collection_Report', [FeeCollectionReportController::class, 'FeeCollectionReport'])->name('FeeCollectionReport');
     });
 });
