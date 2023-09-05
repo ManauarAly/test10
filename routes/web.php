@@ -58,5 +58,7 @@ Route::group(['prefix'=>'admin'],function(){
         Route::post('course-management', [CourseMangController::class, 'storeCourseManage'])->name('storeCourseManage');
 
         Route::get('course-subject-list', [CourseMangController::class, 'courseSubjectList'])->name('courseSubjectList');
+        // TESTING 
+        Route::get('TESTING', [CourseMangController::class, 'TESTING'])->name('TESTING');
     });
 });
