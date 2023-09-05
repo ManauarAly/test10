@@ -44,7 +44,7 @@ Route::group(['prefix'=>'admin'],function(){
 
         Route::get('new-student', [StudentController::class, 'newStudent'])->name('newStudent');
         Route::post('new-student', [StudentController::class, 'storeNewStudent'])->name('storeNewStudent');
-        Route::get('new-blog', [BlogController::class, 'addblog'])->name('addblog');
+       
 
         Route::post('del-student', [StudentController::class, 'delStudent'])->name('delStudent');
 
