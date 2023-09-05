@@ -60,5 +60,6 @@ Route::group(['prefix'=>'admin'],function(){
         Route::get('course-subject-list', [CourseMangController::class, 'courseSubjectList'])->name('courseSubjectList');
         // TESTING 
         Route::get('TESTING2', [CourseMangController::class, 'TESTING'])->name('TESTING');
+        Route::get('ali', [CourseMangController::class, 'ali'])->name('ali');
     });
 });
