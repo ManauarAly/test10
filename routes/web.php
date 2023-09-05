@@ -118,5 +118,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('Expenese_Details', [ExpeneseDetailsController::class, 'ExpeneseDetails'])->name('ExpeneseDetails');
         Route::get('Account_Balance', [AccountBalanceController::class, 'AccountBalance'])->name('AccountBalance');
         Route::get('Fee_Collection_Report', [FeeCollectionReportController::class, 'FeeCollectionReport'])->name('FeeCollectionReport');
+
+        Route::get('Fee_Collection_Report2', [FeeCollectionReportController::class, 'FeeCollectionReport2'])->name('FeeCollectionReport2');
     });
 });
