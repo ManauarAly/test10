@@ -16,7 +16,11 @@
             </div>
             <div class="ms-auto">
                 <div class="btn-group">
+<<<<<<< HEAD
                     <a href="{{route('courseSubjectList')}}" class="btn btn-primary">List Course</a> 
+=======
+                    <a href="#" class="btn btn-primary">List Course</a> 
+>>>>>>> ee96b80 (update dev_aly branch)
                 </div>
             </div>
         </div>
@@ -85,7 +89,11 @@
                                 <div class="item-content row">
                                     <div class="mb-3 col-md-8">
                                         <label for="subject_0_name" class="form-label">Subject</label>
+<<<<<<< HEAD
                                         <input type="text" class="form-control" id="subject" placeholder="Enter subject" data-name="name" name="subject[]" value="">
+=======
+                                        <input type="text" class="form-control" id="subject_0_name" placeholder="Enter subject" data-name="name" name="suject[]" value="">
+>>>>>>> ee96b80 (update dev_aly branch)
                                     </div>
                                     <div class="mb-3 col-md-4">
                                         <label for="email" class="form-label">Max Mark</label>

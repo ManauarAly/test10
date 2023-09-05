@@ -4,8 +4,11 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 use App\Models\CourseMangModel;
 use App\Models\CourseSubjectModel;
+=======
+>>>>>>> ee96b80 (update dev_aly branch)
 
 class CourseMangController extends Controller
 {
@@ -14,6 +17,7 @@ class CourseMangController extends Controller
         return view('admin.pages.course_management');
     }
 
+<<<<<<< HEAD
     public function storeCourseManage(request $request)
     {
         $data = $request->input();
@@ -57,5 +61,13 @@ class CourseMangController extends Controller
         $courseSubjects = CourseMangModel::with('courseSubjects')->get()->toArray();
         return view('admin.pages.course_subject_list')->with('courseSubjects', $courseSubjects);
     }
+=======
+    public function storeCourseManage()
+    {
+        echo '<pre>';
+        print_r($_POST);
+        echo '</pre>';
+    }  
+>>>>>>> ee96b80 (update dev_aly branch)
 
 }

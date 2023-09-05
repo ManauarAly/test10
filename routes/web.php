@@ -1,7 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\admin\LoginController;
+use App\Http\Controllers\admin\AdminController;
+use App\Http\Controllers\admin\EnquiryController;
+use App\Http\Controllers\admin\StudentController;
+use App\Http\Controllers\admin\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,6 +54,5 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('student-edit/{userId?}', [StudentController::class, 'studentEdit'])->name('studentEdit');
         Route::post('student-edit/{userId?}', [StudentController::class, 'saveStudentEdit'])->name('saveStudentEdit');
         Route::get('admission-print/{userId}', [StudentController::class, 'admissionPrint'])->name('admissionPrint');
->>>>>>> ac0efd0 (push on dev_aly branch)
     });
 });
