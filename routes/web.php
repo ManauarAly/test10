@@ -119,6 +119,10 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('Account_Balance', [AccountBalanceController::class, 'AccountBalance'])->name('AccountBalance');
         Route::get('Fee_Collection_Report', [FeeCollectionReportController::class, 'FeeCollectionReport'])->name('FeeCollectionReport');
 
+<<<<<<< HEAD
         Route::get('Fee_Collection_Report5', [FeeCollectionReportController::class, 'FeeCollectionReport5'])->name('FeeCollectionReport5');
+=======
+        Route::get('Fee_Collection_Report10', [FeeCollectionReportController::class, 'FeeCollectionReport10'])->name('FeeCollectionReport10');
+>>>>>>> f93a50b (dvdsvdsvdsvdsvds)
     });
 });
