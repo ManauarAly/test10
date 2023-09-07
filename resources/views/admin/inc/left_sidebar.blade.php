@@ -44,8 +44,8 @@
                 <li>
                     <a href="{{route('newStudent')}}"><i class="bx bx-right-arrow-alt"></i>New Admission</a>
                 </li>
-                <li>
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Student List</a>
+                <li> 
+                    <a href="{{route('studentList')}}"><i class="bx bx-right-arrow-alt"></i>Student List</a>
                 </li>
                 <li>
                     <a href="#"><i class="bx bx-right-arrow-alt"></i>Student Bday</a>
@@ -53,10 +53,10 @@
                 <li>
                     <a href="#"><i class="bx bx-right-arrow-alt"></i>Print Student List</a>
                 </li>
-                <li>
+                <li> 
                     <a href="#"><i class="bx bx-right-arrow-alt"></i>Course Management</a>
                 </li>
-                <li>
+                <li> 
                     <a href="#"><i class="bx bx-right-arrow-alt"></i>Head Office ID Card</a>
                 </li>
                 <li>

@@ -60,6 +60,8 @@ class StudentController extends Controller
                 StuEnqModel::where('id', $comfirm_id)->update(['status' => 'Confirm']);
             }
             return redirect('admin/new-student')->with('status',"Insert successfully");
+        }catch(Exception $e){
+            return redirect('insert')->with('failed',"operation failed");
         }
         catch(Exception $e){
             return redirect('insert')->with('failed',"operation failed");
