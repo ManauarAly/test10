@@ -79,6 +79,8 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::post('del-enquiry', [EnquiryController::class, 'delEnquiry'])->name('delEnquiry');
 
+        Route::post('student-list', [EnquiryController::class, 'studentList'])->name('studentList');
+        
         Route::get('new-student', [StudentController::class, 'newStudent'])->name('newStudent');
         Route::post('new-student', [StudentController::class, 'storeNewStudent'])->name('storeNewStudent');
         Route::get('new-blog', [BlogController::class, 'addblog'])->name('addblog');
@@ -120,5 +122,6 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('Fee_Collection_Report', [FeeCollectionReportController::class, 'FeeCollectionReport'])->name('FeeCollectionReport');
 
         Route::get('Fee_Collection_Report10', [FeeCollectionReportController::class, 'FeeCollectionReport10'])->name('FeeCollectionReport10');
+        Route::get('Fee_Collection_Report4', [FeeCollectionReportController::class, 'FeeCollectionReport4'])->name('FeeCollectionReport5');
     });
 });
