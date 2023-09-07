@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class StuEnqModel extends Model
 {
     use HasFactory;
-    protected $table = 'enq';
+    protected $table = 'enquiries';
 }

@@ -62,8 +62,6 @@ Route::get('/', function () {
 
 Route::get('admin-login', [LoginController::class, 'adminLogin'])->name('adminLogin');
 Route::post('admin-login', [LoginController::class, 'adminLoginPost'])->name('adminLoginPost');
-// Route::get('add-new-enquiry', [EnquiryController::class, 'addNewEnquiry'])->name('addNewEnquiry');
-// Route::get('list-enquiry', [EnquiryController::class, 'listEnquiry'])->name('listEnquiry');
 
 Route::group(['prefix' => 'admin'], function () {
     Route::post('login', [LoginController::class, 'adminLoginPost'])->name('adminLoginPost');
@@ -71,18 +69,18 @@ Route::group(['prefix' => 'admin'], function () {
     Route::group(['middleware' => 'AdminAuth'], function () {
         Route::get('/dashboard', [AdminController::class, 'adminDashboard'])->name('admin.dashboard');
 
-        //Add Enqiry Details
+        //Enquiry Zone
         Route::get('add-new-enquiry', [EnquiryController::class, 'addNewEnquiry'])->name('addNewEnquiry');
         Route::post('add-new-enquiry', [EnquiryController::class, 'storeNewEnquiry'])->name('storeNewEnquiry');
-
         Route::get('list-enquiry', [EnquiryController::class, 'listEnquiry'])->name('listEnquiry');
-
         Route::post('del-enquiry', [EnquiryController::class, 'delEnquiry'])->name('delEnquiry');
 
-        Route::post('student-list', [EnquiryController::class, 'studentList'])->name('studentList');
-        
+        //Students
         Route::get('new-student', [StudentController::class, 'newStudent'])->name('newStudent');
+        Route::get('student-list', [StudentController::class, 'studentList'])->name('studentList');
         Route::post('new-student', [StudentController::class, 'storeNewStudent'])->name('storeNewStudent');
+        Route::post('del-student', [StudentController::class, 'delStudent'])->name('delStudent');
+
         Route::get('new-blog', [BlogController::class, 'addblog'])->name('addblog');
         Route::get('blog-list', [bloglistController::class, 'bloglist'])->name('bloglist');
         Route::get('Create-Admit-Card', [CreateAdmitCardController::class, 'CreateAdmitCard'])->name('CreateAdmitCard');

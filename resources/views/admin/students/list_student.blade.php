@@ -15,7 +15,7 @@
             </div>
             <div class="ms-auto">
                 <div class="btn-group">
-                    <a href="" class="btn btn-primary">Add New Agent</a> 
+                    <a href="{{route('newStudent')}}" class="btn btn-primary">Add New Agent</a> 
                 </div>
             </div>
         </div>

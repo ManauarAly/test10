@@ -1,4 +1,5 @@
 @extends('admin.app')
+@section('title', 'New Admission')
 @section('main')
     <div class="page-content">
         <!--breadcrumb-->
@@ -15,53 +16,38 @@
             </div>
             <div class="ms-auto">
                 <div class="btn-group">
-                    <a href="" class="btn btn-primary">List Students</a> 
+                    <a href="{{route('studentList')}}" class="btn btn-primary">List Students</a> 
                 </div>
             </div>
         </div>
         <!--end breadcrumb-->
         @if (session('status'))
-        <div class="alert alert-success" role="alert">
-            <button type="button" class="close" data-dismiss="alert">×</button>
-            {{ session('status') }}
-        </div>
+            <div class="alert alert-success alert-dismissible">
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                <strong>Success!</strong> {{ session('status') }}
+            </div>
         @elseif(session('failed'))
-        <div class="alert alert-danger" role="alert">
-            <button type="button" class="close" data-dismiss="alert">×</button>
-            {{ session('failed') }}
-        </div>
+            <div class="alert alert-danger alert-dismissible">
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                <strong>Success!</strong> {{ session('failed') }}
+            </div>
         @endif
 
-        @php 
-            if(!empty($students)){
-                $ad_reg_no = $students['reg'];
-                $stu_name  = $students['name'];
-                $stu_course = $students['class'];
-                $stu_fee = $students['fee'];
-                $stu_father = $students['father'];
-                $stu_gender = $students['gender'];
-                $stu_dob = $students['dob'];
-                $stu_gardian = $students['gardian'];
-                $stu_school = $students['last_school'];
-                $stu_board = $students['last_board'];
-                $stu_city = $students['city'];
-                $stu_mob = $students['mob'];
-                $stu_adrs = $students['address'];
-            }else{
-                $ad_reg_no = '';
-                $stu_name = '';
-                $stu_course = '';
-                $stu_fee = '';
-                $stu_father = '';
-                $stu_gender = '';
-                $stu_dob = '';
-                $stu_gardian = '';
-                $stu_school = '';
-                $stu_board = '';
-                $stu_city = '';
-                $stu_mob = '';
-                $stu_adrs = '';
-            }
+        @php
+            $ad_stu_id = (!empty($students))?'?id='.$students['id']:'';
+            $ad_reg_no = (!empty($students))?$students['reg']:'';
+            $stu_name  = (!empty($students))?$students['name']:'';
+            $stu_course = (!empty($students))?$students['class']:'';
+            $stu_fee = (!empty($students))?$students['fee']:'';
+            $stu_father = (!empty($students))?$students['father']:'';
+            $stu_gender = (!empty($students))?$students['gender']:'';
+            $stu_dob = (!empty($students))?$students['dob']:'';
+            $stu_gardian = (!empty($students))?$students['gardian']:'';
+            $stu_school = (!empty($students))?$students['last_school']:'';
+            $stu_board = (!empty($students))?$students['last_board']:'';
+            $stu_city = (!empty($students))?$students['city']:'';
+            $stu_mob = (!empty($students))?$students['mob']:'';
+            $stu_adrs = (!empty($students))?$students['address']:'';
         @endphp
         
         <div class="row">
@@ -69,7 +55,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="p-4 border rounded"> 
-                        <form class="row g-3 needs-validation bv-form" method="post" id="enq_form" enctype="multipart/form-data" action="{{route('storeNewStudent')}}" novalidate="novalidate"><button type="submit" class="bv-hidden-submit" style="display: none; width: 0px; height: 0px;"></button>
+                        <form class="row g-3 needs-validation bv-form" method="post" id="enq_form" enctype="multipart/form-data" action="{{route('storeNewStudent').$ad_stu_id}}" novalidate="novalidate"><button type="submit" class="bv-hidden-submit" style="display: none; width: 0px; height: 0px;"></button>
                             @csrf
                             <div class="col-md-3">
                                 <label for="ad_session" class="form-label">Session:  </label>
@@ -199,10 +185,7 @@
         </div>
         <!--end row-->
     </div>
-
-    @php
-    print_r($students);
-    @endphp
+    @endsection
 
     @section('script')
         <script>
@@ -219,5 +202,4 @@
                 }
              }
         </script>
-    @endsection
     @endsection

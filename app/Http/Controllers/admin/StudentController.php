@@ -16,7 +16,7 @@ class StudentController extends Controller
         }else{
             $students = '';
         }
-        return view('admin.pages.new_student')->with('students', $students);
+        return view('admin.students.new_student')->with('students', $students);
     }
 
     public function storeNewStudent(request $request)
@@ -24,8 +24,8 @@ class StudentController extends Controller
         $data = $request->input();
         try{
 
-        $fileName = time() . '.' . $request->file->extension();
-        $moveFile = $request->file->move(public_path('assets/images/studentImgs'), $fileName);
+            $fileName = time() . '.' . $request->file->extension();
+            $moveFile = $request->file->move(public_path('assets/images/studentImgs'), $fileName);
 
             $stuAdData = new StudentModel();
             $stuAdData->reg    = $data['ad_reg_no'];
@@ -55,7 +55,7 @@ class StudentController extends Controller
             $stuAdData->created_at = date('Y-m-d H:i:s');
             $stuAdData->save();
 
-            if(isset($_GET['id'])){
+            if(isset($_GET['id']) && $_GET['id'] != ''){
                 $comfirm_id = $_GET['id'];
                 StuEnqModel::where('id', $comfirm_id)->update(['status' => 'Confirm']);
             }
@@ -66,5 +66,11 @@ class StudentController extends Controller
         catch(Exception $e){
             return redirect('insert')->with('failed',"operation failed");
         }
+    }
+
+    public function studentList()
+    {
+        $stuDatas = StuEnqModel::orderBy('id', 'DESC')->get();
+        return view('admin.students.list_student')->with('stuDatas', $stuDatas);
     }
 }
