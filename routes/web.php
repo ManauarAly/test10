@@ -79,6 +79,8 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::post('del-enquiry', [EnquiryController::class, 'delEnquiry'])->name('delEnquiry');
 
+        Route::post('student-list', [EnquiryController::class, 'studentList'])->name('studentList');
+        
         Route::get('new-student', [StudentController::class, 'newStudent'])->name('newStudent');
         Route::post('new-student', [StudentController::class, 'storeNewStudent'])->name('storeNewStudent');
         Route::get('new-blog', [BlogController::class, 'addblog'])->name('addblog');
