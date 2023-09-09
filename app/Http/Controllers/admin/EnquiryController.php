@@ -15,7 +15,8 @@ class EnquiryController extends Controller
 {
     public function addNewEnquiry()
     {
-        return view('admin.pages.add_new_enquiry');
+        $enq_no = StuEnqModel::latest()->first()->id+1;
+        return view('admin.enquiry_zone.add_new_enquiry')->with('enq_no', $enq_no);
     }
     
     public function storeNewEnquiry(request $request)
@@ -23,7 +24,7 @@ class EnquiryController extends Controller
         $data = $request->input();
         try{
             $stuEnqData = new StuEnqModel();
-            $stuEnqData->reg    = $data['enq_no'];
+            $stuEnqData->reg    = 'ENQ_NO_'.StuEnqModel::latest()->first()->id+1;
             $stuEnqData->name   = $data['enq_stu_name'];
             $stuEnqData->gender = $data['enq_gender'];
             $stuEnqData->dob    = $data['enq_dob'];
@@ -55,8 +56,8 @@ class EnquiryController extends Controller
     
     public function listEnquiry()
     {
-        $stuEnqDatas = StuEnqModel::all();
-        return view('admin.pages.enquriy_list')->with('stuEnqDatas', $stuEnqDatas);
+        $stuEnqDatas = StuEnqModel::orderBy('id', 'DESC')->get();
+        return view('admin.enquiry_zone.enquriy_list')->with('stuEnqDatas', $stuEnqDatas);
     }
 
     public function delEnquiry(request $request)

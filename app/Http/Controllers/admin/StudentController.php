@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\StudentModel;
 use App\Models\StuEnqModel;
+use App\Models\FeesMangModel;
 
 class StudentController extends Controller
 {
@@ -16,7 +17,13 @@ class StudentController extends Controller
         }else{
             $students = '';
         }
-        return view('admin.pages.new_student')->with('students', $students);
+
+        $reg_no = StudentModel::latest()->first()->id+1;
+
+        $data['students'] = $students;
+        $data['reg_no'] = $reg_no;
+        
+        return view('admin.students.new_student')->with('data', $data);
     }
 
     public function storeNewStudent(request $request)
@@ -24,8 +31,8 @@ class StudentController extends Controller
         $data = $request->input();
         try{
 
-        $fileName = time() . '.' . $request->file->extension();
-        $moveFile = $request->file->move(public_path('assets/images/studentImgs'), $fileName);
+            $fileName = time() . '.' . $request->file->extension();
+            $moveFile = $request->file->move(public_path('assets/images/studentImgs'), $fileName);
 
             $stuAdData = new StudentModel();
             $stuAdData->reg    = $data['ad_reg_no'];
@@ -55,16 +62,37 @@ class StudentController extends Controller
             $stuAdData->created_at = date('Y-m-d H:i:s');
             $stuAdData->save();
 
-            if(isset($_GET['id'])){
+            $stuAdSavedId = $stuAdData->id;
+
+            if(isset($_GET['id']) && $_GET['id'] != '' && $stuAdSavedId){
                 $comfirm_id = $_GET['id'];
                 StuEnqModel::where('id', $comfirm_id)->update(['status' => 'Confirm']);
             }
-            return redirect('admin/new-student')->with('status',"Insert successfully");
+
+            if($stuAdSavedId){
+                // fees update
+                $stu_fee_data = new FeesMangModel();
+                $stu_fee_data->reg = $data['ad_reg_no'];
+                $stu_fee_data->fee = $data['enq_fee'];
+                $stu_fee_data->updated_at = date('Y-m-d H:i:s');
+                $stu_fee_data->created_at = date('Y-m-d H:i:s');
+                $stu_fee_data->save();
+
+                return redirect('admin/new-student')->with('status',"Insert successfully");
+            }else{
+                return redirect('admin/new-student')->with('failed',"There are someting error, please try some time.");
+            }
         }catch(Exception $e){
-            return redirect('insert')->with('failed',"operation failed");
+            return redirect('admin/new-student')->with('failed',"operation failed");
         }
         catch(Exception $e){
-            return redirect('insert')->with('failed',"operation failed");
+            return redirect('admin/new-student')->with('failed',"operation failed");
         }
+    }
+
+    public function studentList()
+    {
+        $stuDatas = StudentModel::orderBy('id', 'DESC')->get();
+        return view('admin.students.list_student')->with('stuDatas', $stuDatas);
     }
 }

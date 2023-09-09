@@ -5,6 +5,8 @@ use App\Http\Controllers\admin\LoginController;
 use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\EnquiryController;
 use App\Http\Controllers\admin\StudentController;
+use App\Http\Controllers\admin\FeesManController;
+
 use App\Http\Controllers\admin\BlogController;
 use App\Http\Controllers\admin\bloglistController;
 use App\Http\Controllers\admin\CreateAdmitCardController;
@@ -43,6 +45,7 @@ use App\Http\Controllers\admin\ExpeneseDetailsController;
 use App\Http\Controllers\admin\AccountBalanceController;
 use App\Http\Controllers\admin\FeeCollectionReportController;
 use App\Http\Controllers\WebsiteController;
+use App\Http\Controllers\admin\FeesController;
 
 
 
@@ -74,8 +77,6 @@ Route::get('About', function () {
 
 Route::get('admin-login', [LoginController::class, 'adminLogin'])->name('adminLogin');
 Route::post('admin-login', [LoginController::class, 'adminLoginPost'])->name('adminLoginPost');
-// Route::get('add-new-enquiry', [EnquiryController::class, 'addNewEnquiry'])->name('addNewEnquiry');
-// Route::get('list-enquiry', [EnquiryController::class, 'listEnquiry'])->name('listEnquiry');
 
 Route::group(['prefix' => 'admin'], function () {
     Route::post('login', [LoginController::class, 'adminLoginPost'])->name('adminLoginPost');
@@ -83,23 +84,28 @@ Route::group(['prefix' => 'admin'], function () {
     Route::group(['middleware' => 'AdminAuth'], function () {
         Route::get('/dashboard', [AdminController::class, 'adminDashboard'])->name('admin.dashboard');
 
-        //Add Enqiry Details
+        //Enquiry Zone
         Route::get('add-new-enquiry', [EnquiryController::class, 'addNewEnquiry'])->name('addNewEnquiry');
         Route::post('add-new-enquiry', [EnquiryController::class, 'storeNewEnquiry'])->name('storeNewEnquiry');
-
         Route::get('list-enquiry', [EnquiryController::class, 'listEnquiry'])->name('listEnquiry');
-
         Route::post('del-enquiry', [EnquiryController::class, 'delEnquiry'])->name('delEnquiry');
 
+        //Students
         Route::get('new-student', [StudentController::class, 'newStudent'])->name('newStudent');
+        Route::get('student-list', [StudentController::class, 'studentList'])->name('studentList');
         Route::post('new-student', [StudentController::class, 'storeNewStudent'])->name('storeNewStudent');
+        Route::post('del-student', [StudentController::class, 'delStudent'])->name('delStudent');
+
+        //Fees  
+        Route::get('fee-submission', [FeesManController::class, 'feeSubmission'])->name('FeeSubmission');
+
         Route::get('new-blog', [BlogController::class, 'addblog'])->name('addblog');
         Route::get('blog-list', [bloglistController::class, 'bloglist'])->name('bloglist');
         Route::get('Create-Admit-Card', [CreateAdmitCardController::class, 'CreateAdmitCard'])->name('CreateAdmitCard');
         Route::get('Admit-Card-Details', [AdmitCardDetailsController::class, 'AdmitCardDetails'])->name('AdmitCardDetails');
         Route::get('Result', [ResultController::class, 'Result'])->name('Result');
         Route::get('Branch-Admit-Card', [BranchAdmitCardController::class, 'BranchAdmitCard'])->name('BranchAdmitCard');
-        Route::get('Fee-Submission', [FeeSubmissionController::class, 'FeeSubmission'])->name('FeeSubmission');
+        
         Route::get('Fee_Details', [FeeDetailsController::class, 'FeeDetails'])->name('FeeDetails');
         Route::get('Today_Fee_Collection', [TodayFeeCollectionController::class, 'TodayFeeCollection'])->name('TodayFeeCollection');
         Route::get('Due_Fee_Report', [DueFeeReportController::class, 'DueFeeReport'])->name('DueFeeReport');
@@ -132,5 +138,6 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('Fee_Collection_Report', [FeeCollectionReportController::class, 'FeeCollectionReport'])->name('FeeCollectionReport');
 
         Route::get('Fee_Collection_Report10', [FeeCollectionReportController::class, 'FeeCollectionReport10'])->name('FeeCollectionReport10');
+        Route::get('Fee_Collection_Report4', [FeeCollectionReportController::class, 'FeeCollectionReport4'])->name('FeeCollectionReport5');
     });
 });
