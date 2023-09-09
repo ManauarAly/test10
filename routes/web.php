@@ -5,6 +5,8 @@ use App\Http\Controllers\admin\LoginController;
 use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\EnquiryController;
 use App\Http\Controllers\admin\StudentController;
+use App\Http\Controllers\admin\FeesManController;
+
 use App\Http\Controllers\admin\BlogController;
 use App\Http\Controllers\admin\bloglistController;
 use App\Http\Controllers\admin\CreateAdmitCardController;
@@ -41,7 +43,7 @@ use App\Http\Controllers\admin\BranchDetailsController;
 use App\Http\Controllers\admin\ExtraExpeneseController;
 use App\Http\Controllers\admin\ExpeneseDetailsController;
 use App\Http\Controllers\admin\AccountBalanceController;
-use App\Http\Controllers\admin\FeeCollectionReportController;
+use App\Http\Controllers\admin\FeesController;
 
 
 
@@ -81,13 +83,16 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('new-student', [StudentController::class, 'storeNewStudent'])->name('storeNewStudent');
         Route::post('del-student', [StudentController::class, 'delStudent'])->name('delStudent');
 
+        //Fees  
+        Route::get('fee-submission', [FeesManController::class, 'feeSubmission'])->name('FeeSubmission');
+
         Route::get('new-blog', [BlogController::class, 'addblog'])->name('addblog');
         Route::get('blog-list', [bloglistController::class, 'bloglist'])->name('bloglist');
         Route::get('Create-Admit-Card', [CreateAdmitCardController::class, 'CreateAdmitCard'])->name('CreateAdmitCard');
         Route::get('Admit-Card-Details', [AdmitCardDetailsController::class, 'AdmitCardDetails'])->name('AdmitCardDetails');
         Route::get('Result', [ResultController::class, 'Result'])->name('Result');
         Route::get('Branch-Admit-Card', [BranchAdmitCardController::class, 'BranchAdmitCard'])->name('BranchAdmitCard');
-        Route::get('Fee-Submission', [FeeSubmissionController::class, 'FeeSubmission'])->name('FeeSubmission');
+        
         Route::get('Fee_Details', [FeeDetailsController::class, 'FeeDetails'])->name('FeeDetails');
         Route::get('Today_Fee_Collection', [TodayFeeCollectionController::class, 'TodayFeeCollection'])->name('TodayFeeCollection');
         Route::get('Due_Fee_Report', [DueFeeReportController::class, 'DueFeeReport'])->name('DueFeeReport');

@@ -1,6 +1,9 @@
 @extends('admin.app')
 @section('title', 'New Admission')
 @section('main')
+
+
+
     <div class="page-content">
         <!--breadcrumb-->
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
@@ -34,20 +37,20 @@
         @endif
 
         @php
-            $ad_stu_id = (!empty($students))?'?id='.$students['id']:'';
-            $ad_reg_no = (!empty($students))?$students['reg']:'';
-            $stu_name  = (!empty($students))?$students['name']:'';
-            $stu_course = (!empty($students))?$students['class']:'';
-            $stu_fee = (!empty($students))?$students['fee']:'';
-            $stu_father = (!empty($students))?$students['father']:'';
-            $stu_gender = (!empty($students))?$students['gender']:'';
-            $stu_dob = (!empty($students))?$students['dob']:'';
-            $stu_gardian = (!empty($students))?$students['gardian']:'';
-            $stu_school = (!empty($students))?$students['last_school']:'';
-            $stu_board = (!empty($students))?$students['last_board']:'';
-            $stu_city = (!empty($students))?$students['city']:'';
-            $stu_mob = (!empty($students))?$students['mob']:'';
-            $stu_adrs = (!empty($students))?$students['address']:'';
+            $ad_stu_id = (!empty($data['students']))?'?id='.$data['students']['id']:'';
+            $ad_reg_no = (!empty($data['students']))?$data['students']['reg']:'';
+            $stu_name  = (!empty($data['students']))?$data['students']['name']:'';
+            $stu_course = (!empty($data['students']))?$data['students']['class']:'';
+            $stu_fee = (!empty($data['students']))?$data['students']['fee']:'';
+            $stu_father = (!empty($data['students']))?$data['students']['father']:'';
+            $stu_gender = (!empty($data['students']))?$data['students']['gender']:'';
+            $stu_dob = (!empty($data['students']))?$data['students']['dob']:'';
+            $stu_gardian = (!empty($data['students']))?$data['students']['gardian']:'';
+            $stu_school = (!empty($data['students']))?$data['students']['last_school']:'';
+            $stu_board = (!empty($data['students']))?$data['students']['last_board']:'';
+            $stu_city = (!empty($data['students']))?$data['students']['city']:'';
+            $stu_mob = (!empty($data['students']))?$data['students']['mob']:'';
+            $stu_adrs = (!empty($data['students']))?$data['students']['address']:'';
         @endphp
         
         <div class="row">
@@ -69,12 +72,12 @@
                                
                                 <div class="col-md-3">
                                     <label for="ad_reg_no" class="form-label">Reg No *</label>
-                                    <input type="text" class="form-control" name="ad_reg_no" id="ad_reg_no" value="{{$ad_reg_no}}" data-bv-field="reg_no">
+                                    <input type="text" class="form-control" name="ad_reg_no" id="ad_reg_no" value="REG_NO_{{$data['reg_no']}}" data-bv-field="reg_no" readonly>
                                 </div>
 
                                 <div class="col-md-3">
                                     <label for="ad_date" class="form-label">Admission Date *</label>
-                                    <input type="date" class="form-control" name="ad_date" id="ad_date" value="" placeholder="Enter student" data-bv-field="enq_stu_name">
+                                    <input type="date" class="form-control" name="ad_date" id="ad_date" value="{{date('Y-m-d')}}" placeholder="Enter student" data-bv-field="enq_stu_name">
                                 </div>
 
                                 <div class="col-md-3">
