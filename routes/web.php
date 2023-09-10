@@ -43,6 +43,8 @@ use App\Http\Controllers\admin\BranchDetailsController;
 use App\Http\Controllers\admin\ExtraExpeneseController;
 use App\Http\Controllers\admin\ExpeneseDetailsController;
 use App\Http\Controllers\admin\AccountBalanceController;
+use App\Http\Controllers\admin\FeeCollectionReportController;
+use App\Http\Controllers\WebsiteController;
 use App\Http\Controllers\admin\FeesController;
 
 
@@ -61,6 +63,17 @@ use App\Http\Controllers\admin\FeesController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('Home', function () {
+    return view('web.home');
+});
+
+Route::get('About', function () {
+    return view('web.about');
+});
+// web managmnet 
+// Route::get('test3', [WebsiteController::class, 'homePage'])->name('homePage');
+
 
 Route::get('admin-login', [LoginController::class, 'adminLogin'])->name('adminLogin');
 Route::post('admin-login', [LoginController::class, 'adminLoginPost'])->name('adminLoginPost');
