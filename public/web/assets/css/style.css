@@ -2704,7 +2704,8 @@ ul.listing-style.modify li:before {
 }
 
 .full-width-header .rs-header .right_menu_togle .canvas-logo img {
-  max-height: 35px;
+  max-height: 125px;
+  margin-top: -30px;
 }
 
 .full-width-header .rs-header .right_menu_togle .offcanvas-gallery {
@@ -4335,6 +4336,7 @@ ul.listing-style.modify li:before {
 
 .full-width-header.home8-style4.main-home .menu-area .rs-menu-area .main-menu .rs-menu-toggle {
   color: #ffffff !important;
+  margin: 15px 10px;
 }
 
 .full-width-header.home8-style4.main-home .menu-area.menu-sticky.sticky .logo-part .sticky-logo {
@@ -5894,6 +5896,14 @@ body .modal-backdrop {
 
 .rs-breadcrumbs .breadcrumbs-img img {
   width: 100%;
+}
+
+.bg-lighter {
+  background-color: #f7f7f7 !important;
+}
+
+.contact i {
+  font-size: 36px !important;
 }
 
 .rs-breadcrumbs .breadcrumbs-text {
@@ -7986,6 +7996,7 @@ body .modal-backdrop {
 .bg-theme-colored {
   background-color: #202c45 !important;
   border-radius: 5px;
+  margin-bottom: 20px;
 }
 
 .rs-popular-courses.style5 .courses-item .courses-grid .content-part .course-price .price {

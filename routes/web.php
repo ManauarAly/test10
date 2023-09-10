@@ -84,6 +84,34 @@ Route::get('Software-Courses', function () {
     return view('web.software-courses');
 });
 
+Route::get('Final-Result', function () {
+    return view('web.final-result');
+});
+
+Route::get('Semester-Result', function () {
+    return view('web.semester-result');
+});
+
+Route::get('Branch-Student', function () {
+    return view('web.branch-student');
+});
+
+Route::get('Head-Office-Student', function () {
+    return view('web.head-office-student');
+});
+
+Route::get('Gallery', function () {
+    return view('web.gallery');
+});
+
+Route::get('Contact', function () {
+    return view('web.contact');
+});
+
+Route::get('Important-Links', function () {
+    return view('web.important-links');
+});
+
 // web managmnet 
 // Route::get('test3', [WebsiteController::class, 'homePage'])->name('homePage');
 
