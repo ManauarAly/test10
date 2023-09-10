@@ -20,6 +20,8 @@
     <!-- owl.carousel css -->
     <link rel="stylesheet" type="text/css" href="{{asset('web/assets/css/owl.carousel.css')}}">
     <!-- slick css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
     <link rel="stylesheet" type="text/css" href="{{asset('web/assets/css/slick.css')}}">
     <!-- off canvas css -->
     <link rel="stylesheet" type="text/css" href="{{asset('web/assets/css/off-canvas.css')}}">
@@ -105,17 +107,17 @@
                                             <a href="#">About</a>
                                             <ul class="sub-menu">
                                                 <li><a href="/About">About</a> </li>
-                                                <li><a href="about2.html">Declaration</a> </li>
+                                                <li><a href="/Declaration">Declaration</a> </li>
                                             </ul>
                                         </li>
 
-                                        <li class="rs-mega-menu mega-rs current-menu-item"> <a href="#">More Branch</a>
+                                        <li class="rs-mega-menu mega-rs"> <a href="/Branches">More Branch</a>
                                         </li>
 
                                         <li class="menu-item-has-children">
                                             <a href="#">Courses</a>
                                             <ul class="sub-menu">
-                                                <li><a href="course.html">Software Courses</a> </li>
+                                                <li><a href="/Software-Courses">Software Courses</a> </li>
                                                 <li><a href="course2.html">Hardware Courses</a> </li>
                                                 <li><a href="course3.html">Technical Courses</a> </li>
                                             </ul>
@@ -137,13 +139,13 @@
                                             </ul>
                                         </li>
 
-                                        <li class="rs-mega-menu mega-rs current-menu-item"> <a href="#">Gallery </a>
+                                        <li class="rs-mega-menu mega-rs"> <a href="#">Gallery </a>
                                         </li>
 
-                                        <li class="rs-mega-menu mega-rs current-menu-item"> <a href="#">Contact</a>
+                                        <li class="rs-mega-menu mega-rs"> <a href="#">Contact</a>
                                         </li>
 
-                                        <li class="rs-mega-menu mega-rs current-menu-item"> <a href="#">Imp Links</a>
+                                        <li class="rs-mega-menu mega-rs"> <a href="#">Imp Links</a>
                                         </li>
                                     </ul> <!-- //.nav-menu -->
                                 </nav>

@@ -71,6 +71,19 @@ Route::get('Home', function () {
 Route::get('About', function () {
     return view('web.about');
 });
+
+Route::get('Declaration', function () {
+    return view('web.declaration');
+});
+
+Route::get('Branches', function () {
+    return view('web.branches');
+});
+
+Route::get('Software-Courses', function () {
+    return view('web.software-courses');
+});
+
 // web managmnet 
 // Route::get('test3', [WebsiteController::class, 'homePage'])->name('homePage');
 
@@ -105,7 +118,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('Admit-Card-Details', [AdmitCardDetailsController::class, 'AdmitCardDetails'])->name('AdmitCardDetails');
         Route::get('Result', [ResultController::class, 'Result'])->name('Result');
         Route::get('Branch-Admit-Card', [BranchAdmitCardController::class, 'BranchAdmitCard'])->name('BranchAdmitCard');
-        
+
         Route::get('Fee_Details', [FeeDetailsController::class, 'FeeDetails'])->name('FeeDetails');
         Route::get('Today_Fee_Collection', [TodayFeeCollectionController::class, 'TodayFeeCollection'])->name('TodayFeeCollection');
         Route::get('Due_Fee_Report', [DueFeeReportController::class, 'DueFeeReport'])->name('DueFeeReport');

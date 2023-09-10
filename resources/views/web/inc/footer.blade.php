@@ -1,3 +1,29 @@
+<div class="rs-newsletter style1 orange-color mb--90 sm-mb-0 sm-pb-70">
+    <div class="container">
+        <div class="newsletter-wrap">
+            <div class="row y-middle">
+                <div class="col-lg-10 col-md-12 md-mb-30">
+                    <div class="content-part">
+                        <div class="sec-title">
+                            <div class="title-icon md-mb-15">
+                                <img src="{{ asset('web/assets/images/newsletter.png')}}" alt="images">
+                            </div>
+                            <h2 class="title mb-0 white-color">For any query please contact me.</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-12">
+                    <div class="newsletter-form h-100">
+                        <button type="submit">
+                            <a href="tel:7705080002"> Call Now..</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <footer id="rs-footer" class="rs-footer home9-style main-home">
     <div class="footer-top">
         <div class="container">
@@ -7,27 +33,8 @@
                         <a href="index.html"><img src="assets/images/lite-logo.png" alt=""></a>
                     </div>
                     <div class="textwidget pr-60 md-pr-15">
-                        <p class="white-color">We denounce with righteous indi gnation and dislike men who are so beguiled and demoralized by the charms of pleasure of your moment, so blinded by desire those who fail weakness.</p>
+                        <p class="white-color">The institutes campus is located at the national route gorakhpur to nepal via maharajganj and is architecturally planned and provides a perfect learning environment to students.</p>
                     </div>
-                    <ul class="footer_social">
-                        <li>
-                            <a href="#" target="_blank"><span><i class="fa fa-facebook"></i></span></a>
-                        </li>
-                        <li>
-                            <a href="# " target="_blank"><span><i class="fa fa-twitter"></i></span></a>
-                        </li>
-
-                        <li>
-                            <a href="# " target="_blank"><span><i class="fa fa-pinterest-p"></i></span></a>
-                        </li>
-                        <li>
-                            <a href="# " target="_blank"><span><i class="fa fa-google-plus-square"></i></span></a>
-                        </li>
-                        <li>
-                            <a href="# " target="_blank"><span><i class="fa fa-instagram"></i></span></a>
-                        </li>
-
-                    </ul>
                 </div>
                 <div class="col-lg-3 col-md-12 col-sm-12 footer-widget md-mb-50">
                     <h3 class="widget-title">Address</h3>
@@ -39,55 +46,50 @@
                         <li>
                             <i class="flaticon-call"></i>
                             <div class="desc">
-                                <a href="tel:(+880)155-69569">(+880)155-69569</a>
+                                <a href="tel:+91 9161203786">+91 9161203786</a>
                             </div>
                         </li>
                         <li>
                             <i class="flaticon-email"></i>
                             <div class="desc">
-                                <a href="mailto:support@rstheme.com">support@rstheme.com</a>
+                                <a href="mailto:meraz@rti.in.net">meraz@rti.in.net</a>
                             </div>
                         </li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-12 col-sm-12 pl-50 md-pl-15 footer-widget md-mb-50">
-                    <h3 class="widget-title">Courses</h3>
+                    <h3 class="widget-title">Useful Links</h3>
                     <ul class="site-map">
-                        <li><a href="#">Courses</a></li>
-                        <li><a href="#">Course Two</a></li>
-                        <li><a href="#">Single Course</a></li>
-                        <li><a href="#">Profile</a></li>
-                        <li><a href="#">Login/Register</a></li>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="about.php">About us</a></li>
+                        <li><a href="result.php">Result</a></li>
+                        <li><a href="gallery.php">Gallery</a></li>
+                        <li><a href="Contact.php">Contact</a></li>
+                        <li><a href="privacypolicy.php">Privacy Policy</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-12 col-sm-12 footer-widget">
-                    <h3 class="widget-title">Recent Posts</h3>
+                    <h3 class="widget-title">Opening Hours</h3>
                     <div class="recent-post mb-20">
-                        <div class="post-img">
-                            <img src="assets/images/footer/1.jpg" alt="">
-                        </div>
                         <div class="post-item">
-                            <div class="post-desc">
-                                <a href="#">University while the lovely valley team work</a>
-                            </div>
-                            <span class="post-date">
-                                <i class="fa fa-calendar"></i>
-                                September 20, 2020
-                            </span>
-                        </div>
-                    </div>
-                    <div class="recent-post mb-20 md-pb-0">
-                        <div class="post-img">
-                            <img src="assets/images/footer/2.jpg" alt="">
-                        </div>
-                        <div class="post-item">
-                            <div class="post-desc">
-                                <a href="#">High school program starting soon 2021</a>
-                            </div>
-                            <span class="post-date">
-                                <i class="fa fa-calendar-check-o"></i>
-                                September 14, 2020
-                            </span>
+                            <ul class="list-border">
+                                <li class="clearfix"> <span> Mon - Sat : </span>
+                                    <div class="value pull-right flip"> 8.00 am - 6.00 pm </div>
+                                </li>
+                                <li class="clearfix text-white"> <span><i class="fa fa-ticket"></i></span>
+                                    <div class="value pull-right flip"> Student's 24x7 </div>
+                                </li>
+                                <li class="clearfix text-white"> <span><i class="fa fa-phone"></i></span>
+                                    <div class="value pull-right flip"> +91- 9807007772 </div>
+                                </li>
+                                <li class="clearfix text-white"> <span><i class="fa fa-phone"></i></span>
+                                    <div class="value pull-right flip"> +91- 9161203786 </div>
+                                </li>
+                                <li class="clearfix text-white"> <span><i class="fa fa-envelope"></i></span>
+                                    <div class="value pull-right flip"> meraz@rti.in.net </div>
+                                </li>
+
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -99,15 +101,13 @@
             <div class="row y-middle">
                 <div class="col-lg-6 md-mb-20">
                     <div class="copyright">
-                        <p>© 2020 All Rights Reserved. Developed By <a href="http://rstheme.com/">RSTheme</a></p>
+                        <p class="font-13 text-black-777 m-0">Copyright ©2022
+                            <a href="https://www.cstechnology.org/" style="color:#FFFFFF;">CS-Technology.org</a> All Rights Reserved <a href="https://mail.hostinger.com/" class="text-white" style="cursor: pointer;">Webmail Login</a>
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-6 text-right md-text-left">
-                    <ul class="copy-right-menu">
-                        <li><a href="#">Event</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
+                     
                 </div>
             </div>
         </div>
