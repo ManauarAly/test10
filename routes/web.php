@@ -60,11 +60,11 @@ use App\Http\Controllers\admin\FeesController;
 | check
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('Home', function () {
+Route::get('/', function () {
     return view('web.home');
 });
 
