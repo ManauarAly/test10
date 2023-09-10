@@ -615,30 +615,5 @@
             </div>
         </div>
     </div>
-</div>
-<div class="rs-newsletter style1 orange-color mb--90 sm-mb-0 sm-pb-70">
-    <div class="container">
-        <div class="newsletter-wrap">
-            <div class="row y-middle">
-                <div class="col-lg-10 col-md-12 md-mb-30">
-                    <div class="content-part">
-                        <div class="sec-title">
-                            <div class="title-icon md-mb-15">
-                                <img src="{{ asset('web/assets/images/newsletter.png')}}" alt="images">
-                            </div>
-                            <h2 class="title mb-0 white-color">For any query please contact me.</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-12">
-                    <div class="newsletter-form h-100">
-                        <button type="submit">
-                            <a href="tel:7705080002"> Call Now..</a>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+</div> 
 @endsection
