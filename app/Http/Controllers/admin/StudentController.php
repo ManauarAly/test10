@@ -85,14 +85,18 @@ class StudentController extends Controller
         }catch(Exception $e){
             return redirect('admin/new-student')->with('failed',"operation failed");
         }
-        catch(Exception $e){
-            return redirect('admin/new-student')->with('failed',"operation failed");
-        }
+        
     }
 
     public function studentList()
     {
         $stuDatas = StudentModel::orderBy('id', 'DESC')->get();
         return view('admin.students.list_student')->with('stuDatas', $stuDatas);
+    }
+
+    public function studentProfile($id)
+    {
+        $student = StudentModel::find($id);
+        return view('admin.students.student_profile')->with('student', $student);
     }
 }
