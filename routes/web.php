@@ -68,6 +68,10 @@ Route::get('/', function () {
     return view('web.home');
 });
 
+Route::get('/Home', function () {
+    return view('web.home');
+});
+
 Route::get('About', function () {
     return view('web.about');
 });
