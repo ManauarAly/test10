@@ -1,4 +1,5 @@
 @extends('admin.app')
+@section('title', 'Fee Submission')
 @section('main')
 
 <div class="page-content">
@@ -46,7 +47,7 @@
                         <td>
                             <div class="ms-auto">
                                 <div class="btn-group">
-                                    <a href="http://127.0.0.1:8000/admin/list-enquiry" class="btn btn-primary">Quick Payment</a>
+                                    <a href="fee-payment/{{$stuData->reg}}" class="btn btn-primary">Quick Payment</a>
                                 </div>
                             </div>
                         </td>

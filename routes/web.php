@@ -134,11 +134,14 @@ Route::group(['prefix' => 'admin'], function () {
         //Students
         Route::get('new-student', [StudentController::class, 'newStudent'])->name('newStudent');
         Route::get('student-list', [StudentController::class, 'studentList'])->name('studentList');
+        Route::get('student-profile/{id}', [StudentController::class, 'studentProfile'])->name('studentProfile');
         Route::post('new-student', [StudentController::class, 'storeNewStudent'])->name('storeNewStudent');
         Route::post('del-student', [StudentController::class, 'delStudent'])->name('delStudent');
 
         //Fees  
         Route::get('fee-submission', [FeesManController::class, 'feeSubmission'])->name('FeeSubmission');
+        Route::get('fee-payment/{id}', [FeesManController::class, 'feePayment'])->name('feePayment');
+        Route::post('fee-payment', [FeesManController::class, 'storeFeePayment'])->name('storeFeePayment');
 
         Route::get('new-blog', [BlogController::class, 'addblog'])->name('addblog');
         Route::get('blog-list', [bloglistController::class, 'bloglist'])->name('bloglist');
