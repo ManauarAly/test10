@@ -101,7 +101,7 @@
                                 </div>
                                 <nav class="rs-menu">
                                     <ul class="nav-menu">
-                                        <li class="rs-mega-menu mega-rs current-menu-item"> <a href="/Home">Home</a>
+                                        <li class=" current-menu-item"> <a href="/Home">Home</a>
                                         </li>
                                         <li class="menu-item-has-children">
                                             <a href="#">About</a>
@@ -111,7 +111,7 @@
                                             </ul>
                                         </li>
 
-                                        <li class="rs-mega-menu mega-rs"> <a href="/Branches">More Branch</a>
+                                        <li> <a href="/Branches">More Branch</a>
                                         </li>
 
                                         <li class="menu-item-has-children">
@@ -126,26 +126,26 @@
                                         <li class="menu-item-has-children">
                                             <a href="#">Result</a>
                                             <ul class="sub-menu">
-                                                <li><a href="course.html">Final Result</a> </li>
-                                                <li><a href="course2.html">Semester Result</a> </li>
+                                                <li><a href="/Final-Result">Final Result</a> </li>
+                                                <li><a href="/Semester-Result">Semester Result</a> </li>
                                             </ul>
                                         </li>
 
                                         <li class="menu-item-has-children">
                                             <a href="#">Student Profile</a>
                                             <ul class="sub-menu">
-                                                <li><a href="course.html">Branch Student</a> </li>
-                                                <li><a href="course2.html">Head Office Student</a> </li>
+                                                <li><a href="/Branch-Student">Branch Student</a> </li>
+                                                <li><a href="/Head-Office-Student">Head Office Student</a> </li>
                                             </ul>
                                         </li>
 
-                                        <li class="rs-mega-menu mega-rs"> <a href="#">Gallery </a>
+                                        <li> <a href="/Gallery">Gallery </a>
                                         </li>
 
-                                        <li class="rs-mega-menu mega-rs"> <a href="#">Contact</a>
+                                        <li> <a href="/Contact">Contact</a>
                                         </li>
 
-                                        <li class="rs-mega-menu mega-rs"> <a href="#">Imp Links</a>
+                                        <li> <a href="/Important-Links">Imp Links</a>
                                         </li>
                                     </ul> <!-- //.nav-menu -->
                                 </nav>
