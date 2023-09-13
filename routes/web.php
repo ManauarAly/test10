@@ -116,6 +116,7 @@ Route::get('Important-Links', function () {
     return view('web.important-links');
 });
 
+//master
 // web managmnet 
 // Route::get('test3', [WebsiteController::class, 'homePage'])->name('homePage');
 
