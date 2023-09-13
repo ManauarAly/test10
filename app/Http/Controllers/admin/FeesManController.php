@@ -47,4 +47,11 @@ class FeesManController extends Controller
             return redirect('admin/new-student')->with('failed',"operation failed");
         }
     }
+
+    public function feePaymentPrint()
+    {
+        return view('admin.fees_manage.fee_payment_print');
+    }
+
+
 }

@@ -147,6 +147,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('fee-submission', [FeesManController::class, 'feeSubmission'])->name('FeeSubmission');
         Route::get('fee-payment/{id}', [FeesManController::class, 'feePayment'])->name('feePayment');
         Route::post('fee-payment', [FeesManController::class, 'storeFeePayment'])->name('storeFeePayment');
+        Route::get('fee-payment-print', [FeesManController::class, 'feePaymentPrint'])->name('feePaymentPrint');
 
         Route::get('new-blog', [BlogController::class, 'addblog'])->name('addblog');
         Route::get('blog-list', [bloglistController::class, 'bloglist'])->name('bloglist');
