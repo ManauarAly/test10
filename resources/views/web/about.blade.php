@@ -147,50 +147,170 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-6 mb-30 wow fadeInUp" data-wow-delay="300ms" data-wow-duration="2000ms" style="visibility: visible; animation-duration: 2000ms; animation-delay: 300ms; animation-name: fadeInUp;">
-                    <div class="courses-item">
+            <div class="about-us mb-4">
+
+                <div class="ProductBlock p-3">
+                    <div class="team-member border">
                         <div class="img-part">
-                            <img src="{{ asset('web/assets/images/courses/1.jpg')}}" alt="">
+                            <img src="photo/teacher/3534842678girjesgh.jpg" alt="Teacher" class="img-thumbnail">
                         </div>
-                        <div class="content-part">
-                            <h5 class="text-uppercase mb-0"><a href="#!">SOHRAB ANSARI</a></h5>
-                            <h6 class="text-theme-colored2 mt-0">IT SUPPORT (COMPUTER HARDWARE)</h6>
+                        <div class="content-part p-3">
+                            <h3 class="text-uppercase mb-0"><a href="#!">GIRIJESH KUMAR</a></h3>
+                            <p class="text-theme-colored2 mt-0">HARDWARE TEACHER</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6  mb-30 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="2000ms" style="visibility: visible; animation-duration: 2000ms; animation-delay: 400ms; animation-name: fadeInUp;">
-                    <div class="courses-item">
+
+
+                <div class="ProductBlock p-3">
+                    <div class="team-member border">
                         <div class="img-part">
-                            <img src="{{ asset('web/assets/images/courses/2.jpg')}}" alt="">
+                            <img src="photo/teacher/5864453937vijay2.jpg" alt="Teacher" class="img-thumbnail">
                         </div>
-                        <div class="content-part">
-                            <h5 class="text-uppercase mb-0"><a href="#!">SOHRAB ANSARI</a></h5>
-                            <h6 class="text-theme-colored2 mt-0">IT SUPPORT (COMPUTER HARDWARE)</h6>
+                        <div class="content-part p-3">
+                            <h3 class="text-uppercase mb-0"><a href="#!">VIJAY GUPTA</a></h3>
+                            <p class="text-theme-colored2 mt-0">SYSTEM MANAGEMENT &amp; SOFTWARE TEACHER</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6  mb-30 wow fadeInUp" data-wow-delay="500ms" data-wow-duration="2000ms" style="visibility: visible; animation-duration: 2000ms; animation-delay: 500ms; animation-name: fadeInUp;">
-                    <div class="courses-item">
+
+
+                <div class="ProductBlock p-3">
+                    <div class="team-member border">
                         <div class="img-part">
-                            <img src="{{ asset('web/assets/images/courses/3.jpg')}}" alt="">
+                            <img src="photo/teacher/28691alauddin-khan-copy.jpg" alt="Teacher" class="img-thumbnail">
                         </div>
-                        <div class="content-part">
-                            <div class="bottom-part">
-                                <h5 class="text-uppercase mb-0"><a href="#!">SOHRAB ANSARI</a></h5>
-                                <h6 class="text-theme-colored2 mt-0">IT SUPPORT (COMPUTER HARDWARE)</h6>
-                            </div>
+                        <div class="content-part p-3">
+                            <h3 class="text-uppercase mb-0"><a href="#!">Alauddin Khan</a></h3>
+                            <p class="text-theme-colored2 mt-0">Computer Software &amp; Hardware Teacher</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6  mb-30 wow fadeInUp" data-wow-delay="300ms" data-wow-duration="2000ms" style="visibility: visible; animation-duration: 2000ms; animation-delay: 300ms; animation-name: fadeInUp;">
-                    <div class="courses-item">
+
+
+                <div class="ProductBlock p-3">
+                    <div class="team-member border">
                         <div class="img-part">
-                            <img src="{{ asset('web/assets/images/courses/4.jpg')}}" alt="">
+                            <img src="photo/teacher/25217sohrab-sir.jpg" alt="Teacher" class="img-thumbnail">
                         </div>
-                        <div class="content-part">
-                            <h5 class="text-uppercase mb-0"><a href="#!">SOHRAB ANSARI</a></h5>
-                            <h6 class="text-theme-colored2 mt-0">IT SUPPORT (COMPUTER HARDWARE)</h6>
+                        <div class="content-part p-3">
+                            <h3 class="text-uppercase mb-0"><a href="#!">SOHRAB ANSARI</a></h3>
+                            <p class="text-theme-colored2 mt-0">IT SUPPORT (COMPUTER HARDWARE)</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="ProductBlock p-3">
+                    <div class="team-member border">
+                        <div class="img-part">
+                            <img src="photo/teacher/3129123778rajesh-yadav-2.jpg" alt="Teacher" class="img-thumbnail">
+                        </div>
+                        <div class="content-part p-3">
+                            <h3 class="text-uppercase mb-0"><a href="#!">RAJESH YADAV</a></h3>
+                            <p class="text-theme-colored2 mt-0">SOFTWARE TEACHER</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ProductBlock p-3">
+                    <div class="team-member border">
+                        <div class="img-part">
+                            <img src="photo/teacher/3534842678girjesgh.jpg" alt="Teacher" class="img-thumbnail">
+                        </div>
+                        <div class="content-part p-3">
+                            <h3 class="text-uppercase mb-0"><a href="#!">GIRIJESH KUMAR</a></h3>
+                            <p class="text-theme-colored2 mt-0">HARDWARE TEACHER</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ProductBlock p-3">
+                    <div class="team-member border">
+                        <div class="img-part">
+                            <img src="photo/teacher/5864453937vijay2.jpg" alt="Teacher" class="img-thumbnail">
+                        </div>
+                        <div class="content-part p-3">
+                            <h3 class="text-uppercase mb-0"><a href="#!">VIJAY GUPTA</a></h3>
+                            <p class="text-theme-colored2 mt-0">SYSTEM MANAGEMENT &amp; SOFTWARE TEACHER</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="ProductBlock p-3">
+                    <div class="team-member border">
+                        <div class="img-part">
+                            <img src="photo/teacher/28691alauddin-khan-copy.jpg" alt="Teacher" class="img-thumbnail">
+                        </div>
+                        <div class="content-part p-3">
+                            <h3 class="text-uppercase mb-0"><a href="#!">Alauddin Khan</a></h3>
+                            <p class="text-theme-colored2 mt-0">Computer Software &amp; Hardware Teacher</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="ProductBlock p-3">
+                    <div class="team-member border">
+                        <div class="img-part">
+                            <img src="photo/teacher/25217sohrab-sir.jpg" alt="Teacher" class="img-thumbnail">
+                        </div>
+                        <div class="content-part p-3">
+                            <h3 class="text-uppercase mb-0"><a href="#!">SOHRAB ANSARI</a></h3>
+                            <p class="text-theme-colored2 mt-0">IT SUPPORT (COMPUTER HARDWARE)</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="ProductBlock p-3">
+                    <div class="team-member border">
+                        <div class="img-part">
+                            <img src="photo/teacher/3129123778rajesh-yadav-2.jpg" alt="Teacher" class="img-thumbnail">
+                        </div>
+                        <div class="content-part p-3">
+                            <h3 class="text-uppercase mb-0"><a href="#!">RAJESH YADAV</a></h3>
+                            <p class="text-theme-colored2 mt-0">SOFTWARE TEACHER</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="ProductBlock p-3">
+                    <div class="team-member border">
+                        <div class="img-part">
+                            <img src="photo/teacher/3534842678girjesgh.jpg" alt="Teacher" class="img-thumbnail">
+                        </div>
+                        <div class="content-part p-3">
+                            <h3 class="text-uppercase mb-0"><a href="#!">GIRIJESH KUMAR</a></h3>
+                            <p class="text-theme-colored2 mt-0">HARDWARE TEACHER</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="ProductBlock p-3">
+                    <div class="team-member border">
+                        <div class="img-part">
+                            <img src="photo/teacher/5864453937vijay2.jpg" alt="Teacher" class="img-thumbnail">
+                        </div>
+                        <div class="content-part p-3">
+                            <h3 class="text-uppercase mb-0"><a href="#!">VIJAY GUPTA</a></h3>
+                            <p class="text-theme-colored2 mt-0">SYSTEM MANAGEMENT &amp; SOFTWARE TEACHER</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="ProductBlock p-3">
+                    <div class="team-member border">
+                        <div class="img-part">
+                            <img src="photo/teacher/28691alauddin-khan-copy.jpg" alt="Teacher" class="img-thumbnail">
+                        </div>
+                        <div class="content-part p-3">
+                            <h3 class="text-uppercase mb-0"><a href="#!">Alauddin Khan</a></h3>
+                            <p class="text-theme-colored2 mt-0">Computer Software &amp; Hardware Teacher</p>
                         </div>
                     </div>
                 </div>

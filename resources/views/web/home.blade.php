@@ -30,9 +30,47 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-5 pl-60 order-last md-pl-15 md-mb-60">
-                <div class="img-part js-tilt" style="will-change: transform; transform: perspective(300px) rotateX(0deg) rotateY(0deg);">
-                    <img class="" src="{{ asset('web/assets/images/about/about3.png')}}" alt="">
-                    <img class="shape top-center animated rotate infinite" src="{{ asset('web/assets/images/about/image-center-circle.png')}}" alt="Cirle Shape Img">
+                <div class="bg-lighter wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s;">
+                    <h3 class="mt-0 mb-0 pt-15 pb-15 text-white text-center bg-theme-colored"> Latest News</h3>
+                    <div class="p-20 bg-gray-lighter form-boxshadow">
+                        <!-- Appilication Form Start-->
+                        <form name="reservation_form" class="reservation-form mt-10" method="post" action="">
+                            <div class="row">
+                                <div class="col-sm-12 p-3">
+                                    <p style="color:black;">
+                                        <marquee direction="up" onmouseover="this.stop();" onmouseout="this.start()" scrollamount="2" style="height:300px; color:black;">
+
+
+
+
+                                            <img src="images/about/New.gif">
+                                            <p></p>
+                                            <p>Welcome to Rama Technical Institute&nbsp;</p>
+
+                                            <p><strong>Our latest&nbsp;&nbsp;courses&nbsp;</strong></p>
+
+                                            <ol>
+                                                <li>AutoCad</li>
+                                                <li>Video Editing&nbsp;</li>
+                                                <li>Libre Office&nbsp;</li>
+                                                <li>HTML&nbsp;</li>
+                                                <li>Blogging + Web Hosting&nbsp;</li>
+                                            </ol>
+
+                                            <p>&nbsp;</p>
+
+                                            <p>&nbsp;</p>
+
+                                            <p>&nbsp;</p>
+
+                                            <p>&nbsp;</p>
+                                            <p></p>
+                                        </marquee>
+                                    </p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-7">
@@ -74,12 +112,9 @@
                 <div class="courses-item">
                     <div class="courses-grid">
                         <div class="img-part">
-                            <a href="#"><img src="{{ asset('web/assets/images/courses/home8/1.jpg')}}" alt=""></a>
+                            <a href="#"><img src="{{ asset('web/assets/images/1.jpg')}}" alt=""></a>
                         </div>
                         <div class="content-part">
-                            <div class="course-price">
-                                <span class="price">$22.00</span>
-                            </div>
                             <h3 class="title"><a href="#">ALL COMPUTER COURSE</a></h3>
                             <p>We will Provide well-designed Courses, fairly graded, helpful for students with a wide
                                 range of abilities and experience. Curricula that are up-to-date and prepare students
@@ -93,12 +128,9 @@
                 <div class="courses-item">
                     <div class="courses-grid">
                         <div class="img-part">
-                            <a href="#"> <img src="{{ asset('web/assets/images/courses/home8/2.jpg')}}" alt=""></a>
+                            <a href="#"> <img src="{{ asset('web/assets/images/2.jpg')}}" alt=""></a>
                         </div>
                         <div class="content-part">
-                            <div class="course-price">
-                                <span class="price">$22.00</span>
-                            </div>
                             <h3 class="title"><a href="#">DRA COURSES</a></h3>
                             <p>DRA Training mark as DRA stands for Debt Recovery Agent.The Debt ... The course Improves
                                 employability and Career enhancement for the certified DRAs. Air Condition System & type
@@ -112,12 +144,9 @@
                 <div class="courses-item">
                     <div class="courses-grid">
                         <div class="img-part">
-                            <a href="#"><img src="{{ asset('web/assets/images/courses/home8/3.jpg')}}" alt=""></a>
+                            <a href="#"><img src="{{ asset('web/assets/images/3.jpg')}}" alt=""></a>
                         </div>
                         <div class="content-part">
-                            <div class="course-price">
-                                <span class="price">$22.00</span>
-                            </div>
                             <h3 class="title"><a href="#">ALL COURSE PREPARATION</a></h3>
                             <p>Rama Technical classes is specialized Institute for JE/SSC/BANK/RAILWAY & other one day
                                 exam.Regular , highly , qualified a trained teacher for full courses. Enhanstive ,
@@ -467,46 +496,1606 @@
     </div>
 </div>
 
-<div id="rs-blog" class="rs-blog main-home pb-100 pt-100 md-pt-70 md-pb-70">
-    <div class="container">
-        <div class="sec-title3 text-center mb-50">
-            <h2 class="title"> MORE BRANCH</h2>
-            <div class="sub-title">We have well qalified & experienced faculty.</div>
-        </div>
-        <div class="rs-carousel owl-carousel owl-loaded owl-drag" data-loop="true" data-items="1" data-margin="10" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="false" data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="2" data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2="1" data-ipad-device-nav2="false" data-ipad-device-dots2="false" data-md-device="3" data-md-device-nav="false" data-md-device-dots="false">
+<div id="rs-blog" class="bg-lighter rs-blog main-home pt-40 md-pt-70 md-pb-70">
 
-            <div class="owl-stage-outer">
-                <div class="owl-stage">
-                    <div class="owl-item active">
-                        <div class="blog-item">
-                            <div class="image-part">
-                                <img src="{{ asset('web/assets/images/blog/style2/3.jpg')}}" alt="">
-                            </div>
-                            <div class="blog-content">
-                                <ul class="blog-meta">
-                                    <li><i class="fa fa-user-o"></i> Admin</li>
-                                    <li><i class="fa fa-calendar"></i>April 25, 2020</li>
-                                </ul>
-                                <h3 class="title"><a href="blog-single.html">Shutdown of schools extended to Aug 31 </a>
-                                </h3>
-                                <div class="desc">the acquisition of knowledge, skills, values befs, and habits.
-                                    Educational methods include teach ing, training, storytelling</div>
-                                <div class="btn-btm">
-                                    <div class="cat-list">
-                                        <ul class="post-categories">
-                                            <li><a href="#">College</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="rs-view-btn">
-                                        <a href="#">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
+    <div class="sec-title3 text-center mb-50">
+        <h2 class="title"> MORE BRANCH</h2>
+        <div class="sub-title">We have well qalified & experienced faculty.</div>
+    </div>
+
+    <div class="Container pb-4 mb-4">
+        <div class="MoreBranch mb-4">
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/41858591.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">FARAZ KHAN</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
                         </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=21">Branch
+                            Details</a>
                     </div>
                 </div>
             </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/77374784c3b81-752c-45dc-a419-000c7057a1b9.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">GUDIYA SAHANI</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=22">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/2013039996img20200930130604.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">SHAILESH KUMAR RAI</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=23">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/92631img20191116085255.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">GIRJESH KUMAR</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=24">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/22407bg-p.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">RAM AVATAR YADAV</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=25">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/27531photo-2021-12-06-12-02-56-(1).jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">RAMZAAN ALI</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=26">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/78273img-20211126-084725.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">VIJAY JAISWAL</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=27">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/34597unnamed.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">PAVAN CHAUDHARY</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=28">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/273592764977107.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">ABHISHEK YADAV</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=29">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/23723rti-logo.png" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">VIRENDRA PRAJAPATI</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=30">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/97629whatsapp-image-2022-08-21-at-12.52.09(1).jpeg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">RAJESH YADAV</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=31">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/88074wasim-khan-htc.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">MOHD WASIM </a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=32">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/4652htc18520221012_11193928.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">RAJKUMAR BHARTI</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=33">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/55539ajad-singh20221105_14311179.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">AJAD SINGH</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=34">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/78847img-20221223-wa0001.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">NITISH KUMAR SINGH</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=35">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/37332dir.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">VIVEK GUPTA</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=36">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/72897khaoh.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">RAJKUMAR NISHAD</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=40">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/6829imiliya.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">KHUSHBOO YADAV</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=41">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/25434whatsapp-image-2023-08-11-at-11.51.59-am.jpeg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">ANANAD MOHAN MANI TRIPATHI</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=42">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/54721photo-2018-09-25-12-43-32.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">JAFAR ALI</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=1">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/92550photo-2018-10-01-10-28-50.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">AKHILESH CHATURVEDI</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=2">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/3432346945photo-2019-01-27-09-52-52.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">KAMLESH SINGH</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=3">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/934photo-2019-03-26-22-29-25.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">SHAIF ANSARI</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=4">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/9363img-20190823-wa0042.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">IMTIYAZ HUSAIN</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=5">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/27498logorama.png" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">SATYENDRA PANDEY</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=6">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/75301logorama.png" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">ER. SUJEET, VIJAY KUMAR</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=7">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/73778img-20200119-wa0025.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">Meraj Siddiqui</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=8">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/56768img-20190831-wa0048.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">UMESH KUMAR</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=10">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/85372photo-2019-08-25-12-38-02.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">AJAD SINGH</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=11">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/7000049944.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">RANJEET KUMAR</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=12">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/73450img-20190824-wa0024.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">LALIT SINGH</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=13">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/30292logorama.png" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">SERAJUDDIN</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=14">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/81584774.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">K.K. GUPTA</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=15">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/31545photo-2018-10-08-07-05-26.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">ARMAN ALI</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=16">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/890566c27293-b090-4927-aeca-9bd231c90768.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">MUKESH VISHWAKARMA</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=17">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/4385296831img-20200205-wa0000.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">Javed Alam Khan</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=18">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/52212girj.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">GIRJESH KUMAR</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=19">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/41858591.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">FARAZ KHAN</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=21">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/77374784c3b81-752c-45dc-a419-000c7057a1b9.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">GUDIYA SAHANI</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=22">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/2013039996img20200930130604.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">SHAILESH KUMAR RAI</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=23">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/92631img20191116085255.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">GIRJESH KUMAR</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=24">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/22407bg-p.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">RAM AVATAR YADAV</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=25">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/27531photo-2021-12-06-12-02-56-(1).jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">RAMZAAN ALI</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=26">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/78273img-20211126-084725.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">VIJAY JAISWAL</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=27">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/34597unnamed.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">PAVAN CHAUDHARY</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=28">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/273592764977107.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">ABHISHEK YADAV</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=29">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/23723rti-logo.png" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">VIRENDRA PRAJAPATI</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=30">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/97629whatsapp-image-2022-08-21-at-12.52.09(1).jpeg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">RAJESH YADAV</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=31">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/88074wasim-khan-htc.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">MOHD WASIM </a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=32">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/4652htc18520221012_11193928.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">RAJKUMAR BHARTI</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=33">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/55539ajad-singh20221105_14311179.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">AJAD SINGH</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=34">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/78847img-20221223-wa0001.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">NITISH KUMAR SINGH</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=35">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/37332dir.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">VIVEK GUPTA</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=36">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/72897khaoh.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">RAJKUMAR NISHAD</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=40">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/6829imiliya.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">KHUSHBOO YADAV</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=41">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/25434whatsapp-image-2023-08-11-at-11.51.59-am.jpeg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">ANANAD MOHAN MANI TRIPATHI</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=42">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/54721photo-2018-09-25-12-43-32.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">JAFAR ALI</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=1">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/92550photo-2018-10-01-10-28-50.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">AKHILESH CHATURVEDI</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=2">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/3432346945photo-2019-01-27-09-52-52.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">KAMLESH SINGH</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=3">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/934photo-2019-03-26-22-29-25.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">SHAIF ANSARI</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=4">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/9363img-20190823-wa0042.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">IMTIYAZ HUSAIN</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=5">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/27498logorama.png" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">SATYENDRA PANDEY</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=6">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/75301logorama.png" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">ER. SUJEET, VIJAY KUMAR</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=7">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/73778img-20200119-wa0025.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">Meraj Siddiqui</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=8">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/56768img-20190831-wa0048.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">UMESH KUMAR</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=10">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/85372photo-2019-08-25-12-38-02.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">AJAD SINGH</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=11">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/7000049944.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">RANJEET KUMAR</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=12">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/73450img-20190824-wa0024.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">LALIT SINGH</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=13">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/30292logorama.png" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">SERAJUDDIN</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=14">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/81584774.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">K.K. GUPTA</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=15">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/31545photo-2018-10-08-07-05-26.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">ARMAN ALI</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=16">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/890566c27293-b090-4927-aeca-9bd231c90768.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">MUKESH VISHWAKARMA</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=17">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/4385296831img-20200205-wa0000.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">Javed Alam Khan</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=18">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/52212girj.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">GIRJESH KUMAR</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=19">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="campaign maxwidth400 mb-30 blog-item">
+                    <div class="image-part">
+                        <img src="photo/directorpic/41858591.jpg" class="img-fullwidth" style="width:30%; height:265px;">
+                        <div class="campaign-overlay"></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3></h3>
+                        <h3 class="title"><a href="!#">FARAZ KHAN</a></h3>
+
+                        <div class="desc">
+                            Rama Technical Institute is a leading institute which provides complete study material and total practical
+                            training.
+                        </div>
+
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=21">Branch
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Item -->
+            <div class="">
+                <div class="">
+                    <div class="">
+                        <img src="{{ asset('web/assets/images/blog/style2/3.jpg')}}" alt="">
+                    </div>
+                    <div class="">
+                        <h3 class="title">LALIT SINGH</h3>
+                        <div class="desc">Rama Technical Institute is a leading institute which provides complete study material and total practical training.</div>
+                        <a class="btn btn-dark mt-3" href="more_brancha_details.php?getid=25">Branch Details</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Item -->
         </div>
+        <!-- Carousel Container -->
     </div>
 </div>
 
@@ -521,13 +2110,14 @@
         </div>
     </div>
     <div class="section-content">
-        <div class="row">
-            <div class="col-md-4">
+        <div class="students-say mb-4">
+            <!-- Item -->
+            <div class="ProductBlock">
                 <div class="testimonial-wrapper text-center bg-theme-colored p-3">
                     <div class="thumb mb-30">
                         <img class="img-circle img-thumbnail" alt="" src="{{ asset('web/assets/images/blog/style2/3.jpg')}}">
                     </div>
-                    <div class="content">
+                    <div class="content testimonial-wrapper text-center bg-theme-colored p-3">
                         <p class="text-white">Give a man one rupee and you serve him for a day, Teach a man to earn one
                             rupee and you serve him for a life’. All the training programs are designed and developed by
                             the team of experts as per the industry input. I feel grateful to all our students and
@@ -539,81 +2129,325 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <!-- Item -->
+            <!-- Item -->
+            <div class="ProductBlock">
                 <div class="testimonial-wrapper text-center bg-theme-colored p-3">
-                    <div class="thumb mb-30"><img class="img-circle img-thumbnail" alt="" src="{{ asset('web/assets/images/blog/style2/3.jpg')}}"></div>
-                    <div class="content">
-                        <p class="text-white">Rama Technical Institute technologies is not only professional in teaching
-                            international students, but the school is also good at taking care of students. .
-
-                            I believe in student centred approach so that the problems , needs and priority issues can
-                            be addressed in participatory manner that will deal with efficiency In work. For many people
-                            the computer education is unaffordable, but our efforts is to make it choice..</p>
-                        <h4 class="author text-white mb-0">Ajay</h4>
+                    <div class="thumb mb-30">
+                        <img class="img-circle img-thumbnail" alt="" src="{{ asset('web/assets/images/blog/style2/3.jpg')}}">
+                    </div>
+                    <div class="content testimonial-wrapper text-center bg-theme-colored p-3">
+                        <p class="text-white">Give a man one rupee and you serve him for a day, Teach a man to earn one
+                            rupee and you serve him for a life’. All the training programs are designed and developed by
+                            the team of experts as per the industry input. I feel grateful to all our students and
+                            associates who have inspired us by their wholehearted support and true feedback. It is our
+                            utmost satisfaction when our student is placed in various companies and firms on completion
+                            of his/her.</p>
+                        <h4 class="author text-white mb-0">Shashi</h4>
                         <h6 class="title text-white mt-0 mb-15">Student</h6>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <!-- Item -->
+            <!-- Item -->
+            <div class="ProductBlock">
                 <div class="testimonial-wrapper text-center bg-theme-colored p-3">
-                    <div class="thumb mb-30"><img class="img-circle img-thumbnail" alt="" src="{{ asset('web/assets/images/blog/style2/3.jpg')}}"></div>
-                    <div class="content">
-                        <p class="text-white">Any educational institute becomes the best not only because of its quality
-                            faculty, high standards of teaching, and world-class infrastructure, but also because of the
-                            students’ calibre. The students make the differenceThe institute’s campus is located at the
-                            national route gorakhpur to nepal via mahrajganj and is architecturally planned and provides
-                            a perfect learning environment to students. </p>
-                        <h4 class="author text-white mb-0">Ali</h4>
+                    <div class="thumb mb-30">
+                        <img class="img-circle img-thumbnail" alt="" src="{{ asset('web/assets/images/blog/style2/3.jpg')}}">
+                    </div>
+                    <div class="content testimonial-wrapper text-center bg-theme-colored p-3">
+                        <p class="text-white">Give a man one rupee and you serve him for a day, Teach a man to earn one
+                            rupee and you serve him for a life’. All the training programs are designed and developed by
+                            the team of experts as per the industry input. I feel grateful to all our students and
+                            associates who have inspired us by their wholehearted support and true feedback. It is our
+                            utmost satisfaction when our student is placed in various companies and firms on completion
+                            of his/her.</p>
+                        <h4 class="author text-white mb-0">Shashi</h4>
                         <h6 class="title text-white mt-0 mb-15">Student</h6>
                     </div>
                 </div>
             </div>
+            <!-- Item -->
+            <!-- Item -->
+            <div class="ProductBlock">
+                <div class="testimonial-wrapper text-center bg-theme-colored p-3">
+                    <div class="thumb mb-30">
+                        <img class="img-circle img-thumbnail" alt="" src="{{ asset('web/assets/images/blog/style2/3.jpg')}}">
+                    </div>
+                    <div class="content testimonial-wrapper text-center bg-theme-colored p-3">
+                        <p class="text-white">Give a man one rupee and you serve him for a day, Teach a man to earn one
+                            rupee and you serve him for a life’. All the training programs are designed and developed by
+                            the team of experts as per the industry input. I feel grateful to all our students and
+                            associates who have inspired us by their wholehearted support and true feedback. It is our
+                            utmost satisfaction when our student is placed in various companies and firms on completion
+                            of his/her.</p>
+                        <h4 class="author text-white mb-0">Shashi</h4>
+                        <h6 class="title text-white mt-0 mb-15">Student</h6>
+                    </div>
+                </div>
+            </div>
+            <!-- Item -->
+            <!-- Item -->
+            <div class="ProductBlock">
+                <div class="testimonial-wrapper text-center bg-theme-colored p-3">
+                    <div class="thumb mb-30">
+                        <img class="img-circle img-thumbnail" alt="" src="{{ asset('web/assets/images/blog/style2/3.jpg')}}">
+                    </div>
+                    <div class="content testimonial-wrapper text-center bg-theme-colored p-3">
+                        <p class="text-white">Give a man one rupee and you serve him for a day, Teach a man to earn one
+                            rupee and you serve him for a life’. All the training programs are designed and developed by
+                            the team of experts as per the industry input. I feel grateful to all our students and
+                            associates who have inspired us by their wholehearted support and true feedback. It is our
+                            utmost satisfaction when our student is placed in various companies and firms on completion
+                            of his/her.</p>
+                        <h4 class="author text-white mb-0">Shashi</h4>
+                        <h6 class="title text-white mt-0 mb-15">Student</h6>
+                    </div>
+                </div>
+            </div>
+            <!-- Item -->
         </div>
     </div>
-
-
-
-
-    <div class="section-title text-center mt-4">
-        <div class="row pt-4">
-            <div class="col-md-8 pt-4 col-md-offset-2 m-auto">
-                <h2 class="mt-0 line-height-1 text-dark">Our Toppers Student List</h2>
-            </div>
-        </div>
-    </div>
-    <div class="section-content mb-4">
-        <div class="row">
-            <div class="col-md-2">
-                <div class="testimonial-wrapper text-center bg-theme-colored p-3">
-
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="testimonial-wrapper text-center bg-theme-colored p-3">
-
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="testimonial-wrapper text-center bg-theme-colored p-3">
-
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="testimonial-wrapper text-center bg-theme-colored p-3">
-
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="testimonial-wrapper text-center bg-theme-colored p-3">
-
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="testimonial-wrapper text-center bg-theme-colored p-3">
-
+    <div class="Container pb-4 mb-4">
+        <div class="section-title text-center mt-4 ">
+            <div class="row pt-4">
+                <div class="col-md-8 pt-4 col-md-offset-2 m-auto">
+                    <h2 class="mt-0 line-height-1 text-dark">Our Toppers Student List</h2>
                 </div>
             </div>
         </div>
+        <div class="SlickCarousel mb-4">
+            <div class="ProductBlock">
+                <div class="Content testimonial-wrapper text-center bg-theme-colored p-3">
+                    <div class="img-fill">
+                        <img src="photo/students/35439whatsapp-image-2022-03-01-at-11.02.31-pm.jpeg" width="150" height="150">
+                    </div>
+                    <h3>VIKASH SINGH</h3>
+                </div>
+
+            </div>
+            <div class="ProductBlock">
+                <div class="Content testimonial-wrapper text-center bg-theme-colored p-3">
+                    <div class="img-fill">
+                        <img src="photo/students/46025whatsapp-image-2022-03-01-at-11.02.32-pm.jpeg" width="150" height="150">
+                    </div>
+                    <h3>SABINOOR</h3>
+                </div>
+
+            </div>
+            <div class="ProductBlock">
+                <div class="Content testimonial-wrapper text-center bg-theme-colored p-3">
+                    <div class="img-fill">
+                        <img src="photo/students/92212whatsapp-image-2022-03-01-at-11.02.32-pm-(1).jpeg" width="150" height="150">
+                    </div>
+                    <h3>PRIYA RAO</h3>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="Content testimonial-wrapper text-center bg-theme-colored p-3">
+                    <div class="img-fill">
+                        <img src="photo/students/633879303138658mi20210702_04242428.jpg" width="150" height="150">
+                    </div>
+                    <h3>NOOR AFSHAN KHATOON </h3>
+                    <h3>RTI BHATHAT</h3>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="Content testimonial-wrapper text-center bg-theme-colored p-3">
+                    <div class="img-fill">
+                        <img src="photo/students/70862shakib.jpeg" width="150" height="150">
+                    </div>
+                    <h3>SAKIB KHAN</h3>
+                    <h3>RTI BHATHAT</h3>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="Content testimonial-wrapper text-center bg-theme-colored p-3">
+                    <div class="img-fill">
+                        <img src="photo/students/2456820220309_0335.jpg" width="150" height="150">
+                    </div>
+                    <h3>IRTAJ ALI</h3>
+                    <h3>RTI BHATHAT</h3>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="Content testimonial-wrapper text-center bg-theme-colored p-3">
+                    <div class="img-fill">
+                        <img src="photo/students/72032img_20210322_185351.jpg" width="150" height="150">
+                    </div>
+                    <h3>IMAMUL HAQE</h3>
+                    <h3>RTI PIPARAICH</h3>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="Content testimonial-wrapper text-center bg-theme-colored p-3">
+                    <div class="img-fill">
+                        <img src="photo/students/8784354274belal.jpg" width="150" height="150">
+                    </div>
+                    <h3>BELAL AHMAD</h3>
+                    <h3>RTI BHATHAT</h3>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="Content testimonial-wrapper text-center bg-theme-colored p-3">
+                    <div class="img-fill"><img src="photo/students/1585112350suraj.jpg" width="150" height="150">
+                    </div>
+                    <h3>SURAJ MODANWAL</h3>
+                    <h3>RTI BHATHAT</h3>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="Content testimonial-wrapper text-center bg-theme-colored p-3">
+                    <div class="img-fill">
+                        <img src="photo/students/7274111184img20161128_01131295.jpg" width="150" height="150">
+                    </div>
+                    <h3>RIMJHIM CHAUHAN</h3>
+                    <h3>RTI BHATHAT</h3>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="Content testimonial-wrapper text-center bg-theme-colored p-3">
+                    <div class="img-fill">
+                        <img src="photo/students/35439whatsapp-image-2022-03-01-at-11.02.31-pm.jpeg" width="150" height="150">
+                    </div>
+                    <h3>VIKASH SINGH</h3>
+                </div>
+
+            </div>
+            <div class="ProductBlock">
+                <div class="Content testimonial-wrapper text-center bg-theme-colored p-3">
+                    <div class="img-fill">
+                        <img src="photo/students/46025whatsapp-image-2022-03-01-at-11.02.32-pm.jpeg" width="150" height="150">
+                    </div>
+                    <h3>SABINOOR</h3>
+                </div>
+
+            </div>
+            <div class="ProductBlock">
+                <div class="Content testimonial-wrapper text-center bg-theme-colored p-3">
+                    <div class="img-fill">
+                        <img src="photo/students/92212whatsapp-image-2022-03-01-at-11.02.32-pm-(1).jpeg" width="150" height="150">
+                    </div>
+                    <h3>PRIYA RAO</h3>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="Content testimonial-wrapper text-center bg-theme-colored p-3">
+                    <div class="img-fill">
+                        <img src="photo/students/633879303138658mi20210702_04242428.jpg" width="150" height="150">
+                    </div>
+                    <h3>NOOR AFSHAN KHATOON </h3>
+                    <h3>RTI BHATHAT</h3>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="Content testimonial-wrapper text-center bg-theme-colored p-3">
+                    <div class="img-fill">
+                        <img src="photo/students/70862shakib.jpeg" width="150" height="150">
+                    </div>
+                    <h3>SAKIB KHAN</h3>
+                    <h3>RTI BHATHAT</h3>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="Content testimonial-wrapper text-center bg-theme-colored p-3">
+                    <div class="img-fill"><img src="photo/students/2456820220309_0335.jpg" width="150" height="150">
+
+
+
+                    </div>
+                    <h3>IRTAJ ALI
+                    </h3>
+                    <h3>RTI BHATHAT
+                    </h3>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="Content testimonial-wrapper text-center bg-theme-colored p-3">
+                    <div class="img-fill"><img src="photo/students/72032img_20210322_185351.jpg" width="150" height="150">
+                    </div>
+                    <h3>IMAMUL HAQE
+                    </h3>
+                    <h3>RTI PIPARAICH
+                    </h3>
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="Content testimonial-wrapper text-center bg-theme-colored p-3">
+                    <div class="img-fill"><img src="photo/students/8784354274belal.jpg" width="150" height="150">
+                    </div>
+                    <h3>BELAL AHMAD
+                    </h3>
+                    <h3>RTI BHATHAT
+                    </h3>
+
+
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="Content testimonial-wrapper text-center bg-theme-colored p-3">
+                    <div class="img-fill"><img src="photo/students/1585112350suraj.jpg" width="150" height="150">
+                    </div>
+                    <h3>SURAJ
+                        MODANWAL </h3>
+                    <h3>RTI BHATHAT
+                    </h3>
+
+
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="Content testimonial-wrapper text-center bg-theme-colored p-3">
+                    <div class="img-fill"><img src="photo/students/7274111184img20161128_01131295.jpg" width="150" height="150">
+                    </div>
+                    <h3>RIMJHIM
+                        CHAUHAN </h3>
+                    <h3>RTI BHATHAT
+                    </h3>
+
+
+                </div>
+            </div>
+
+            <div class="ProductBlock">
+                <div class="Content testimonial-wrapper text-center bg-theme-colored p-3">
+                    <div class="img-fill"><img src="photo/students/35439whatsapp-image-2022-03-01-at-11.02.31-pm.jpeg" width="150" height="150">
+                    </div>
+                    <h3>VIKASH SINGH
+                    </h3>
+                </div>
+
+            </div>
+            <div class="ProductBlock">
+                <div class="Content testimonial-wrapper text-center bg-theme-colored p-3">
+                    <div class="img-fill"><img src="photo/students/46025whatsapp-image-2022-03-01-at-11.02.32-pm.jpeg" width="150" height="150">
+                    </div>
+                    <h3>SABINOOR
+                    </h3>
+
+
+                </div>
+            </div>
+        </div>
+        <!-- Carousel Container -->
     </div>
-</div> 
+
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js' type='text/javascript'></script>
+    <script src='https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/slick.js' type='text/javascript'></script>
+</div>
 @endsection
