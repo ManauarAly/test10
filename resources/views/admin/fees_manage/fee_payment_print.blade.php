@@ -4,13 +4,6 @@
 
 
 <style>
-    /*-----------------------------------------------------------------------------------
-
-    @version         : 1.0.0
-    @Template Name   : initBill - invoice & Receipt HTML Template.
-    @Template author : https://themeforest.net/user/inittheme
-
-  -----------------------------------------------------------------------------------*/
   @import url("https://fonts.googleapis.com/css2?family=Gabriela&family=Inter:wght@300;400;500;600;700;800&display=swap");
   .flexContent {
     display: -webkit-box;
