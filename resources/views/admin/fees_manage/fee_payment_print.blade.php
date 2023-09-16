@@ -24303,7 +24303,10 @@
     width: 100%;
   }
 </style>
-
+<!-- 
+@php 
+echo '<pre>'; print_r($data); echo '</pre>';
+@endphp -->
 <div class="page-content">
     <main class="main-wrapper position-relative">
       <div class="bill-download">
@@ -24312,7 +24315,7 @@
             <div class="invoice-top">
                 <div class="row align-items-center">
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 text-center text-sm-start mb-3 mb-sm-1">
-                        <img src="https://manauaraly.in/public/web/assets/images/lite-logo.png" title="invoice" alt="invoice" width="10%">
+                        <img src="https://manauaraly.in/public/web/assets/images/lite-logo.png" title="invoice" alt="invoice" width="15%">
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 text-center text-sm-end mb-3 mb-sm-1">
                         <h4 class=" mb-0 mt-0">Fee Receipt</h4>
@@ -24327,19 +24330,21 @@
                     <div class="col-sm-6 text-sm-end order-sm-1">
                         <strong class="text-18 mb-3 d-inline-block">Institute </strong>
                         <address class="mb-4">
-                            initTheme<br>
-                            1216 R. Dhaka, Bangladesh<br>
-                            Bonani, OX Bokki<br>
-                            contact@inittheme.com
+                            RAMA TECHNICAL INSTITUTE<br>
+                            Bhathat Bazar<br>
+                            Gorakhpur (U.P) - 273306<br>
+                            <b>Email:</b>meraz@rti.in.net<br>
+                            <b>Mob No:</b>+91-9161203786<br>
                         </address>
                     </div>
                     <div class="col-sm-6 order-sm-0">
                         <strong class="text-18 mb-3 d-inline-block">Student Detail`s</strong>
                         <address class="mb-4">
-                            Rafsan Jani<br>
-                            16/10 A Banasree<br>
-                            1508C uttor AN<br>
-                            kolkata , india
+                          <b>Reg No:</b> {{$data['student'][0]['reg']}}<br>
+                          <b>Name:</b> {{$data['student'][0]['name']}}<br>
+                          <b>Course:</b> {{$data['student'][0]['class']}}<br>
+                          <b>Mob No:</b> {{$data['student'][0]['mob']}}<br>
+                          <b>Address:</b> {{$data['student'][0]['address']}}<br>
                         </address>
                     </div>
                 </div>
@@ -24349,27 +24354,21 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Item</th>
                             <th>Description</th>
-                            <th class="black-bg">Unit Cost</th>
-                            <th class="black-bg">Total</th>
+                            <th class="black-bg text-right">Unit Cost</th>
+                            <th class="black-bg text-right">Total</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1</td>
-                            <td>Origin License</td>
-                            <td>Extended License</td>
-                            <td>$999,00</td>
-                            <td>$999,00</td>
+                            <td>Pay Fee</td>
+                            <td class="text-right">{{$data['fee'][0]['receive_fee']}}</td>
+                            <td class="text-right">{{$data['fee'][0]['receive_fee']}}</td>
                         </tr>
                         <tr>
-                            <td>2</td>
-                            <td>Custom Services</td>
-                            <td>Instalation </td>
-                            <td>$150,00</td>
-                            <td>$3.000,00</td>
+                            <td>Left Fee</td>
+                            <td class="text-right">{{$data['fee'][0]['left_due']}}</td>
+                            <td class="text-right">{{$data['fee'][0]['left_due']}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -24383,26 +24382,20 @@
                                 <td>
                                     <strong class="status">Subtotal</strong>
                                 </td>
-                                <td>$8.497,00</td>
+                                <td>{{$data['fee'][0]['receive_fee']}} &#8377;</td>
                             </tr>
                             <tr>
                                 <td>
-                                    <strong class="status">Discount (20%)</strong>
+                                    <strong class="status">Discount (0%)</strong>
                                 </td>
-                                <td>$1,699,40</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <strong class="status">VAT (10%)</strong>
-                                </td>
-                                <td>$679,76</td>
+                                <td>{{$data['fee'][0]['receive_fee']}} &#8377;</td>
                             </tr>
                             <tr class="total-pay">
                                 <td class="border-bottom-0">
                                     <strong>Total</strong>
                                 </td>
                                 <td class="border-bottom-0">
-                                    <strong>$7.477,36</strong>
+                                    <strong>{{$data['fee'][0]['receive_fee']}} &#8377;</strong>
                                 </td>
                             </tr>
                         </tbody>
@@ -24412,7 +24405,7 @@
             <!-- invoice address -->
             <div class="row">
                 <div class="col-sm-12 mb-20">
-                    <span class="status d-block mb-20"> <strong>Date :</strong> 01-12-2023</span>
+                    <span class="status d-block mb-20"> <strong>Date :</strong> {{ date('d-m-Y', strtotime($data['fee'][0]['created_at'])) }}</span>
                     <h5 class="mb-2 text-title font-700"> Important: </h5>
                     <p>This is an electronic generated invoice so doesn't require any signature. </p>
                     <p>Please read all terms and polices on www.yourdomaon.com for returns, replacement and other issues.</p>
@@ -24421,8 +24414,8 @@
             <!-- invoice address -->
             <div class="signature text-right">
                 <img src="https://initbill.sai4ul.com/assets/images/sign.svg" alt="img">
-                <p>Sujayat Ali</p>
-                <h5 class="text-title font-500 text-18"> Product Manager </h5>
+                <p>Mr. Meraz Hussain</p>
+                <h5 class="text-title font-500 text-18">CEO OF RTI</h5>
             </div>
         </div>
         </div>
@@ -24444,37 +24437,36 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script> 
     
     <script>
-$(document).ready(function () {  
-    var form = $('.bill-download'),  
-    cache_width = form.width(),  
-    a4 = [595.28, 841.89]; // for a4 size paper width and height  
+    $(document).ready(function () {  
+      var form = $('.bill-download'),  
+      cache_width = form.width(),  
+      a4 = [595.28, 841.89]; // for a4 size paper width and height  
 
-    $('#bill-download').on('click', function () {  
-        // $('body').scrollTop(0);  
-        generatePDF();  
-    });  
-    
-    function generatePDF() {  
-        getCanvas().then(function (canvas) {  
-            var img = canvas.toDataURL("image/png"),  
-             doc = new jsPDF({  
-                 unit: 'px',  
-                 format: 'a4'  
-             });  
-            doc.addImage(img, 'JPEG', 20, 20);  
-            doc.save('tech-html-to-pdf.pdf');  
-            form.width(cache_width);  
-        });  
-    }  
+      $('#bill-download').on('click', function () {  
+          generatePDF();  
+      });  
       
-    function getCanvas() {  
-        form.width((a4[0] * 1.33333) - 80).css('max-width', 'none');  
-        return html2canvas(form, {  
-            imageTimeout: 2000,  
-            removeContainer: true  
-        });  
-    }
-});
+      function generatePDF() {  
+          getCanvas().then(function (canvas) {  
+              var img = canvas.toDataURL("image/png"),  
+              doc = new jsPDF({  
+                  unit: 'px',  
+                  format: 'a4'  
+              });  
+              doc.addImage(img, 'JPEG', 20, 20);  
+              doc.save('fee_receipt_{{$data["student"][0]["reg"]}}.pdf');  
+              form.width(cache_width);  
+          });  
+      }  
+        
+      function getCanvas() {  
+          form.width((a4[0] * 1.33333) - 80).css('max-width', 'none');  
+          return html2canvas(form, {  
+              imageTimeout: 2000,  
+              removeContainer: true  
+          });  
+      }
+    });
 </script>
         
   @endsection

@@ -31,6 +31,7 @@ class FeesManController extends Controller
             $stu_fee_data = new FeesSubmissonModel();
             $stu_fee_data->reg = $data['reg_no'];
             $stu_fee_data->receive_fee = $data['receive_fee'];
+            $stu_fee_data->left_due = $data['left_due'];
             $stu_fee_data->payment_mode = $data['payment_mode'];
             $stu_fee_data->updated_at = date('Y-m-d H:i:s');
             $stu_fee_data->created_at = date('Y-m-d H:i:s');
@@ -38,7 +39,7 @@ class FeesManController extends Controller
 
             $stuAdSavedId = $stu_fee_data->id;
             if($stuAdSavedId){
-                return redirect('admin/fee-payment/'.$data['reg_no'])->with('status',"Insert successfully");
+                return redirect('admin/fee-payment-print/'.$data['reg_no'].'/'.$stuAdSavedId)->with('status',"Insert successfully");
             }else{
                 return redirect('admin/fee-payment/'.$data['reg_no'])->with('failed',"There are someting error, please try some time.");
             }
@@ -48,9 +49,11 @@ class FeesManController extends Controller
         }
     }
 
-    public function feePaymentPrint()
+    public function feePaymentPrint($reg_no, $id)
     {
-        return view('admin.fees_manage.fee_payment_print');
+        $data['student'] = StudentModel::where('reg', '=', $reg_no)->get()->toArray();
+        $data['fee'] = FeesSubmissonModel::where('id', '=', $id)->get()->toArray();
+        return view('admin.fees_manage.fee_payment_print')->with('data', $data);
     }
 
 

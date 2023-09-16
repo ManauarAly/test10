@@ -108,7 +108,7 @@
                                     </div>
                                     <div class="col-md-12">
                                         <label for="left_due" class="form-label">Left Due</label>
-                                        <input type="text" class="form-control" id="left_due" placeholder="Left Due" readonly>
+                                        <input type="text" class="form-control" id="left_due" name="left_due" placeholder="Left Due" readonly>
                                     </div>
                                     <div class="col-12">
                                         <label for="payment_mode" class="form-label">Payment Mode</label>
