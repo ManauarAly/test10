@@ -23651,6 +23651,13 @@
       justify-content: space-between !important;
       display: flex !important;
     }
+    .print-two2{
+      flex-wrap: unset !important;
+    }
+    .print-two2 > *{
+      max-width: 100% !important;
+      width: unset !important;
+    }
   }
   strong {
     font-weight: 600;
@@ -24379,7 +24386,7 @@ echo '<pre>'; print_r($data); echo '</pre>';
                     </tbody>
                 </table>
             </div>
-            <div class="row">
+            <div class="row print-two2">
                 <div class="col-lg-8 col-md-8 col-sm-6"></div>
                 <div class="col-lg-4 col-md-4 col-sm-6 ms-auto">
                     <table class="table">
@@ -24388,19 +24395,19 @@ echo '<pre>'; print_r($data); echo '</pre>';
                                 <td>
                                     <strong class="status">Subtotal</strong>
                                 </td>
-                                <td>{{$data['fee'][0]['receive_fee']}} &#8377;</td>
+                                <td class="text-right">{{$data['fee'][0]['receive_fee']}} &#8377;</td>
                             </tr>
                             <tr>
                                 <td>
                                     <strong class="status">Discount (0%)</strong>
                                 </td>
-                                <td>{{$data['fee'][0]['receive_fee']}} &#8377;</td>
+                                <td class="text-right">{{$data['fee'][0]['receive_fee']}} &#8377;</td>
                             </tr>
                             <tr class="total-pay">
                                 <td class="border-bottom-0">
                                     <strong>Total</strong>
                                 </td>
-                                <td class="border-bottom-0">
+                                <td class="border-bottom-0 text-right">
                                     <strong>{{$data['fee'][0]['receive_fee']}} &#8377;</strong>
                                 </td>
                             </tr>
