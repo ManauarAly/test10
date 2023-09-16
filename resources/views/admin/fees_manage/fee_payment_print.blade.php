@@ -23647,13 +23647,19 @@
     .modern-invoice3{
       margin-top:-55px !important;
     }
-    .invoice-details .row .col-sm-6:nth-child(1){
-      display: none !important;
+    .print-row{
+      justify-content: space-between !important;
+      display: flex !important;
     }
   }
   strong {
     font-weight: 600;
   }
+
+  .print-row{
+      justify-content: space-between !important;
+      display: flex !important;
+    }
 
   hr {
     border-bottom: 1px solid #eeeeef;
@@ -23801,7 +23807,7 @@
     border-radius: 6px;
     padding: 50px;
     overflow: hidden;
-    border-bottom: 26px solid #000;
+    border-bottom: 3px solid #000;
   }
   @media (max-width: 991px) {
     .modern-invoice3 {
@@ -24326,8 +24332,8 @@ echo '<pre>'; print_r($data); echo '</pre>';
             <hr>
             <!-- invoice Details -->
             <div class="invoice-details pt-20">
-                <div class="row">
-                    <div class="col-sm-6 text-sm-end order-sm-1">
+                <div class="row1 print-row">
+                    <div class="col-sm-6 text-sm-end order-1">
                         <strong class="text-18 mb-3 d-inline-block">Institute </strong>
                         <address class="mb-4">
                             RAMA TECHNICAL INSTITUTE<br>
@@ -24337,7 +24343,7 @@ echo '<pre>'; print_r($data); echo '</pre>';
                             <b>Mob No:</b>+91-9161203786<br>
                         </address>
                     </div>
-                    <div class="col-sm-6 order-sm-0">
+                    <div class="col-sm-6 order-0">
                         <strong class="text-18 mb-3 d-inline-block">Student Detail`s</strong>
                         <address class="mb-4">
                           <b>Reg No:</b> {{$data['student'][0]['reg']}}<br>
@@ -24406,9 +24412,9 @@ echo '<pre>'; print_r($data); echo '</pre>';
             <div class="row">
                 <div class="col-sm-12 mb-20">
                     <span class="status d-block mb-20"> <strong>Date :</strong> {{ date('d-m-Y', strtotime($data['fee'][0]['created_at'])) }}</span>
-                    <h5 class="mb-2 text-title font-700"> Important: </h5>
+                    <h5 class="mb-2 text-title font-700"> Note: </h5>
                     <p>This is an electronic generated invoice so doesn't require any signature. </p>
-                    <p>Please read all terms and polices on www.yourdomaon.com for returns, replacement and other issues.</p>
+                    <p>Please read all terms and polices on https://rti.in.net/ for returns, replacement and other issues.</p>
                 </div>
             </div>
             <!-- invoice address -->
