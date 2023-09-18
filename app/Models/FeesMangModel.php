@@ -14,4 +14,5 @@ class FeesMangModel extends Model
     {
         return $this->hasMany(FeesSubmissonModel::class, 'reg', 'reg');
     }
+
 }

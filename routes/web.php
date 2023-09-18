@@ -148,6 +148,8 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('fee-payment/{id}', [FeesManController::class, 'feePayment'])->name('feePayment');
         Route::post('fee-payment', [FeesManController::class, 'storeFeePayment'])->name('storeFeePayment');
         Route::get('fee-payment-print/{id}/{reg}', [FeesManController::class, 'feePaymentPrint'])->name('feePaymentPrint');
+        Route::get('Fee_Details/', [FeesManController::class, 'FeeDetails'])->name('FeeDetails');
+        
 
         Route::get('new-blog', [BlogController::class, 'addblog'])->name('addblog');
         Route::get('blog-list', [bloglistController::class, 'bloglist'])->name('bloglist');
@@ -156,7 +158,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('Result', [ResultController::class, 'Result'])->name('Result');
         Route::get('Branch-Admit-Card', [BranchAdmitCardController::class, 'BranchAdmitCard'])->name('BranchAdmitCard');
 
-        Route::get('Fee_Details', [FeeDetailsController::class, 'FeeDetails'])->name('FeeDetails');
+        
         Route::get('Today_Fee_Collection', [TodayFeeCollectionController::class, 'TodayFeeCollection'])->name('TodayFeeCollection');
         Route::get('Due_Fee_Report', [DueFeeReportController::class, 'DueFeeReport'])->name('DueFeeReport');
         Route::get('Fee_Reminder', [FeeReminderController::class, 'FeeReminder'])->name('FeeReminder');

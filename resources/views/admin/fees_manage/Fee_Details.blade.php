@@ -137,54 +137,43 @@
                     </tr>
                 </thead>
                 <tbody>
+                @php 
+                    $total_fee = 0;
+                    $fee_due = 0;
+                @endphp
+                
+                @foreach($stuDatas as $stuData)
+
+                    @php
+                       if(!empty($stuData['stu_fees_manage_with_student'])){
+                            foreach($stuData['stu_fees_manage_with_student'] as $val){
+                                $total_fee  =   $total_fee+$val['receive_fee'];
+                            }
+                       }   
+                       
+                       $fee_due = (int)$stuData['fee'] - (int)$total_fee;
+                    @endphp
+            
                     <tr>
-                        <td>Typing (English)</td>
-                        <td>BHI838</td>
-                        <td>2014-09-10</td>
-                        <td>SURAJ GUPTA</td>
-                        <td>ROHIT GUPTA</td>
-                        <td>3000</td>
-                        <td><i class="fa fa-rupee"></i>3000</td>
+                        <td>{{$stuData['class']}}</td>
+                        <td>{{$stuData['reg']}}</td>
+                        <td>{{$stuData['admission_date']}}</td>
+                        <td>{{$stuData['name']}}</td>
+                        <td>{{$stuData['father']}}</td>
+                        <td>{{$total_fee}}</td>
+                        <td>{{$fee_due}}</td>
                         <td>
-                            <div class="ms-auto">
+                            <div class="ms-auto d-flex">
                                 <div class="btn-group">
-                                    <a href="http://127.0.0.1:8000/admin/list-enquiry" class="btn btn-primary">Quick Payment</a>
+                                    <a href="/admin/fee-payment-print/REG_NO_3611/7" class="btn btn-success">View</a>
+                                </div>
+                                <div class="btn-group">
+                                    <a href="#" class="btn btn-primary">Quick Payment</a>
                                 </div>
                             </div>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Typing (English)</td>
-                        <td>BHI838</td>
-                        <td>2014-09-10</td>
-                        <td>SURAJ GUPTA</td>
-                        <td>ROHIT GUPTA</td>
-                        <td>3000</td>
-                        <td><i class="fa fa-rupee"></i>3000</td>
-                        <td>
-                            <div class="ms-auto">
-                                <div class="btn-group">
-                                    <a href="http://127.0.0.1:8000/admin/list-enquiry" class="btn btn-primary">Quick Payment</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Typing (English)</td>
-                        <td>BHI838</td>
-                        <td>2014-09-10</td>
-                        <td>SURAJ GUPTA</td>
-                        <td>ROHIT GUPTA</td>
-                        <td>3000</td>
-                        <td><i class="fa fa-rupee"></i>3000</td>
-                        <td>
-                            <div class="ms-auto">
-                                <div class="btn-group">
-                                    <a href="http://127.0.0.1:8000/admin/list-enquiry" class="btn btn-primary">Quick Payment</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
+                @endforeach
                 </tbody>
             </table>
 
@@ -212,5 +201,10 @@
             </div>
         </div>
     </div>
+
+    @php 
+    echo '<pre>';
+    print_r($stuDatas);
+    @endphp
 
     @endsection
