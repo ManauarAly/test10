@@ -99,4 +99,12 @@ class StudentController extends Controller
         $student = StudentModel::find($id);
         return view('admin.students.student_profile')->with('student', $student);
     }
+
+    public function studentDay()
+    {
+        $sevendaysafter = date('Y-m-d', strtotime('+7 days') );
+        $sevendaysbefore = date('Y-m-d', strtotime('-7 days') );
+        $stubdayDatas = StudentModel::whereBetween('dob', [$sevendaysbefore, $sevendaysafter])->get();
+        return view('admin.students.student_bday')->with('stubdayDatas', $stubdayDatas);
+    }
 }

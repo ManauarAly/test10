@@ -142,6 +142,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('student-profile/{id}', [StudentController::class, 'studentProfile'])->name('studentProfile');
         Route::post('new-student', [StudentController::class, 'storeNewStudent'])->name('storeNewStudent');
         Route::post('del-student', [StudentController::class, 'delStudent'])->name('delStudent');
+        Route::get('student-bday', [StudentController::class, 'studentDay'])->name('studentBday');
 
         //Fees  
         Route::get('fee-submission', [FeesManController::class, 'feeSubmission'])->name('FeeSubmission');
