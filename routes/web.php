@@ -6,6 +6,7 @@ use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\EnquiryController;
 use App\Http\Controllers\admin\StudentController;
 use App\Http\Controllers\admin\FeesManController;
+use App\Http\Controllers\admin\CourseMangController;
 
 use App\Http\Controllers\admin\BlogController;
 use App\Http\Controllers\admin\bloglistController;
@@ -150,6 +151,12 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('fee-payment', [FeesManController::class, 'storeFeePayment'])->name('storeFeePayment');
         Route::get('fee-payment-print/{id}/{reg}', [FeesManController::class, 'feePaymentPrint'])->name('feePaymentPrint');
         Route::get('Fee_Details/', [FeesManController::class, 'FeeDetails'])->name('FeeDetails');
+
+        //course
+        Route::get('course-management/', [CourseMangController::class, 'courseManage'])->name('courseManage');
+        Route::get('course-subject-list/', [CourseMangController::class, 'courseSubjectList'])->name('courseSubjectList');
+        Route::post('store-course-manage', [CourseMangController::class, 'storeCourseManage'])->name('storeCourseManage');
+        
         
 
         Route::get('new-blog', [BlogController::class, 'addblog'])->name('addblog');
