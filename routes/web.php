@@ -16,8 +16,6 @@ use App\Http\Controllers\admin\resultController;
 use App\Http\Controllers\admin\BranchAdmitCardController;
 use App\Http\Controllers\admin\FeeSubmissionController;
 use App\Http\Controllers\admin\FeeDetailsController;
-use App\Http\Controllers\admin\TodayFeeCollectionController;
-use App\Http\Controllers\admin\DueFeeReportController;
 use App\Http\Controllers\admin\FeeReminderController;
 use App\Http\Controllers\admin\AddDepartmentController;
 use App\Http\Controllers\admin\AddEmployeeController;
@@ -152,15 +150,13 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('fee-payment-print/{id}/{reg}', [FeesManController::class, 'feePaymentPrint'])->name('feePaymentPrint');
         Route::get('Fee_Details/', [FeesManController::class, 'FeeDetails'])->name('FeeDetails');
         Route::get('view-payment/{reg}', [FeesManController::class, 'viewPayment'])->name('viewPayment');
-
-        
+        Route::get('today-fee-collection/', [FeesManController::class, 'todayFeeCollection'])->name('todayFeeCollection');
+        Route::get('due-Fee-report', [FeesManController::class, 'dueFeeReport'])->name('dueFeeReport');
 
         //course
         Route::get('course-management/', [CourseMangController::class, 'courseManage'])->name('courseManage');
         Route::get('course-subject-list/', [CourseMangController::class, 'courseSubjectList'])->name('courseSubjectList');
         Route::post('store-course-manage', [CourseMangController::class, 'storeCourseManage'])->name('storeCourseManage');
-        
-        
 
         Route::get('new-blog', [BlogController::class, 'addblog'])->name('addblog');
         Route::get('blog-list', [bloglistController::class, 'bloglist'])->name('bloglist');
@@ -169,9 +165,6 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('Result', [ResultController::class, 'Result'])->name('Result');
         Route::get('Branch-Admit-Card', [BranchAdmitCardController::class, 'BranchAdmitCard'])->name('BranchAdmitCard');
 
-        
-        Route::get('Today_Fee_Collection', [TodayFeeCollectionController::class, 'TodayFeeCollection'])->name('TodayFeeCollection');
-        Route::get('Due_Fee_Report', [DueFeeReportController::class, 'DueFeeReport'])->name('DueFeeReport');
         Route::get('Fee_Reminder', [FeeReminderController::class, 'FeeReminder'])->name('FeeReminder');
         Route::get('Add_Department', [AddDepartmentController::class, 'AddDepartment'])->name('AddDepartment');
         Route::get('Add_Employee', [AddEmployeeController::class, 'AddEmployee'])->name('AddEmployee');

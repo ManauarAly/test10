@@ -148,7 +148,7 @@
                                     <a href="/admin/view-payment/{{$stuData['reg']}}" class="btn btn-success">View</a>
                                 </div>
                                 <div class="btn-group">
-                                    <a href="#" class="btn btn-primary">Quick Payment</a>
+                                    <a href="fee-payment/{{$stuData['reg']}}" class="btn btn-primary">Quick Payment</a>
                                 </div>
                             </div>
                         </td>

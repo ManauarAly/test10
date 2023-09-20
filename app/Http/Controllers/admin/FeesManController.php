@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\StudentModel;
 use App\Models\FeesMangModel;
 use App\Models\FeesSubmissonModel;
+use DB;
 
 class FeesManController extends Controller
 {
@@ -70,6 +71,18 @@ class FeesManController extends Controller
         $data['fee'] = FeesSubmissonModel::where('reg', '=', $reg_no)->get()->toArray();
 
         return view('admin.fees_manage.fee_payment_view')->with('data', $data);
+    }
+
+    public function todayFeeCollection()
+    {
+        $feesStudent = StudentModel::with('stuFeesManageWithStudent')->get()->toArray();
+        return view('admin.fees_manage.Today_Fee_Collection')->with('stuDatas', $feesStudent);
+    }
+
+    public function dueFeeReport()
+    {
+        $feesStudent = StudentModel::with('stuFeesManageWithStudent')->get()->toArray();
+        return view('admin.fees_manage.Due_Fee_Report')->with('stuDatas', $feesStudent);
     }
 
 

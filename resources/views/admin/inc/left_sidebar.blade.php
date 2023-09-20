@@ -117,10 +117,10 @@
                     <a href="{{route('FeeDetails')}}"><i class="bx bx-right-arrow-alt"></i>Fee Details</a>
                 </li>
                 <li>
-                    <a href="{{route('TodayFeeCollection')}}"><i class="bx bx-right-arrow-alt"></i>Today Fee Collection</a>
+                    <a href="{{route('todayFeeCollection')}}"><i class="bx bx-right-arrow-alt"></i>Today Fee Collection</a>
                 </li>
                 <li>
-                    <a href="{{route('DueFeeReport')}}"><i class="bx bx-right-arrow-alt"></i>Due Fee Report</a>
+                    <a href="{{route('dueFeeReport')}}"><i class="bx bx-right-arrow-alt"></i>Due Fee Report</a>
                 </li>
                 <li>
                     <a href="{{route('FeeReminder')}}"><i class="bx bx-right-arrow-alt"></i>Fee Reminder</a>
