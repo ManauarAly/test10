@@ -151,6 +151,9 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('fee-payment', [FeesManController::class, 'storeFeePayment'])->name('storeFeePayment');
         Route::get('fee-payment-print/{id}/{reg}', [FeesManController::class, 'feePaymentPrint'])->name('feePaymentPrint');
         Route::get('Fee_Details/', [FeesManController::class, 'FeeDetails'])->name('FeeDetails');
+        Route::get('view-payment/{reg}', [FeesManController::class, 'viewPayment'])->name('viewPayment');
+
+        
 
         //course
         Route::get('course-management/', [CourseMangController::class, 'courseManage'])->name('courseManage');

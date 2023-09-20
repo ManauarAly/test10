@@ -24328,7 +24328,7 @@
                         <img src="https://manauaraly.in/public/web/assets/images/lite-logo.png" title="invoice" alt="invoice" width="15%">
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 text-center text-sm-end mb-3 mb-sm-1">
-                        <h4 class=" mb-0 mt-0">Fee Receipt</h4>
+                        <h4 class=" mb-0 mt-0">View Fee Receipt</h4>
                     </div>
                 </div>
                 <hr>
@@ -24364,22 +24364,27 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>Description</th>
-                            <th class="black-bg text-right">Unit Cost</th>
-                            <th class="black-bg text-right">Total</th>
+                            <th>Date</th>
+                            <th class="black-bg text-right">Received fee</th>
+                            <th class="black-bg text-right">Due fee</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>Pay Fee</td>
-                            <td class="text-right">{{$data['fee'][0]['receive_fee']}}</td>
-                            <td class="text-right">{{$data['fee'][0]['receive_fee']}}</td>
-                        </tr>
-                        <tr>
-                            <td>Left Fee</td>
-                            <td class="text-right">{{$data['fee'][0]['left_due']}}</td>
-                            <td class="text-right">{{$data['fee'][0]['left_due']}}</td>
-                        </tr>
+                    <tbody> 
+                      @php 
+                        $totaldue = $totalreceive = 0;
+                      @endphp
+
+                      @foreach($data['fee'] as $fee)
+                        @php
+                          $totaldue = $totaldue+$fee['left_due'];
+                          $totalreceive = $totalreceive+$fee['receive_fee'];
+                        @endphp
+                      <tr>
+                        <td>{{date('m-d-Y', strtotime($fee['created_at']))}}</td>
+                        <td class="text-right">{{$fee['receive_fee']}}</td>
+                        <td class="text-right">{{$fee['left_due']}}</td>
+                      </tr>
+                      @endforeach
                     </tbody>
                 </table>
             </div>
@@ -24390,22 +24395,22 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <strong class="status">Subtotal</strong>
+                                    <strong class="status">Total Due Fee</strong>
                                 </td>
-                                <td class="text-right">{{$data['fee'][0]['receive_fee']}} &#8377;</td>
+                                <td class="text-right">{{$totaldue}} &#8377;</td>
                             </tr>
                             <tr>
                                 <td>
-                                    <strong class="status">Discount (0%)</strong>
+                                    <strong class="status">Total Receive Fee</strong>
                                 </td>
-                                <td class="text-right">{{$data['fee'][0]['receive_fee']}} &#8377;</td>
+                                <td class="text-right">{{$totalreceive}} &#8377;</td>
                             </tr>
                             <tr class="total-pay">
                                 <td class="border-bottom-0">
-                                    <strong>Total</strong>
+                                    <strong>Total Left Fee</strong>
                                 </td>
                                 <td class="border-bottom-0 text-right">
-                                    <strong>{{$data['fee'][0]['receive_fee']}} &#8377;</strong>
+                                    <strong>{{ $data['fee_total'][0]['fee'] - $totalreceive}} &#8377;</strong>
                                 </td>
                             </tr>
                         </tbody>
@@ -24415,7 +24420,7 @@
             <!-- invoice address -->
             <div class="row">
                 <div class="col-sm-12 mb-20">
-                    <span class="status d-block mb-20"> <strong>Date :</strong> {{ date('d-m-Y', strtotime($data['fee'][0]['created_at'])) }}</span>
+                    <span class="status d-block mb-20"> <strong>Date :</strong> {{ date('d-m-Y') }}</span>
                     <h5 class="mb-2 text-title font-700"> Note: </h5>
                     <p>This is an electronic generated invoice so doesn't require any signature. </p>
                     <p>Please read all terms and polices on https://rti.in.net/ for returns, replacement and other issues.</p>

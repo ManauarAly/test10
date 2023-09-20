@@ -1,4 +1,5 @@
 @extends('admin.app')
+@section('title', 'Fee Management')
 @section('main')
 
 <div class="page-content">
@@ -102,28 +103,7 @@
     <div class="card">
         <div class="card-body">
 
-            <div class="box-header">
-                <form action="admitCardPrint.php" target="_blank" method="post">
-
-                    <div class="row mb-3">
-                        <div class="col-md-3 d-flex align-items-center">
-                            <label for="">Show</label>
-                            <select class="form-select mx-2" aria-label="Default select example">
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                            <label for="">Entries</label>
-                        </div>
-                        <div class="col-md-5"></div>
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" id="myInput" onkeyup="myFunction()" placeholder="Search for Reg Number..">
-                        </div>
-                    </div>
-                </form>
-            </div>
-
-            <table class="table table-striped">
+            <table id="example" class="table table-striped table-bordered" style="width:100%">
                 <thead>
                     <tr>
                         <th scope="col">Class</th>
@@ -165,7 +145,7 @@
                         <td>
                             <div class="ms-auto d-flex">
                                 <div class="btn-group">
-                                    <a href="/admin/fee-payment-print/REG_NO_3611/7" class="btn btn-success">View</a>
+                                    <a href="/admin/view-payment/{{$stuData['reg']}}" class="btn btn-success">View</a>
                                 </div>
                                 <div class="btn-group">
                                     <a href="#" class="btn btn-primary">Quick Payment</a>
@@ -177,34 +157,12 @@
                 </tbody>
             </table>
 
-            <div class="row">
-                <div class="col-sm-7">
-                    <div class="dataTables_info" id="dataTables-example_info" role="status" aria-live="polite">Showing 1 to 10 of 3,558 entries</div>
-                </div>
-                <div class="col-sm-5">
-                    <nav aria-label="...">
-                        <ul class="pagination">
-                            <li class="page-item disabled">
-                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item active" aria-current="page">
-                                <a class="page-link" href="#">2</a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">Next</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
         </div>
     </div>
 
-    @php 
+    <!-- @php 
     echo '<pre>';
     print_r($stuDatas);
-    @endphp
+    @endphp -->
 
     @endsection

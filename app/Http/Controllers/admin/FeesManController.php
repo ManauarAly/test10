@@ -59,11 +59,17 @@ class FeesManController extends Controller
 
     public function FeeDetails()
     {
-        // $stuDatas = StudentModel::orderBy('id', 'DESC')->get();
-
         $feesStudent = StudentModel::with('stuFeesManageWithStudent')->get()->toArray();
         return view('admin.fees_manage.Fee_Details')->with('stuDatas', $feesStudent);
+    }
 
+    public function viewPayment($reg_no)
+    {
+        $data['student'] = StudentModel::where('reg', '=', $reg_no)->get()->toArray();
+        $data['fee_total'] = FeesMangModel::where('reg', '=', $reg_no)->get()->toArray();
+        $data['fee'] = FeesSubmissonModel::where('reg', '=', $reg_no)->get()->toArray();
+
+        return view('admin.fees_manage.fee_payment_view')->with('data', $data);
     }
 
 
