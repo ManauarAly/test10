@@ -158,10 +158,12 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('course-subject-list/', [CourseMangController::class, 'courseSubjectList'])->name('courseSubjectList');
         Route::post('store-course-manage', [CourseMangController::class, 'storeCourseManage'])->name('storeCourseManage');
 
+        //admit card
+        Route::get('create-admit-card', [AdmitCardDetailsController::class, 'createAdmitCard'])->name('createAdmitCard');
+
         Route::get('new-blog', [BlogController::class, 'addblog'])->name('addblog');
         Route::get('blog-list', [bloglistController::class, 'bloglist'])->name('bloglist');
-        Route::get('Create-Admit-Card', [CreateAdmitCardController::class, 'CreateAdmitCard'])->name('CreateAdmitCard');
-        Route::get('Admit-Card-Details', [AdmitCardDetailsController::class, 'AdmitCardDetails'])->name('AdmitCardDetails');
+        // Route::get('Create-Admit-Card', [CreateAdmitCardController::class, 'CreateAdmitCard'])->name('CreateAdmitCard');
         Route::get('Result', [ResultController::class, 'Result'])->name('Result');
         Route::get('Branch-Admit-Card', [BranchAdmitCardController::class, 'BranchAdmitCard'])->name('BranchAdmitCard');
 

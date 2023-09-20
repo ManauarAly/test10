@@ -89,10 +89,10 @@
             </a>
             <ul>
                 <li>
-                    <a href="{{route('CreateAdmitCard')}}"><i class="bx bx-right-arrow-alt"></i>Create Admit Card</a>
+                    <a href="{{route('createAdmitCard')}}"><i class="bx bx-right-arrow-alt"></i>Create Admit Card</a>
                 </li>
                 <li>
-                    <a href="{{route('AdmitCardDetails')}}"><i class="bx bx-right-arrow-alt"></i>Admit Card Details</a>
+                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Admit Card Details</a>
                 </li>
                 <li>
                     <a href="{{route('Result')}}"><i class="bx bx-right-arrow-alt"></i>Result</a>
