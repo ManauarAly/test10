@@ -11,7 +11,12 @@ class AdmitCardDetailsController extends Controller
     public function createAdmitCard()
     {
         $stuDatas = StudentModel::orderBy('id', 'DESC')->get();
-        // return view('admin.students.list_student')->with('stuDatas', $stuDatas);
         return view('admin.admit_card_result.Create_Admit_Card')->with('stuDatas', $stuDatas);
     }
+
+    public function admitCardPrint()
+    {
+        return view('admin.admit_card_result.admit_card_print');
+    }
+
 }
