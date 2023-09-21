@@ -163,7 +163,11 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('create-admit-card', [AdmitCardDetailsController::class, 'createAdmitCard'])->name('createAdmitCard');
         Route::get('admit-card-print', [AdmitCardDetailsController::class, 'admitCardPrint'])->name('admitCardPrint');
 
+        //blog
         Route::get('new-blog', [BlogController::class, 'addblog'])->name('addblog');
+        Route::post('new-blog', [BlogController::class, 'storeNewBlog'])->name('storeNewBlog');
+
+        // Route::get('new-blog', [BlogController::class, 'addblog'])->name('addblog');
         Route::get('blog-list', [bloglistController::class, 'bloglist'])->name('bloglist');
         // Route::get('Create-Admit-Card', [CreateAdmitCardController::class, 'CreateAdmitCard'])->name('CreateAdmitCard');
         Route::get('Result', [ResultController::class, 'Result'])->name('Result');
