@@ -51,7 +51,7 @@
                     <a href="{{route('studentBday')}}"><i class="bx bx-right-arrow-alt"></i>Student Bday</a>
                 </li>
                 <li>
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Print Student List</a>
+                    <a href="{{route('studentListprint')}}"><i class="bx bx-right-arrow-alt"></i>Print Student List</a>
                 </li>
                 <li>
                     <a href="{{route('courseManage')}}"><i class="bx bx-right-arrow-alt"></i>Course Management</a>

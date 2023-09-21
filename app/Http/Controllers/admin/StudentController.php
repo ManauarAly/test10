@@ -107,4 +107,11 @@ class StudentController extends Controller
         $stubdayDatas = StudentModel::whereBetween('dob', [$sevendaysbefore, $sevendaysafter])->get();
         return view('admin.students.student_bday')->with('stubdayDatas', $stubdayDatas);
     }
+
+    public function studentListprint(){
+        $studlists = StudentModel::all();
+        return view('admin.students.student_list_print')->with('studlists', $studlists);
+    }
+
+    
 }
