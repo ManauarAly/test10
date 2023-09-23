@@ -167,6 +167,22 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('new-blog', [BlogController::class, 'addblog'])->name('addblog');
         Route::post('new-blog', [BlogController::class, 'storeNewBlog'])->name('storeNewBlog');
 
+        //Department
+        Route::get('Add_Department', [AddDepartmentController::class, 'AddDepartment'])->name('AddDepartment');
+        Route::post('Add_Department', [AddDepartmentController::class, 'storeDept'])->name('storeDept');
+        Route::post('del_Department', [AddDepartmentController::class, 'delDept'])->name('delDept');
+
+        //Expense
+        Route::get('Extra_Expenese', [ExpeneseDetailsController::class, 'ExtraExpenese'])->name('ExtraExpenese');
+        Route::post('Extra_Expenese', [ExpeneseDetailsController::class, 'storeExtraExpenese'])->name('storeExtraExpenese');
+        Route::post('Expenese_Details', [ExpeneseDetailsController::class, 'delExpeneseDetails'])->name('delExpeneseDetails');
+
+        //Employee
+        Route::get('Employee_Details', [AddEmployeeController::class, 'EmployeeDetails'])->name('EmployeeDetails');
+        Route::get('Add_Employee', [AddEmployeeController::class, 'AddEmployee'])->name('AddEmployee');
+        Route::post('Add_Employee', [AddEmployeeController::class, 'storeEmployee'])->name('storeEmployee');
+        Route::post('Employee_Details', [AddEmployeeController::class, 'deleteEmp'])->name('deleteEmp');
+
         // Route::get('new-blog', [BlogController::class, 'addblog'])->name('addblog');
         Route::get('blog-list', [bloglistController::class, 'bloglist'])->name('bloglist');
         // Route::get('Create-Admit-Card', [CreateAdmitCardController::class, 'CreateAdmitCard'])->name('CreateAdmitCard');
@@ -175,8 +191,7 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::get('Fee_Reminder', [FeeReminderController::class, 'FeeReminder'])->name('FeeReminder');
         Route::get('Add_Department', [AddDepartmentController::class, 'AddDepartment'])->name('AddDepartment');
-        Route::get('Add_Employee', [AddEmployeeController::class, 'AddEmployee'])->name('AddEmployee');
-        Route::get('Employee_Details', [EmployeeDetailsController::class, 'EmployeeDetails'])->name('EmployeeDetails');
+        
         Route::get('Attendance', [AttendanceController::class, 'Attendance'])->name('Attendance');
         Route::get('Attendance_Details', [AttendanceDetailsController::class, 'AttendanceDetails'])->name('AttendanceDetails');
         Route::get('Leave_Type', [LeaveTypeController::class, 'LeaveType'])->name('LeaveType');
@@ -196,7 +211,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('Student_Image_Details', [StudentImageDetailsController::class, 'StudentImageDetails'])->name('StudentImageDetails');
         Route::get('New_Branch_Add', [NewBranchAddController::class, 'NewBranchAdd'])->name('NewBranchAdd');
         Route::get('Branch_Details', [BranchDetailsController::class, 'BranchDetails'])->name('BranchDetails');
-        Route::get('Extra_Expenese', [ExtraExpeneseController::class, 'ExtraExpenese'])->name('ExtraExpenese');
+        
         Route::get('Expenese_Details', [ExpeneseDetailsController::class, 'ExpeneseDetails'])->name('ExpeneseDetails');
         Route::get('Account_Balance', [AccountBalanceController::class, 'AccountBalance'])->name('AccountBalance');
         Route::get('Fee_Collection_Report', [FeeCollectionReportController::class, 'FeeCollectionReport'])->name('FeeCollectionReport');
