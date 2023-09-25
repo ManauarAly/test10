@@ -161,6 +161,7 @@ Route::group(['prefix' => 'admin'], function () {
 
         //admit card
         Route::get('create-admit-card', [AdmitCardDetailsController::class, 'createAdmitCard'])->name('createAdmitCard');
+        Route::post('create-admit-card-form', [AdmitCardDetailsController::class, 'admitCardForm'])->name('admitCardForm');
         Route::get('admit-card-print', [AdmitCardDetailsController::class, 'admitCardPrint'])->name('admitCardPrint');
 
         //blog

@@ -19,4 +19,11 @@ class AdmitCardDetailsController extends Controller
         return view('admin.admit_card_result.admit_card_print');
     }
 
+    public function admitCardForm(request $request)
+    {
+        $ids = $request['_stu_reg'];
+        $stu_data = StudentModel::whereIn('id', $ids)->get()->toArray();
+        return view('admin.admit_card_result.admin_card_form')->with('data_stu', $stu_data);
+    }
+
 }
