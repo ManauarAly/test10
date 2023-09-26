@@ -40,62 +40,62 @@
     }
 
     @media print {
-    .d-print-inline {
-      display: inline !important;
+        .d-print-inline {
+        display: inline !important;
+        }
+        .d-print-inline-block {
+        display: inline-block !important;
+        }
+        .d-print-block {
+        display: block !important;
+        }
+        .d-print-grid {
+        display: -ms-grid !important;
+        display: grid !important;
+        }
+        .d-print-table {
+        display: table !important;
+        }
+        .d-print-table-row {
+        display: table-row !important;
+        }
+        .d-print-table-cell {
+        display: table-cell !important;
+        }
+        .d-print-flex {
+        display: -webkit-box !important;
+        display: -ms-flexbox !important;
+        display: flex !important;
+        }
+        .d-print-inline-flex {
+        display: -webkit-inline-box !important;
+        display: -ms-inline-flexbox !important;
+        display: inline-flex !important;
+        }
+        .d-print-none {
+        display: none !important;
+        }
+        .sidebar-wrapper, .topbar, .page-footer{
+        display: none !important;
+        }
+        .page-wrapper{
+        margin-left:0px;
+        }
+        .modern-invoice3{
+        margin-top:-55px !important;
+        }
+        .print-row{
+        justify-content: space-between !important;
+        display: flex !important;
+        }
+        .print-two2{
+        flex-wrap: unset !important;
+        }
+        .print-two2 > *{
+        max-width: 100% !important;
+        width: unset !important;
+        }
     }
-    .d-print-inline-block {
-      display: inline-block !important;
-    }
-    .d-print-block {
-      display: block !important;
-    }
-    .d-print-grid {
-      display: -ms-grid !important;
-      display: grid !important;
-    }
-    .d-print-table {
-      display: table !important;
-    }
-    .d-print-table-row {
-      display: table-row !important;
-    }
-    .d-print-table-cell {
-      display: table-cell !important;
-    }
-    .d-print-flex {
-      display: -webkit-box !important;
-      display: -ms-flexbox !important;
-      display: flex !important;
-    }
-    .d-print-inline-flex {
-      display: -webkit-inline-box !important;
-      display: -ms-inline-flexbox !important;
-      display: inline-flex !important;
-    }
-    .d-print-none {
-      display: none !important;
-    }
-    .sidebar-wrapper, .topbar, .page-footer{
-      display: none !important;
-    }
-    .page-wrapper{
-      margin-left:0px;
-    }
-    .modern-invoice3{
-      margin-top:-55px !important;
-    }
-    .print-row{
-      justify-content: space-between !important;
-      display: flex !important;
-    }
-    .print-two2{
-      flex-wrap: unset !important;
-    }
-    .print-two2 > *{
-      max-width: 100% !important;
-      width: unset !important;
-    }
-  }
 
   .main-wrapper{
     display: flex;
