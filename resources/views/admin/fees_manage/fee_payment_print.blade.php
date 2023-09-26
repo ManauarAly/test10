@@ -23659,6 +23659,7 @@
       width: unset !important;
     }
   }
+  
   strong {
     font-weight: 600;
   }

@@ -26,7 +26,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="p-4 border rounded"> 
-                    <form class="row g-3 needs-validation bv-form" method="post" id="enq_form" enctype="multipart/form-data" action="" novalidate="novalidate"><button type="submit" class="bv-hidden-submit" style="display: none; width: 0px; height: 0px;"></button>
+                    <form class="row g-3 needs-validation bv-form" method="post" id="enq_form" enctype="multipart/form-data" action="{{route('admitCardPrint')}}" novalidate="novalidate">
                         @csrf
                             <div class="col-md-3">
                                 <label for="adc_exam_name" class="form-label">Exam Name *</label>
@@ -52,19 +52,20 @@
                                 <button class="btn btn-primary btn-block" style="width:100%" type="submit">Submit </button>
                             </div>
                             <hr style="border: 2px dashed #939393; border-style: none none dashed;">
+                        
+                            @foreach($data_stu as $_data_stu)
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="_reg_no" class="form-label">Reg No *</label>
+                                    <input type="text" class="form-control" name="_reg_no[]" id="_reg_no" value="{{$_data_stu['reg']}}" placeholder="Reg No" readonly>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="_stu_name" class="form-label">Student Name *</label>
+                                    <input type="text" class="form-control" name="_stu_name" id="_stu_name" value="{{$_data_stu['name']}}" placeholder="Student Name" readonly>
+                                </div>
+                                </div>
+                            @endforeach
                         </form>
-                        @foreach($data_stu as $_data_stu)
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label for="_reg_no" class="form-label">Reg No *</label>
-                                <input type="text" class="form-control" name="_reg_no" id="_reg_no" value="{{$_data_stu['reg']}}" placeholder="Reg No" readonly>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="_stu_name" class="form-label">Student Name *</label>
-                                <input type="text" class="form-control" name="_stu_name" id="_stu_name" value="{{$_data_stu['name']}}" placeholder="Student Name" readonly>
-                            </div>
-                            </div>
-                        @endforeach
                     </div>
                 </div>
             </div>

@@ -92,7 +92,7 @@
                     <a href="{{route('createAdmitCard')}}"><i class="bx bx-right-arrow-alt"></i>Create Admit Card</a>
                 </li>
                 <li>
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Admit Card Details</a>
+                    <a href="{{route('admitCardDtails')}}"><i class="bx bx-right-arrow-alt"></i>Admit Card Details</a>
                 </li>
                 <li>
                     <a href="{{route('Result')}}"><i class="bx bx-right-arrow-alt"></i>Result</a>
