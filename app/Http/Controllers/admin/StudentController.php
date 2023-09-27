@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\StudentModel;
 use App\Models\StuEnqModel;
 use App\Models\FeesMangModel;
+use App\Models\StudentIcard;
 
 class StudentController extends Controller
 {
@@ -111,6 +112,35 @@ class StudentController extends Controller
     public function studentListprint(){
         $studlists = StudentModel::all();
         return view('admin.students.student_list_print')->with('studlists', $studlists);
+    }
+
+
+    public function studentIdcard()
+    {
+        $studlists = StudentModel::all()->take(5);
+        return view('admin.i_card.stud_id_card')->with('studlists', $studlists);
+    }
+
+    public function dispStudIdCard(request $request)
+    {
+        $data = $request->input();
+        $checkbox_ids = $request['student_icard'];
+        $studs_icard_regno = StudentIcard::all()->toArray();
+        $stud_regno = array();
+
+         foreach( $studs_icard_regno as $stud_icard_regno ){
+            $stud_regno[] = $stud_icard_regno['stud_reg_no'];
+        } 
+
+        foreach($checkbox_ids as $checkbox_id){
+            if(! in_array($checkbox_id, $stud_regno) ) {
+                $icard = new StudentIcard();
+                $icard->stud_reg_no = $checkbox_id;
+                $icard->save();
+            }
+        }
+        $students_data = StudentIcard::with('stuicardwithadmission')->whereIn('stud_reg_no', $checkbox_ids)->get()->toArray();
+        return view('admin.i_card.disp_stud_id_card')->with('students_data', $students_data);
     }
 
     

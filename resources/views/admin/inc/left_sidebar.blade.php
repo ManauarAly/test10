@@ -56,8 +56,8 @@
                 <li>
                     <a href="{{route('courseManage')}}"><i class="bx bx-right-arrow-alt"></i>Course Management</a>
                 </li>
-                <li> 
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Head Office ID Card</a>
+                <li>
+                    <a href="{{route('studentIdcard')}}"><i class="bx bx-right-arrow-alt"></i>Head Office ID Card</a>
                 </li>
                 <li>
                     <a href="#"><i class="bx bx-right-arrow-alt"></i>Branch ID Card</a>

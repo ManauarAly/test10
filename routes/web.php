@@ -165,6 +165,11 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('admit-card-print', [AdmitCardDetailsController::class, 'admitCardPrint'])->name('admitCardPrint');
         Route::get('admit-card-details', [AdmitCardDetailsController::class, 'admitCardDtails'])->name('admitCardDtails');
 
+        //i-card
+        Route::get('stud-id-card', [StudentController::class, 'studentIdcard'])->name('studentIdcard');
+        Route::post('disp-stud-id-card', [StudentController::class, 'dispStudIdCard'])->name('dispStudIdCard');
+
+
         //blog
         Route::get('new-blog', [BlogController::class, 'addblog'])->name('addblog');
         Route::post('new-blog', [BlogController::class, 'storeNewBlog'])->name('storeNewBlog');
