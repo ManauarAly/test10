@@ -44,7 +44,7 @@ echo '</pre>';
                             <th>Gender</th>
                             <th>DOB</th>
                             <th>Mobile No</th>
-                            <!-- <th>Action</th> -->
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -58,6 +58,7 @@ echo '</pre>';
                                 <td>{{$stuData['stu_admin_with_student'][0]['gender']}}</td>
                                 <td>{{$stuData['stu_admin_with_student'][0]['dob']}}</td>
                                 <td>{{$stuData['stu_admin_with_student'][0]['mob']}}</td>
+                                <td> <a href="#" class=""><i class="bx bx-plus" style="font-size: 20px;font-weight: bold;"></i></a> </td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -71,7 +72,7 @@ echo '</pre>';
                             <th>Gender</th>
                             <th>DOB</th>
                             <th>Mobile No</th>
-                            <!-- <th>Action</th> -->
+                            <th>Action</th>
                         </tr>
                     </tfoot>
                 </table>
