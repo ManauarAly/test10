@@ -314,13 +314,10 @@
             </a>
             <ul>
                 <li>
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Add New Branch</a>
+                    <a href="{{route('NewBranchAdd')}}"><i class="bx bx-right-arrow-alt"></i>Add New Branch</a>
                 </li>
                 <li>
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Branch Details</a>
-                </li>
-                <li>
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>All Student Of Branch Details</a>
+                    <a href="{{route('BranchDetails')}}"><i class="bx bx-right-arrow-alt"></i>Branch Details</a>
                 </li>
             </ul>
         </li>

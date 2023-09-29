@@ -169,6 +169,15 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('stud-id-card', [StudentController::class, 'studentIdcard'])->name('studentIdcard');
         Route::post('disp-stud-id-card', [StudentController::class, 'dispStudIdCard'])->name('dispStudIdCard');
 
+        //certificate
+        Route::get('create-marksheet/{reg}', [CourseDetailsController::class, 'createMarksheet'])->name('createMarksheet');
+
+        //Branch
+        Route::get('New_Branch_Add', [NewBranchAddController::class, 'NewBranchAdd'])->name('NewBranchAdd');
+        Route::post('New_Branch_Add', [NewBranchAddController::class, 'storeNewBranchAdd'])->name('storeNewBranchAdd');
+        Route::get('Branch_Details', [NewBranchAddController::class, 'BranchDetails'])->name('BranchDetails');
+        Route::get('/Edit_Branch_Details/{id}', [NewBranchAddController::class, 'editBranchDetails'])->name('editBranchDetails');
+        Route::put('/updateBranch/{id}', [NewBranchAddController::class, 'updateBranch'])->name('updateBranch');
 
         //blog
         Route::get('new-blog', [BlogController::class, 'addblog'])->name('addblog');
@@ -216,8 +225,6 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('Gallery_Image_Details', [GalleryImageDetailsController::class, 'GalleryImageDetails'])->name('GalleryImageDetails');
         Route::get('New_Student_Image_upload', [NewStudentImageuploadController::class, 'NewStudentImageupload'])->name('NewStudentImageupload');
         Route::get('Student_Image_Details', [StudentImageDetailsController::class, 'StudentImageDetails'])->name('StudentImageDetails');
-        Route::get('New_Branch_Add', [NewBranchAddController::class, 'NewBranchAdd'])->name('NewBranchAdd');
-        Route::get('Branch_Details', [BranchDetailsController::class, 'BranchDetails'])->name('BranchDetails');
         
         Route::get('Expenese_Details', [ExpeneseDetailsController::class, 'ExpeneseDetails'])->name('ExpeneseDetails');
         Route::get('Account_Balance', [AccountBalanceController::class, 'AccountBalance'])->name('AccountBalance');

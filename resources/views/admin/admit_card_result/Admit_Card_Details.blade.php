@@ -58,7 +58,7 @@ echo '</pre>';
                                 <td>{{$stuData['stu_admin_with_student'][0]['gender']}}</td>
                                 <td>{{$stuData['stu_admin_with_student'][0]['dob']}}</td>
                                 <td>{{$stuData['stu_admin_with_student'][0]['mob']}}</td>
-                                <td> <a href="#" class=""><i class="bx bx-plus" style="font-size: 20px;font-weight: bold;"></i></a> </td>
+                                <td> <a href="{{url('create-marksheet').'/'.$stuData['stu_admin_with_student'][0]['reg']}}" class=""><i class="bx bx-plus" style="font-size: 20px;font-weight: bold;"></i></a> </td>
                             </tr>
                         @endforeach
                     </tbody>
