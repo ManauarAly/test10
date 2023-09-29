@@ -170,7 +170,8 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('disp-stud-id-card', [StudentController::class, 'dispStudIdCard'])->name('dispStudIdCard');
 
         //certificate
-        Route::get('create-marksheet/{reg}', [CourseDetailsController::class, 'createMarksheet'])->name('createMarksheet');
+        Route::get('create-marksheet/{reg}', [CertificateDetailsController::class, 'createMarksheet'])->name('createMarksheet');
+        Route::post('create-marksheet/', [CertificateDetailsController::class, 'storeMarksheet'])->name('storeMarksheet');
 
         //Branch
         Route::get('New_Branch_Add', [NewBranchAddController::class, 'NewBranchAdd'])->name('NewBranchAdd');
