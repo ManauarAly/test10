@@ -143,5 +143,130 @@ class StudentController extends Controller
         return view('admin.i_card.disp_stud_id_card')->with('students_data', $students_data);
     }
 
+
+    public function branchnewStudent()
+    {
+    
+        if(isset($_GET['id'])){
+            $students = StuEnqModel::find($_GET['id']);
+        }else{
+            $students = '';
+        }
+
+        $reg_no = StudentModel::latest()->first()->id+1;
+        $data['students'] = $students;
+        $data['reg_no'] = $reg_no;
+        return view('branch.students.new_student')->with('data', $data);
+    }
+    
+    public function branchstoreNewStudent(request $request)
+    {
+    
+        $data = $request->input();
+        try{
+
+            $fileName = time() . '.' . $request->file->extension();
+            $moveFile = $request->file->move(public_path('assets/images/studentImgs'), $fileName);
+            $stuAdData = new StudentModel();
+            $stuAdData->reg = $data['ad_reg_no'];
+            $stuAdData->admission_date = $data['ad_date'];
+            $stuAdData->regular = $data['ad_regular'];
+            $stuAdData->select_branch = $data['ad_branch'];
+            $stuAdData->name = $data['enq_stu_name'];
+            $stuAdData->gender = $data['enq_gender'];
+            $stuAdData->dob = $data['enq_dob'];
+            $stuAdData->class = $data['enq_course'];
+            $stuAdData->gardian = $data['enq_gua_mobile_no'];
+            $stuAdData->father = $data['enq_father_name'];
+            $stuAdData->city = $data['enq_city'];
+            $stuAdData->mob = $data['enq_mobile_no'];
+            $stuAdData->address = $data['enq_address'];
+            $stuAdData->last_school = $data['enq_school_name'];
+            $stuAdData->board = $data['enq_board'];
+            $stuAdData->img = $fileName;
+            $stuAdData->board = $data['enq_board'];
+            $stuAdData->date = date('Y-m-d');
+            $stuAdData->time = date('H:i:s');
+            $stuAdData->by = $data['enq_stu_name'];
+            $stuAdData->session = $data['ad_session'];
+            $stuAdData->fee = $data['enq_fee'];
+            $stuAdData->course_id = 10;
+            $stuAdData->updated_at = date('Y-m-d H:i:s');
+            $stuAdData->created_at = date('Y-m-d H:i:s');
+            $stuAdData->save();
+
+            $stuAdSavedId = $stuAdData->id;
+
+            if(isset($_GET['id']) && $_GET['id'] != '' && $stuAdSavedId){
+                $comfirm_id = $_GET['id'];
+                StuEnqModel::where('id', $comfirm_id)->update(['status' => 'Confirm']);
+            }
+
+            if($stuAdSavedId){
+
+                $stu_fee_data = new FeesMangModel();
+                $stu_fee_data->reg = $data['ad_reg_no'];
+                $stu_fee_data->fee = $data['enq_fee'];
+                $stu_fee_data->updated_at = date('Y-m-d H:i:s');
+                $stu_fee_data->created_at = date('Y-m-d H:i:s');
+                $stu_fee_data->save();
+
+                return redirect('branch/branch-new-student')->with('status',"Insert successfully");
+            }else{
+                return redirect('branch/branch-new-student')->with('failed',"There are someting error, please try some time.");
+            }
+        }catch(Exception $e){
+            return redirect('branch/branch-new-student')->with('failed',"operation failed");
+        }
+    }
+
+    public function branchstudentList()
+    {
+        $stuDatas = StudentModel::orderBy('id', 'DESC')->get();
+        return view('branch.students.list_student')->with('stuDatas', $stuDatas);
+    }
+
+    public function branchstudentDay()
+    {
+        $sevendaysafter = date('Y-m-d', strtotime('+7 days') );
+        $sevendaysbefore = date('Y-m-d', strtotime('-7 days') );
+        $stubdayDatas = StudentModel::whereBetween('dob', [$sevendaysbefore, $sevendaysafter])->get();
+        return view('branch.students.student_bday')->with('stubdayDatas', $stubdayDatas);
+    }
+
+    public function branchstudentListprint(){
+        $studlists = StudentModel::all();
+        return view('branch.students.student_list_print')->with('studlists', $studlists);
+    }
+
+    public function branchstudentIdcard()
+    {
+        $studlists = StudentModel::all()->take(5);
+        return view('branch.i_card.stud_id_card')->with('studlists', $studlists);
+    }
+
+    public function branchdispStudIdCard(request $request)
+    {
+        $data = $request->input();
+        $checkbox_ids = $request['student_icard'];
+        $studs_icard_regno = StudentIcard::all()->toArray();
+        $stud_regno = array();
+
+        foreach( $studs_icard_regno as $stud_icard_regno ){
+            $stud_regno[] = $stud_icard_regno['stud_reg_no'];
+        } 
+
+        foreach($checkbox_ids as $checkbox_id){
+            if(! in_array($checkbox_id, $stud_regno) ) {
+                $icard = new StudentIcard();
+                $icard->stud_reg_no = $checkbox_id;
+                $icard->save();
+            }
+        }
+        
+        $students_data = StudentIcard::with('stuicardwithadmission')->whereIn('stud_reg_no', $checkbox_ids)->get()->toArray();
+        return view('branch.i_card.disp_stud_id_card')->with('students_data', $students_data);
+    }
+
     
 }

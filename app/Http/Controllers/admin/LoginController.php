@@ -28,31 +28,37 @@ class LoginController extends Controller
                 ->wherepswd(md5($request->password))
                 ->first();
 
-                // dd($dbData);
             if($dbData){
                 
-                if($dbData->typ == 'Administrator'){
+                if($dbData->typ == 'admin'){
                    
                     if($dbData->status == 'active'){
 
-                        Session::put('adminId',$dbData->id);
-                        //Session::put('userName',$dbData->username);
-                        
-                        // $clientIP = request()->ip();
-                        // $last_login = Carbon::now();
-                        // $dbData->update(['last_login'=>$last_login, 'last_ip'=>$clientIP ]); // update last login here        
-                         return redirect('admin/dashboard');
-                        //echo"LOGIN DONE";
-                        // die;
+                        Session::put('type', 'admin');
+                        Session::put('adminId',$dbData->id);        
+                        return redirect('admin/dashboard');
+                    
                     }else{
                         return redirect()->back()
                         ->with('error','You are block by admin.');
                     }
 
 
+                }elseif($dbData->typ == 'branch'){
+
+                    if($dbData->status == 'active'){
+                        
+                        Session::put('type', 'branch');
+                        Session::put('branchId', $dbData->id);
+                        return redirect('branch/dashboard');
+
+                    }else{
+                        return redirect()->back()
+                        ->with('error','You are block by admin.');
+                    }
                 }else{
                     return redirect()->back()
-                    ->with('error','Only admin login');
+                    ->with('error','You have not access');
                 }
                 
             }else{

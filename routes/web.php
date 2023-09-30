@@ -45,7 +45,7 @@ use App\Http\Controllers\admin\AccountBalanceController;
 use App\Http\Controllers\admin\FeeCollectionReportController;
 use App\Http\Controllers\WebsiteController;
 use App\Http\Controllers\admin\FeesController;
-
+use App\Http\Controllers\branch\BranchController;
 
 
 /*
@@ -115,12 +115,13 @@ Route::get('Important-Links', function () {
     return view('web.important-links');
 });
 
-//master
-// web managmnet 
-// Route::get('test3', [WebsiteController::class, 'homePage'])->name('homePage');
 
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~[ Admin Route ]~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */ 
 
 Route::get('admin-login', [LoginController::class, 'adminLogin'])->name('adminLogin');
+Route::get('admin-logout', [LoginController::class, 'adminLogout'])->name('adminLogout');
 Route::post('admin-login', [LoginController::class, 'adminLoginPost'])->name('adminLoginPost');
 
 Route::group(['prefix' => 'admin'], function () {
@@ -233,5 +234,43 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::get('Fee_Collection_Report10', [FeeCollectionReportController::class, 'FeeCollectionReport10'])->name('FeeCollectionReport10');
         Route::get('Fee_Collection_Report4', [FeeCollectionReportController::class, 'FeeCollectionReport4'])->name('FeeCollectionReport5');
+    });
+});
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~[ Branch Route ]~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */ 
+// Route::get('branch-login', [LoginBranchController::class, 'branchLogin'])->name('branchLogin');
+// Route::post('branch-login', [LoginBranchController::class, 'branchLoginPost'])->name('branchLoginPost');
+Route::post('New_Branch_Add', [NewBranchAddController::class, 'storeNewBranchAdd'])->name('storeNewBranchAdd');
+
+Route::group(['prefix' => 'branch'], function () {
+    // Route::post('login', [LoginBranchController::class, 'branchLoginPost'])->name('branchLoginPost');
+    Route::group(['middleware' => 'AdminAuth'], function () {
+        Route::get('dashboard', [BranchController::class, 'branchDashboard'])->name('branchDashboard');
+
+        //Enquiry Zone
+        Route::get('branch-new-enquiry', [EnquiryController::class, 'branchNewEnquiry'])->name('branchNewEnquiry');
+        Route::post('branch-new-enquiry', [EnquiryController::class, 'addbranchNewEnquiry'])->name('addbranchNewEnquiry');
+        Route::get('branch-list-enquiry', [EnquiryController::class, 'branchlistEnquiry'])->name('branchlistEnquiry');
+
+        //Students
+        Route::get('branch-new-student', [StudentController::class, 'branchnewStudent'])->name('branchnewStudent');
+        Route::post('branch-new-student', [StudentController::class, 'branchstoreNewStudent'])->name('branchstoreNewStudent');
+        Route::get('branch-student-list', [StudentController::class, 'branchstudentList'])->name('branchstudentList');
+        Route::get('branch-student-bday', [StudentController::class, 'branchstudentDay'])->name('branchstudentDay');
+        Route::get('branch-student-list-print', [StudentController::class, 'branchstudentListprint'])->name('branchstudentListprint');
+
+        //course
+        Route::get('branch-course-management/', [CourseMangController::class, 'branchcourseManage'])->name('branchcourseManage');
+        Route::post('branch-store-course-manage', [CourseMangController::class, 'storebranchCourseManage'])->name('storebranchCourseManage');
+
+        //i-card
+        Route::get('stud-id-card', [StudentController::class, 'branchstudentIdcard'])->name('branchstudentIdcard');
+        Route::post('disp-stud-id-card', [StudentController::class, 'branchdispStudIdCard'])->name('branchdispStudIdCard');
+
+        Route::get('Branch_Details', [NewBranchAddController::class, 'BranchDetails'])->name('BranchDetails');
+        Route::get('Edit_Branch_Details/{id}', [NewBranchAddController::class, 'editBranchDetails'])->name('editBranchDetails');
+        Route::put('updateBranch/{id}', [NewBranchAddController::class, 'updateBranch'])->name('updateBranch');
     });
 });
