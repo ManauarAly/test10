@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\admin\LoginController;
+use App\Http\Controllers\login\LoginController;
+
 use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\EnquiryController;
 use App\Http\Controllers\admin\StudentController;
@@ -59,9 +60,11 @@ use App\Http\Controllers\branch\BranchController;
 | check
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+/*
+|--------------------------------------------
+| Without Login
+|--------------------------------------------
+*/
 
 Route::get('/', function () {
     return view('web.home');
@@ -115,17 +118,21 @@ Route::get('Important-Links', function () {
     return view('web.important-links');
 });
 
+//login 
+Route::get('login-panel', [LoginController::class, 'adminLogin'])->name('adminLogin');
+Route::post('login-panel', [LoginController::class, 'adminLoginPost'])->name('adminLoginPost');
+Route::get('logout-url', [LoginController::class, 'adminLogout'])->name('adminLogout');
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/* ~~~~~~~~~~~~~~~[ Admin Route ]~~~~~~~~~~~~~~ */
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */ 
 
-Route::get('admin-login', [LoginController::class, 'adminLogin'])->name('adminLogin');
-Route::get('admin-logout', [LoginController::class, 'adminLogout'])->name('adminLogout');
-Route::post('admin-login', [LoginController::class, 'adminLoginPost'])->name('adminLoginPost');
+/*
+|--------------------------------------------
+| Admin Route
+|--------------------------------------------
+*/
+
+
 
 Route::group(['prefix' => 'admin'], function () {
-    Route::post('login', [LoginController::class, 'adminLoginPost'])->name('adminLoginPost');
 
     Route::group(['middleware' => 'AdminAuth'], function () {
         Route::get('/dashboard', [AdminController::class, 'adminDashboard'])->name('admin.dashboard');
@@ -237,11 +244,12 @@ Route::group(['prefix' => 'admin'], function () {
     });
 });
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/* ~~~~~~~~~~~~~~~[ Branch Route ]~~~~~~~~~~~~~~ */
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */ 
-// Route::get('branch-login', [LoginBranchController::class, 'branchLogin'])->name('branchLogin');
-// Route::post('branch-login', [LoginBranchController::class, 'branchLoginPost'])->name('branchLoginPost');
+/*
+|--------------------------------------------
+| Branch Route
+|--------------------------------------------
+*/
+
 Route::post('New_Branch_Add', [NewBranchAddController::class, 'storeNewBranchAdd'])->name('storeNewBranchAdd');
 
 Route::group(['prefix' => 'branch'], function () {

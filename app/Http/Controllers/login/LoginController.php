@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\login;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -13,7 +13,7 @@ class LoginController extends Controller
 {
     public function adminLogin()
     {
-        return view('admin.pages.login');
+        return view('login.login');
     }
 
     public function adminLoginPost(Request $request) 

@@ -2,13 +2,12 @@
 <!doctype html>
 <html lang="en">
 
-
 <head>
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--favicon-->
-	<link rel="icon" href="{{asset('assets/images/favicon-32x32.png')}}" type="image/png" />
+	<link rel="icon" href="{{asset('web/assets/images/fav-orange.png')}}" type="image/png" />
 	<!--plugins-->
 	<link href="{{asset('assets/plugins/simplebar/css/simplebar.css')}}" rel="stylesheet" />
 	<link href="{{asset('assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css')}}" rel="stylesheet" />
@@ -22,60 +21,64 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&amp;display=swap" rel="stylesheet">
 	<link href="{{asset('assets/css/app.css')}}" rel="stylesheet">
 	<link href="{{asset('assets/css/icons.css')}}" rel="stylesheet">
-	<title>Login </title>
+	<title>RTI::Login Panel</title>
 </head>
 
 <body class="bg-login">
-	@if (session('error'))
-		<div class="alert alert-success" role="alert">
-			<button type="button" class="close" data-dismiss="alert">×</button>
-			{{ session('error') }}
-		</div>
-	@elseif(session('failed'))
-		<div class="alert alert-danger" role="alert">
-			<button type="button" class="close" data-dismiss="alert">×</button>
-			{{ session('failed') }}
-		</div>
-	@endif
 	<!--wrapper-->
 	<div class="wrapper">
 		<div class="section-authentication-signin d-flex align-items-center justify-content-center my-5 my-lg-0">
 			<div class="container-fluid">
 				<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
 					<div class="col mx-auto">
+
+						@if (session('error'))
+							<div class="alert alert-success alert-dismissible">
+								<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+								<strong>Success!</strong> {{ session('error') }}
+							</div>
+						@elseif(session('failed'))
+							<div class="alert alert-danger alert-dismissible">
+								<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+								<strong>Success!</strong> {{ session('failed') }}
+							</div>
+						@endif
+									
 						<div class="card shadow-none">
 							<div class="card-body">
 								<div class="border p-4 rounded">
-									<div class="text-center mb-4">
+									<div class="text-center">
 										<h3 class="">Sign in</h3>
-										<p class="mb-0">Admin Area</p>
+										{{-- <p class="mb-0">Admin Area</p>  --}}
 									</div>
 									{{-- <div class="d-grid gap-3">
 										<a href="javascript:void()" class="btn btn-facebook"><i class="bx bxl-facebook"></i>Login with facebook</a>
 										<a href="javascript:void()" class="btn btn-google-plus"><i class="bx bxl-google-plus"></i> <span>Login with google+</span></a>
 									</div> --}}
-									<div class="login-separater text-center mb-4"> <span>OR SIGN IN WITH EMAIL</span>
+									<div class="login-separater text-center mb-4"> <span>Login Panel</span>
 										<hr/>
 									</div>
 									<div class="form-body">
 										<form class="row g-4" action="{{route('adminLoginPost')}}" method="post">
                                             @csrf
 											<div class="col-12">
-												<label for="username" class="form-label">Userid</label>
-												<input type="text" name="username" class="form-control" id="username" placeholder="Userid">
+												<label for="username" class="form-label">Username</label>
+												<input type="text" name="username" class="form-control" id="username" placeholder="Enter username">
                                                 @error('username')
                                                     <div class="text-danger">{{ $message }}</div>
                                                 @enderror
 											</div>
+
 											<div class="col-12">
 												<label for="password" class="form-label">Enter Password</label>
 												<div class="input-group" id="show_hide_password">
 													<input type="password" class="form-control border-end-0" id="password" value="" name="password" placeholder="Enter Password"> <a href="javascript:;" class="input-group-text bg-transparent"><i class='bx bx-hide'></i></a>
-                                                    @error('password')
+												</div>
+                                                @error('password')
                                                     <div class="text-danger">{{ $message }}</div>
                                                 @enderror
-												</div>
 											</div>
+
 											<div class="col-md-6">
 												<div class="form-check form-switch">
 													<input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
@@ -89,10 +92,10 @@
 													<button type="submit" class="btn btn-primary"><i class="bx bxs-lock-open"></i>Sign in</button>
 												</div>
 											</div>
-											<div class="col-12 text-center">
+											{{-- <div class="col-12 text-center">
 												<p class="mb-0">Don't have an account yet? <a href="authentication-signup.html">Sign up here</a>
 												</p>
-											</div>
+											</div> --}}
 										</form>
 									</div>
 								</div>
