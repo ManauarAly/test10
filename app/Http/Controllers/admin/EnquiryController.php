@@ -24,6 +24,7 @@ class EnquiryController extends Controller
         $data = $request->input();
         try{
             $stuEnqData = new StuEnqModel();
+            $stuEnqData->branch_id = Session::get('adminId');
             $stuEnqData->reg    = 'ENQ_NO_'.StuEnqModel::latest()->first()->id+1;
             $stuEnqData->name   = $data['enq_stu_name'];
             $stuEnqData->gender = $data['enq_gender'];
@@ -90,6 +91,7 @@ class EnquiryController extends Controller
     $data = $request->input();
     try{
         $stuEnqData = new StuEnqModel();
+        $stuEnqData->branch_id = Session::get('branchId');
         $stuEnqData->reg = 'ENQ_NO_'.StuEnqModel::latest()->first()->id+1;
         $stuEnqData->name = $data['enq_stu_name'];
         $stuEnqData->gender = $data['enq_gender'];

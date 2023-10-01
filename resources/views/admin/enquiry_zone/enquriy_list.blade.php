@@ -4,19 +4,19 @@
     <div class="page-content">
         <!--breadcrumb-->
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-            <div class="breadcrumb-title pe-3">Agent</div>
+            <div class="breadcrumb-title pe-3">Enquiry Zone</div>
             <div class="ps-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0 p-0">
-                        <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                        <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}"><i class="bx bx-home-alt"></i></a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">List All</li>
+                        <li class="breadcrumb-item active" aria-current="page">List Enquiry</li>
                     </ol>
                 </nav>
             </div>
             <div class="ms-auto">
                 <div class="btn-group">
-                    <a href="" class="btn btn-primary">Add New Agent</a> 
+                    <a href="{{route('addNewEnquiry')}}" class="btn btn-primary">Add New Enquiry</a> 
                 </div>
             </div>
         </div>
@@ -53,8 +53,8 @@
                                 </td>
                                 <td>{{$stuEnqData->mob}}</td>
                                 <td>
-                                    <a href="javascript:void(0)" data-id="{{$stuEnqData->id}}" class="btn btn-danger del-enq-stu"><i class="bx bx-trash-alt"></i></a>
-                                    <a href="{{route('newStudent')}}?id={{$stuEnqData->id}}" class="btn btn-success"><i class="bx bx-plus"></i></a>
+                                    <a href="javascript:void(0)" data-id="{{$stuEnqData->id}}" class="btn btn-danger del-enq-stu" title="Delete"><i class="bx bx-trash-alt"></i></a>
+                                    <a href="{{route('newStudent')}}?id={{$stuEnqData->id}}" class="btn btn-success" title="Transfer Admission"><i class="bx bx-plus"></i></a>
                                 </td>
                             </tr>
                             @endforeach

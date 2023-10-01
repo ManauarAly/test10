@@ -7,13 +7,13 @@
     <div class="page-content">
         <!--breadcrumb-->
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-            <div class="breadcrumb-title pe-3">Add New </div>
+            <div class="breadcrumb-title pe-3">Student</div>
             <div class="ps-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0 p-0">
                         <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Student</li>
+                        <li class="breadcrumb-item active" aria-current="page">Add Admission</li>
                     </ol>
                 </nav>
             </div>
@@ -64,8 +64,8 @@
                                 <label for="ad_session" class="form-label">Session:  </label>
                                 <select class="single-select" name="ad_session" id="ad_session">
                                     <option value="">Select </option>
-                                    @for ($i = 2012; $i <= 2024; $i++)
-                                        <option value="2016-2017">{{ $i }} </option>
+                                    @for ($i = 2012; $i <= 2030; $i++)
+                                        <option value="{{ $i }}">{{ $i }}</option>
                                     @endfor
                                 </select>
                             </div>
@@ -92,7 +92,7 @@
                                 <div class="col-md-3">
                                     <label for="ad_branch" class="form-label">Select Branch *</label>  
                                     <select class="form-control" name="ad_branch" data-bv-field="ad_branch">
-                                        <option value="RTI BHATHAT">RTI BHATHAT</option>
+                                        <option value="RTI BHATHAT">Admin</option>
                                     </select>
                                 </div>
                                 

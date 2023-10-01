@@ -9,13 +9,13 @@
     <div class="page-content">
         <!--breadcrumb-->
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-            <div class="breadcrumb-title pe-3">Add New </div>
+            <div class="breadcrumb-title pe-3">Enquiry Zone</div>
             <div class="ps-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0 p-0">
-                        <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                        <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}"><i class="bx bx-home-alt"></i></a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Enquiry</li>
+                        <li class="breadcrumb-item active" aria-current="page">Add New Enquiry</li>
                     </ol>
                 </nav>
             </div>
@@ -35,7 +35,7 @@
         @elseif(session('failed'))
             <div class="alert alert-danger alert-dismissible">
                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                <strong>Success!</strong> {{ session('failed') }}
+                <strong>Error!</strong> {{ session('failed') }}
             </div>
         @endif
 
@@ -50,20 +50,20 @@
                                 <label for="enq_session" class="form-label">Session:  </label>
                                 <select class="single-select" name="enq_session" id="enq_session">
                                     <option value="">Select </option>
-                                    @for ($i = 2012; $i <= 2024; $i++)
-                                        <option value="2016-2017">{{ $i }} </option>
+                                    @for ($i = 2012; $i <= 2030; $i++)
+                                        <option value="{{ $i }}">{{ $i }}</option>
                                     @endfor
                                 </select>
                             </div>
                                
                             <div class="col-md-3">
                                 <label for="enq_no" class="form-label">Enq No *</label>
-                                <input type="text" class="form-control" name="enq_no" id="enq_no" value="ENQ_NO_{{$enq_no}}" data-bv-field="enq_no">
+                                <input type="text" class="form-control" name="enq_no" id="enq_no" value="ENQ_NO_{{$enq_no}}" readonly>
                             </div>
                             
                             <div class="col-md-3">
                                 <label for="enq_stu_name" class="form-label">Student Name *</label>
-                                <input type="text" class="form-control" name="enq_stu_name" id="enq_stu_name" value="" placeholder="Enter student" data-bv-field="enq_stu_name">
+                                <input type="text" class="form-control" name="enq_stu_name" id="enq_stu_name" value="" placeholder="Enter student">
                             </div>
 
                             <div class="col-md-3">

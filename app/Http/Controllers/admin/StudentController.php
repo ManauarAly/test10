@@ -8,6 +8,7 @@ use App\Models\StudentModel;
 use App\Models\StuEnqModel;
 use App\Models\FeesMangModel;
 use App\Models\StudentIcard;
+use Session;
 
 class StudentController extends Controller
 {
@@ -39,7 +40,7 @@ class StudentController extends Controller
             $stuAdData->reg    = $data['ad_reg_no'];
             $stuAdData->admission_date   = $data['ad_date'];
             $stuAdData->regular = $data['ad_regular'];
-            $stuAdData->select_branch    = $data['ad_branch'];
+            $stuAdData->branch_id = Session::get('adminId');
             $stuAdData->name  = $data['enq_stu_name'];
             $stuAdData->gender    = $data['enq_gender'];
             $stuAdData->dob = $data['enq_dob'];
@@ -99,6 +100,22 @@ class StudentController extends Controller
     {
         $student = StudentModel::find($id);
         return view('admin.students.student_profile')->with('student', $student);
+    }
+
+    public function delStudent(request $request)
+    {
+     $data = $request->input();
+        $delData = StudentModel::where('id', $data['stuId'])->delete();
+        if($delData){
+            $msg = "Successfully deleted student";
+            $type = 1;
+            $status = 200;
+        }else{
+            $msg = "There are some issue, please try some time";
+            $type = 0;
+            $status = 400;
+        }
+        return response()->json(array('type'=>$type, 'msg'=>$msg), $status);
     }
 
     public function studentDay()
@@ -171,7 +188,8 @@ class StudentController extends Controller
             $stuAdData->reg = $data['ad_reg_no'];
             $stuAdData->admission_date = $data['ad_date'];
             $stuAdData->regular = $data['ad_regular'];
-            $stuAdData->select_branch = $data['ad_branch'];
+            // $stuAdData->select_branch = $data['ad_branch'];
+            $stuAdData->branch_id = Session::get('branchId');
             $stuAdData->name = $data['enq_stu_name'];
             $stuAdData->gender = $data['enq_gender'];
             $stuAdData->dob = $data['enq_dob'];
