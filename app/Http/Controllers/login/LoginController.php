@@ -11,12 +11,12 @@ use Session;
 
 class LoginController extends Controller
 {
-    public function adminLogin()
+    public function loginPanel()
     {
         return view('login.login');
     }
 
-    public function adminLoginPost(Request $request) 
+    public function loginPanelPost(Request $request) 
     {
         $validate = $request->validate([
                         'username' => 'required|min:3',
@@ -68,9 +68,9 @@ class LoginController extends Controller
            
     }
 
-    public function adminLogout()
+    public function logoutUrl()
     {
         Session::flush();
-        return redirect()->route('adminLogin')->with('success','logout successfully');
+        return redirect()->route('loginPanel')->with('success','logout successfully');
     }
 }

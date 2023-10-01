@@ -1,10 +1,10 @@
 <div class="sidebar-wrapper" data-simplebar="true">
     <div class="sidebar-header">
         <div>
-            <img src="{{asset('assets/images/logo-icon.png')}}" class="logo-icon" alt="logo icon">
+            <img src="{{ asset('web/assets/images/lite-logo.png')}}" class="logo-icon" alt="logo icon">
         </div>
         <div>
-            <h4 class="logo-text">RTI Admin </h4>
+            <h4 class="logo-text">RTI Admin</h4>
         </div>
         <div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
         </div>
@@ -156,21 +156,21 @@
             </ul>
         </li>
 
-        <li>
+        {{--<li>
             <a href="{{route('NewsUpdate')}}" class="has-arrow">
                 <div class="parent-icon"><i class="bx bx-pen"></i>
                 </div>
                 <div class="menu-title">News Update</div>
             </a>
-        </li>
+        </li>--}}
 
-        <li>
+        {{--<li>
             <a href="{{route('EnquiryDetails')}}" class="has-arrow">
                 <div class="parent-icon"><i class="bx bx-book"></i>
                 </div>
                 <div class="menu-title">Enquiry Details </div>
             </a>
-        </li>
+        </li>--}}
 
         <li>
             <a href="javascript:;" class="has-arrow">
@@ -188,7 +188,7 @@
             </ul>
         </li>
 
-        <li>
+        {{--<li>
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class="bx bx-cloud"></i>
                 </div>
@@ -208,7 +208,7 @@
                     <a href="{{route('CertificateDetails')}}"><i class="bx bx-right-arrow-alt"></i>Certificate Details</a>
                 </li>
             </ul>
-        </li>
+        </li>--}}
 
         <li>
             <a href="javascript:;" class="has-arrow">
@@ -274,7 +274,7 @@
             </ul>
         </li>
 
-        <li>
+        {{--<li>
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class="bx bx-line-chart"></i>
                 </div>
@@ -291,9 +291,9 @@
                     <a href="{{route('AccountBalance')}}"><i class="bx bx-right-arrow-alt"></i>Account Balance</a>
                 </li>
             </ul>
-        </li>
+        </li>--}}
 
-        <li>
+        {{--<li>
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class="bx bx-pie-chart"></i>
                 </div>
@@ -304,7 +304,7 @@
                     <a href="{{route('FeeCollectionReport')}}"><i class="bx bx-right-arrow-alt"></i>Fee Collection Report</a>
                 </li>
             </ul>
-        </li>
+        </li>--}}
 
         <li>
             <a href="javascript:;" class="has-arrow">

@@ -119,9 +119,9 @@ Route::get('Important-Links', function () {
 });
 
 //login 
-Route::get('login-panel', [LoginController::class, 'adminLogin'])->name('adminLogin');
-Route::post('login-panel', [LoginController::class, 'adminLoginPost'])->name('adminLoginPost');
-Route::get('logout-url', [LoginController::class, 'adminLogout'])->name('adminLogout');
+Route::get('login-panel', [LoginController::class, 'loginPanel'])->name('loginPanel');
+Route::post('login-panel', [LoginController::class, 'loginPanelPost'])->name('loginPanelPost');
+Route::get('logout-url', [LoginController::class, 'logoutUrl'])->name('logoutUrl');
 
 
 /*
@@ -129,8 +129,6 @@ Route::get('logout-url', [LoginController::class, 'adminLogout'])->name('adminLo
 | Admin Route
 |--------------------------------------------
 */
-
-
 
 Route::group(['prefix' => 'admin'], function () {
 

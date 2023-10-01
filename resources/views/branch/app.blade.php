@@ -23,7 +23,9 @@
 		<!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
 		<!--End Back To Top Button-->
 		<footer class="page-footer">
-			<p class="mb-0">Copyright © 2021. All right reserved.</p>
+			<p class="mb-0">Copyright ©{{date('Y')}}
+				<a class="text-dark" href="https://www.cstechnology.org/" style="color:#FFFFFF;">CS-Technology.org</a> All Rights Reserved <a href="https://mail.hostinger.com/" class="text-white" style="cursor: pointer;">Webmail Login</a>
+			</p>
 		</footer>
 	</div>
 	<!--end wrapper-->

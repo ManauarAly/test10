@@ -33,14 +33,14 @@
 					<div class="col mx-auto">
 
 						@if (session('error'))
-							<div class="alert alert-success alert-dismissible">
+							<div class="alert alert-danger alert-dismissible">
 								<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-								<strong>Success!</strong> {{ session('error') }}
+								<strong>Error!</strong> {{ session('error') }}
 							</div>
 						@elseif(session('failed'))
 							<div class="alert alert-danger alert-dismissible">
 								<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-								<strong>Success!</strong> {{ session('failed') }}
+								<strong>Error!</strong> {{ session('failed') }}
 							</div>
 						@endif
 									
@@ -59,7 +59,7 @@
 										<hr/>
 									</div>
 									<div class="form-body">
-										<form class="row g-4" action="{{route('adminLoginPost')}}" method="post">
+										<form class="row g-4" action="{{route('loginPanelPost')}}" method="post">
                                             @csrf
 											<div class="col-12">
 												<label for="username" class="form-label">Username</label>
