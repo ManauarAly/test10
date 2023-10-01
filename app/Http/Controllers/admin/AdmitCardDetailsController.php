@@ -35,7 +35,6 @@ class AdmitCardDetailsController extends Controller
         }
 
         $_stu_data = StudentAdminCard::with('stuAdminWithStudent')->whereIn('stu_reg_no', $regs)->get()->toArray();
-
         return view('admin.admit_card_result.admit_card_print')->with('_stu_data', $_stu_data);
     }
 
@@ -46,10 +45,15 @@ class AdmitCardDetailsController extends Controller
         return view('admin.admit_card_result.admin_card_form')->with('data_stu', $stu_data);
     }
 
+    public function viewAdmitCard($reg)
+    {
+        $_stu_data = StudentAdminCard::with('stuAdminWithStudent')->where('stu_reg_no', $reg)->get()->toArray();
+        return view('admin.admit_card_result.admit_card_print')->with('_stu_data', $_stu_data);
+    }
+
     public function admitCardDtails()
     {
         $stu_data = StudentAdminCard::with('stuAdminWithStudent')->get()->toArray();
-
         return view('admin.admit_card_result.Admit_Card_Details')->with('data_stu', $stu_data);
     }
 

@@ -1,6 +1,8 @@
+@extends('admin.app')
+@section('title', 'I-Card')
+@section('main')
 <style>
-*
-        {
+        *{
             margin:00px;
             padding: 00px;
             
@@ -247,3 +249,5 @@
         </a> 
     </div>
 </div>
+
+@endsection

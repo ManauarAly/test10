@@ -57,11 +57,11 @@
                                     <div class="d-none">
                                         <a class="border p-1 px-2 text-center" href="student-profile/{{$stuData->id}}" title="View Student Profile"><i class="bx bx-low-vision" style="color:#2A5A74;"></i><p>Student Profile</p></a>
                                         <a class="border p-1 px-2 text-center" href="marksheet_create?ncid={{$stuData->id}}" title="Marksheet Create"><i class="bx bx-book" style="color:#2A5A74;"></i><p>Print Marksheet</p></a>
-                                        <a class="border p-1 px-2 text-center" href="javascript:void(0)" data-id="{{$stuData->id}}" class="delAdmStu" title="Delete Student"><i class="bx bx-trash" style="color:#FF0000;"></i><p>Delete Student</p></a>
+                                        <a class="border p-1 px-2 text-center delAdmStu" href="javascript:void(0)" data-id="{{$stuData->id}}" title="Delete Student"><i class="bx bx-trash" style="color:#FF0000;"></i><p>Delete Student</p></a>
                                         <a class="border p-1 px-2 text-center" href="admission-print/{{$stuData->id}}" target="_blank" title="View Details"><i class="bx bx-printer" style="color:#0066FF;"></i><p>Admission Print</p></a>
                                         <a class="border p-1 px-2 text-center" href="student-edit/{{$stuData->id}}" title="Edit Student Data"><i class="bx bx-edit" style="color:#009966;"></i><p>Edit Student</p></a>                                
-                                        <a class="border p-1 px-2 text-center" href="admitCardCreate?ncid={{$stuData->id}}" title="Admit Card Print" class="text-dark"><i class="bx bx-credit-card-front"></i><p>Admit Card Print</p></a>
-                                        <a class="border p-1 px-2 text-center" href="student_id_card?ncid={{$stuData->id}}" title="Print ID Card"><i class="bx bx-book"></i><p>Print ID Card</p></a>
+                                        <a class="border p-1 px-2 text-center" href="view-admit-card/{{$stuData->reg}}" title="Admit Card Print"><i class="bx bx-credit-card-front"></i><p>Admit Card Print</p></a>
+                                        <a class="border p-1 px-2 text-center" href="view-i-card/{{$stuData->reg}}" title="Print ID Card"><i class="bx bx-book"></i><p>Print ID Card</p></a>
                                     </div>
 
                                     <button class="btn btn-primary btn-sm view-action" data-id="{{$stuData->id}}">View Action</button>
@@ -138,8 +138,8 @@
                         data: {'_token':'<?php echo csrf_token() ?>', 'stuId':delStuId},
                         success:function(data) {
                             if(data.type==1){
-                                console.log(data.msg);
                                 $('#stu-id-'+delStuId).hide();
+                                $("#studentAction").modal('hide');
                             }else if(data.type==0){
                                 console.log(data.msg);
                             }

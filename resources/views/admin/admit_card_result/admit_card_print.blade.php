@@ -176,7 +176,7 @@
 
                 <tr>  
                     <th>Examination Center</th>
-                    <td colspan="3">{{$stu_data['stu_admin_with_student'][0]['select_branch']}}</td>
+                    <td colspan="3">{{$stu_data['stu_admin_with_student'][0]['branch_id']}}</td>
                 </tr>
 
                 <tr>

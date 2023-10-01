@@ -773,7 +773,7 @@
     @section('script')
     
         <script>
-            $('body').on('click', '.delAdmStu', function(){
+            $(document).on('click', '.delAdmStu', function(){
                 var delStuId = $(this).data('id');
                 swal({
                     title: "Are you sure?",

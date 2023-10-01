@@ -145,6 +145,10 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('new-student', [StudentController::class, 'newStudent'])->name('newStudent');
         Route::get('student-list', [StudentController::class, 'studentList'])->name('studentList');
         Route::get('student-profile/{id}', [StudentController::class, 'studentProfile'])->name('studentProfile');
+
+        Route::get('student-edit/{userId?}', [StudentController::class, 'studentEdit'])->name('studentEdit');
+        Route::post('student-edit/{userId?}', [StudentController::class, 'saveStudentEdit'])->name('saveStudentEdit');
+
         Route::post('new-student', [StudentController::class, 'storeNewStudent'])->name('storeNewStudent');
         Route::post('del-student', [StudentController::class, 'delStudent'])->name('delStudent');
         Route::get('student-bday', [StudentController::class, 'studentDay'])->name('studentBday');
@@ -170,10 +174,12 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('create-admit-card-form', [AdmitCardDetailsController::class, 'admitCardForm'])->name('admitCardForm');
         Route::post('admit-card-print', [AdmitCardDetailsController::class, 'admitCardPrint'])->name('admitCardPrint');
         Route::get('admit-card-details', [AdmitCardDetailsController::class, 'admitCardDtails'])->name('admitCardDtails');
+        Route::get('view-admit-card/{reg}', [AdmitCardDetailsController::class, 'viewAdmitCard'])->name('viewAdmitCard');
 
         //i-card
         Route::get('stud-id-card', [StudentController::class, 'studentIdcard'])->name('studentIdcard');
         Route::post('disp-stud-id-card', [StudentController::class, 'dispStudIdCard'])->name('dispStudIdCard');
+        Route::get('view-i-card/{reg}', [StudentController::class, 'viewICard'])->name('viewICard');
 
         //certificate
         Route::get('create-marksheet/{reg}', [CertificateDetailsController::class, 'createMarksheet'])->name('createMarksheet');
