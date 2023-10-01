@@ -1,4 +1,5 @@
 @extends('admin.app')
+@section('title', 'Student List Print')
 @section('main')
 
 <style>
@@ -693,7 +694,7 @@
                     <ol class="breadcrumb mb-0 p-0">
                         <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">List All</li>
+                        <li class="breadcrumb-item active" aria-current="page">Student List Print</li>
                     </ol>
                 </nav>
             </div>
@@ -704,7 +705,7 @@
             </div>           
             <div class="ms-auto">           
                 <div class="btn-group">
-                    <a href="{{route('newStudent')}}" class="btn btn-primary">Add New Agent</a> 
+                    <a href="{{route('newStudent')}}" class="btn btn-primary">Student List</a> 
                 </div>
             </div>
         </div>
@@ -762,7 +763,7 @@
                         </tfoot>
                     </table>
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script> 
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script> 
                 </div>
             </div>
         </div>

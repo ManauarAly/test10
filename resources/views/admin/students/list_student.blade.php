@@ -1,6 +1,12 @@
 @extends('admin.app')
 @section('title', 'Student List')
 @section('main')
+
+<style>
+    #studentAction .modal-body div a:hover{
+        background: #dddddd;
+    }
+</style>
     <div class="page-content">
         <!--breadcrumb-->
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
@@ -48,13 +54,17 @@
                                 <td>{{$stuData->dob}}</td>
                                 <td>{{$stuData->mob}}</td>
                                 <td>
-                                    <a href="student-profile/{{$stuData->id}}" title="View Student Profile"><i class="bx bx-low-vision" style="color:#2A5A74;"></i></a>
-                                    <a href="marksheet_create?ncid={{$stuData->id}}" title="Marksheet Create"><i class="bx bx-book" style="color:#2A5A74;"></i></a>
-                                    <a href="javascript:void(0)" data-id="{{$stuData->id}}" class="delAdmStu" title="Delete Student Data"><i class="bx bx-trash" style="color:#FF0000;"></i></a>
-                                    <a href="admission-print/{{$stuData->id}}" target="_blank" title="View Details"><i class="bx bx-printer" style="color:#0066FF;"></i></a><br>
-                                    <a href="student-edit/{{$stuData->id}}" title="Edit Student Data"><i class="bx bx-edit" style="color:#009966;"></i></a>                                
-                                    <a href="admitCardCreate?ncid={{$stuData->id}}" title="Admit Card Print" class="text-dark"><i class="bx bx-credit-card-front"></i></a>
-                                    <a href="student_id_card?ncid={{$stuData->id}}" title="Print ID Card"><i class="bx bx-book"></i></a> 
+                                    <div class="d-none">
+                                        <a class="border p-1 px-2 text-center" href="student-profile/{{$stuData->id}}" title="View Student Profile"><i class="bx bx-low-vision" style="color:#2A5A74;"></i><p>Student Profile</p></a>
+                                        <a class="border p-1 px-2 text-center" href="marksheet_create?ncid={{$stuData->id}}" title="Marksheet Create"><i class="bx bx-book" style="color:#2A5A74;"></i><p>Print Marksheet</p></a>
+                                        <a class="border p-1 px-2 text-center" href="javascript:void(0)" data-id="{{$stuData->id}}" class="delAdmStu" title="Delete Student"><i class="bx bx-trash" style="color:#FF0000;"></i><p>Delete Student</p></a>
+                                        <a class="border p-1 px-2 text-center" href="admission-print/{{$stuData->id}}" target="_blank" title="View Details"><i class="bx bx-printer" style="color:#0066FF;"></i><p>Admission Print</p></a>
+                                        <a class="border p-1 px-2 text-center" href="student-edit/{{$stuData->id}}" title="Edit Student Data"><i class="bx bx-edit" style="color:#009966;"></i><p>Edit Student</p></a>                                
+                                        <a class="border p-1 px-2 text-center" href="admitCardCreate?ncid={{$stuData->id}}" title="Admit Card Print" class="text-dark"><i class="bx bx-credit-card-front"></i><p>Admit Card Print</p></a>
+                                        <a class="border p-1 px-2 text-center" href="student_id_card?ncid={{$stuData->id}}" title="Print ID Card"><i class="bx bx-book"></i><p>Print ID Card</p></a>
+                                    </div>
+
+                                    <button class="btn btn-primary btn-sm view-action" data-id="{{$stuData->id}}">View Action</button>
                                 </td>
                             </tr>
                             @endforeach
@@ -78,46 +88,70 @@
         <!--end row-->
     </div>
 
-    @section('script')
-        <script>
-            $('body').on('click', '.delAdmStu', function(){
-                var delStuId = $(this).data('id');
-                swal({
-                    title: "Are you sure?",
-                    text: "You want to delete.",
-                    icon: "warning",
-                    dangerMode: true,
-                    buttons: {
-                        cancel : 'No',
-                        confirm : {text:'Yes',className:'sweet-warning'},
-                    }
+    <div id="studentAction" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
 
-                }).then((willDelete) => {
-                    if (willDelete) {
-                        console.log('true');
-                        // console.log(delStuId);
-                        $.ajax({
-                            type:'POST',
-                            url:'{{route("delStudent")}}',
-                            data: {'_token':'<?php echo csrf_token() ?>', 'stuId':delStuId},
-                            success:function(data) {
-                                if(data.type==1){
-                                    console.log(data.msg);
-                                    $('#stu-id-'+delStuId).hide();
-                                }else if(data.type==0){
-                                    console.log(data.msg);
-                                }
-                                
+@section('script')
+    <script>
+        $(document).on('click', '.view-action', function(){
+            var _id = $(this).data('id');
+            var _action = $('#stu-id-'+_id+' td:nth-child(8) div').html();
+            var _reg = $('#stu-id-'+_id+' td:nth-child(1)').html();
+            var _title = $('#stu-id-'+_id+' td:nth-child(3)').html()+' ('+_reg+')';
+
+            $("#studentAction .modal-title").html(_title);
+            $("#studentAction .modal-body div").html(_action);
+            $("#studentAction").modal('show');
+        });
+
+        $('body').on('click', '.delAdmStu', function(){
+            var delStuId = $(this).data('id');
+            swal({
+                title: "Are you sure?",
+                text: "You want to delete.",
+                icon: "warning",
+                dangerMode: true,
+                buttons: {
+                    cancel : 'No',
+                    confirm : {text:'Yes',className:'sweet-warning'},
+                }
+
+            }).then((willDelete) => {
+                if (willDelete) {
+                    console.log('true');
+                    // console.log(delStuId);
+                    $.ajax({
+                        type:'POST',
+                        url:'{{route("delStudent")}}',
+                        data: {'_token':'<?php echo csrf_token() ?>', 'stuId':delStuId},
+                        success:function(data) {
+                            if(data.type==1){
+                                console.log(data.msg);
+                                $('#stu-id-'+delStuId).hide();
+                            }else if(data.type==0){
+                                console.log(data.msg);
                             }
-                        });
+                            
+                        }
+                    });
 
-                    } else {
-                        console.log('false');
-                    }
-                });
-            })
-        </script>
-    @endsection
-
+                } else {
+                    console.log('false');
+                }
+            });
+        })
+    </script>
 @endsection
 
