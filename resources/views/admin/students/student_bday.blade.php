@@ -1,5 +1,5 @@
 @extends('admin.app')
-@section('title', 'List Enquiry')
+@section('title', 'Birthday List')
 @section('main')
     <div class="page-content">
         <!--breadcrumb-->

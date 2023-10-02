@@ -10,12 +10,13 @@ use Session;
 use App\Models\StuEnqModel;
 // use App\Models\CandidateModel;
 
-
 class EnquiryController extends Controller
 {
     public function addNewEnquiry()
     {
-        $enq_no = StuEnqModel::latest()->first()->id+1;
+        $last_row = StuEnqModel::latest()->first();
+        $enq_no = ($last_row == '')?0:$last_row->id;
+        $enq_no = $enq_no+1;
         return view('admin.enquiry_zone.add_new_enquiry')->with('enq_no', $enq_no);
     }
     
@@ -23,9 +24,13 @@ class EnquiryController extends Controller
     {
         $data = $request->input();
         try{
+            $last_row = StuEnqModel::latest()->first();
+            $enq_no = ($last_row == '')?0:$last_row->id;
+            $enq_no = $enq_no+1;
+
             $stuEnqData = new StuEnqModel();
             $stuEnqData->branch_id = Session::get('adminId');
-            $stuEnqData->reg    = 'ENQ_NO_'.StuEnqModel::latest()->first()->id+1;
+            $stuEnqData->reg    = 'ENQ_NO_'.$enq_no;
             $stuEnqData->name   = $data['enq_stu_name'];
             $stuEnqData->gender = $data['enq_gender'];
             $stuEnqData->dob    = $data['enq_dob'];
@@ -82,7 +87,10 @@ class EnquiryController extends Controller
     // For branch enquiry
     public function branchNewEnquiry()
     {
-        $enq_no = StuEnqModel::latest()->first()->id+1;
+        // $enq_no = StuEnqModel::latest()->first()->id+1;
+        $last_row = StuEnqModel::latest()->first();
+        $enq_no = ($last_row == '')?0:$last_row->id;
+        $enq_no = $enq_no+1;
         return view('branch.enquiry_zone.add_new_enquiry')->with('enq_no', $enq_no);
     }
     
@@ -90,9 +98,13 @@ class EnquiryController extends Controller
     {
     $data = $request->input();
     try{
+        $last_row = StuEnqModel::latest()->first();
+        $enq_no = ($last_row == '')?0:$last_row->id;
+        $enq_no = $enq_no+1;
+
         $stuEnqData = new StuEnqModel();
         $stuEnqData->branch_id = Session::get('branchId');
-        $stuEnqData->reg = 'ENQ_NO_'.StuEnqModel::latest()->first()->id+1;
+        $stuEnqData->reg = 'ENQ_NO_'.$enq_no;
         $stuEnqData->name = $data['enq_stu_name'];
         $stuEnqData->gender = $data['enq_gender'];
         $stuEnqData->dob = $data['enq_dob'];

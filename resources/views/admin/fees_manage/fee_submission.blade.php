@@ -42,7 +42,7 @@
                         <td>{{$stuData->reg}}</td>
                         <td>{{$stuData->name}}</td>
                         <td>{{$stuData->father}}</td>
-                        <td>3000</td>
+                        <td>{{$stuData->fee}}</td>
                         <td><i class="fa fa-rupee"></i>3000</td>
                         <td>
                             <div class="ms-auto">

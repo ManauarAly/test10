@@ -20,7 +20,9 @@ class StudentController extends Controller
             $students = '';
         }
 
-        $reg_no = StudentModel::latest()->first()->id+1;
+        $last_row = StudentModel::latest()->first();
+        $reg_no = ($last_row == '')?0:$last_row->id;
+        $reg_no = $reg_no+1;
 
         $data['students'] = $students;
         $data['reg_no'] = $reg_no;
@@ -33,11 +35,15 @@ class StudentController extends Controller
         $data = $request->input();
         try{
 
+            $last_row = StudentModel::latest()->first();
+            $reg_no = ($last_row == '')?0:$last_row->id;
+            $reg_no = $reg_no+1;
+
             $fileName = time() . '.' . $request->file->extension();
             $moveFile = $request->file->move(public_path('assets/images/studentImgs'), $fileName);
 
             $stuAdData = new StudentModel();
-            $stuAdData->reg    = $data['ad_reg_no'];
+            $stuAdData->reg    = 'REG_NO_'.$reg_no;
             $stuAdData->admission_date   = $data['ad_date'];
             $stuAdData->regular = $data['ad_regular'];
             $stuAdData->branch_id = Session::get('adminId');
@@ -225,7 +231,10 @@ class StudentController extends Controller
             $students = '';
         }
 
-        $reg_no = StudentModel::latest()->first()->id+1;
+        $last_row = StudentModel::latest()->first();
+        $reg_no = ($last_row == '')?0:$last_row->id;
+        $reg_no = $reg_no+1;
+
         $data['students'] = $students;
         $data['reg_no'] = $reg_no;
         return view('branch.students.new_student')->with('data', $data);
@@ -237,13 +246,17 @@ class StudentController extends Controller
         $data = $request->input();
         try{
 
+            $last_row = StudentModel::latest()->first();
+            $reg_no = ($last_row == '')?0:$last_row->id;
+            $reg_no = $reg_no+1;
+
             $fileName = time() . '.' . $request->file->extension();
             $moveFile = $request->file->move(public_path('assets/images/studentImgs'), $fileName);
+
             $stuAdData = new StudentModel();
-            $stuAdData->reg = $data['ad_reg_no'];
+            $stuAdData->reg = 'REG_NO_'.$reg_no;
             $stuAdData->admission_date = $data['ad_date'];
             $stuAdData->regular = $data['ad_regular'];
-            // $stuAdData->select_branch = $data['ad_branch'];
             $stuAdData->branch_id = Session::get('branchId');
             $stuAdData->name = $data['enq_stu_name'];
             $stuAdData->gender = $data['enq_gender'];

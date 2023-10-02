@@ -63,9 +63,9 @@
                             <div class="col-md-3">
                                 <label for="ad_session" class="form-label">Session:  </label>
                                 <select class="single-select" name="ad_session" id="ad_session">
-                                    <option value="">Select </option>
-                                    @for ($i = 2012; $i <= 2030; $i++)
-                                        <option value="{{ $i }}">{{ $i }}</option>
+                                    <option value="">Select Session</option>
+                                    @for ($i = 2020; $i <= 2030; $i++)
+                                        <option value="{{ $i.'-'.$i+1 }}">{{ $i.'-'.$i+1 }}</option>
                                     @endfor
                                 </select>
                             </div>

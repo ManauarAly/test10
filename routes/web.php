@@ -183,7 +183,14 @@ Route::group(['prefix' => 'admin'], function () {
 
         //certificate
         Route::get('create-marksheet/{reg}', [CertificateDetailsController::class, 'createMarksheet'])->name('createMarksheet');
-        Route::post('create-marksheet/', [CertificateDetailsController::class, 'storeMarksheet'])->name('storeMarksheet');
+        Route::post('create-marksheet', [CertificateDetailsController::class, 'storeMarksheet'])->name('storeMarksheet');
+        Route::get('Result', [CertificateDetailsController::class, 'viewMarksheet'])->name('adminResult');
+        Route::post('disp-stud-marksheet', [CertificateDetailsController::class, 'dispStudmarksheet'])->name('dispStudmarksheet');
+        Route::get('print-marksheet/{reg}', [CertificateDetailsController::class, 'singleDispStudmarksheet'])->name('singleDispStudmarksheet');
+        
+        // Route::get('create-marksheet/{reg}', [CertificateDetailsController::class, 'createMarksheet'])->name('createMarksheet');
+        // Route::post('create-marksheet/', [CertificateDetailsController::class, 'storeMarksheet'])->name('storeMarksheet');
+        // Route::get('Result', [CertificateDetailsController::class, 'viewMarksheet'])->name('Result');
 
         //Branch
         Route::get('New_Branch_Add', [NewBranchAddController::class, 'NewBranchAdd'])->name('NewBranchAdd');
@@ -308,7 +315,7 @@ Route::group(['prefix' => 'branch'], function () {
         Route::post('disp-stud-marksheet', [CertificateDetailsController::class, 'branchdispStudmarksheet'])->name('branchdispStudmarksheet');
 
         Route::get('Result', [CertificateDetailsController::class, 'viewMarksheet'])->name('Result');
-        Route::post('disp-stud-marksheet', [CertificateDetailsController::class, 'dispStudmarksheet'])->name('dispStudmarksheet');
+        // Route::post('disp-stud-marksheet', [CertificateDetailsController::class, 'dispStudmarksheet'])->name('dispStudmarksheet');
 
     });
 });

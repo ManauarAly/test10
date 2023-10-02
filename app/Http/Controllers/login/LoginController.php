@@ -13,6 +13,15 @@ class LoginController extends Controller
 {
     public function loginPanel()
     {
+        
+        if(Session::has('adminId') && Session::get('type') == 'admin'){
+            return redirect()->route('admin.dashboard');
+        }
+
+        if(Session::has('branchId') && Session::get('type') == 'branch'){
+            return redirect()->route('branchDashboard');
+        }
+
         return view('login.login');
     }
 

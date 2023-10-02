@@ -29,15 +29,19 @@
             -webkit-print-color-adjust: exact !important; /*Chrome, Safari */
             color-adjust: exact !important;  /*Firefox*/
         }
+        .page-breadcrumb{
+            display:none !important;
+        }
+
         }
 
         .font
         {
             
-            height: 314px;
+            height: 296px;
             width: 198px;
             position: relative;
-            border-radius:5px;
+            /* border-radius:5px; */
             background-image:url('./idCard.jpg');
             visibility: visible;
             background-size: 198px 314px;
@@ -70,25 +74,23 @@
         }
         .ename{
             position: absolute;
-            top: 135px;
+            top: 92px;
             left: 5px;
             font-size:12px;
         }
         
-        .edetails
-        {
+        .edetails {
             position: absolute;
-            top: 168px;
-            text-transform:capitalize;
+            top: 130px;
+            text-transform: capitalize;
             font-size: 13px;
             text-emphasis: spacing;
             margin-left: 6px;
-
         }
         .signature{
             position: absolute;
-            top: 74%;
-            left: 100px;
+            top: 73%;
+            left: 85px;
             height: 80px;
             width: 160px;
         }
@@ -147,66 +149,95 @@
             width: 60%;
             text-align: justify;
         }
-
+        .page-wrapper p{
+            margin-bottom:unset !important;
+        }
         @media print {
-        .d-print-inline {
-        display: inline !important;
+            .d-print-inline {
+            display: inline !important;
+            }
+            .d-print-inline-block {
+            display: inline-block !important;
+            }
+            .d-print-block {
+            display: block !important;
+            }
+            .d-print-grid {
+            display: -ms-grid !important;
+            display: grid !important;
+            }
+            .d-print-table {
+            display: table !important;
+            }
+            .d-print-table-row {
+            display: table-row !important;
+            }
+            .d-print-table-cell {
+            display: table-cell !important;
+            }
+            .d-print-flex {
+            display: -webkit-box !important;
+            display: -ms-flexbox !important;
+            display: flex !important;
+            }
+            .d-print-inline-flex {
+            display: -webkit-inline-box !important;
+            display: -ms-inline-flexbox !important;
+            display: inline-flex !important;
+            }
+            .d-print-none {
+            display: none !important;
+            }
+            .sidebar-wrapper, .topbar, .page-footer{
+            display: none !important;
+            }
+            .page-wrapper{
+            margin-left:0px;
+            }
+            .modern-invoice3{
+            margin-top:-55px !important;
+            }
+            .print-row{
+            justify-content: space-between !important;
+            display: flex !important;
+            }
+            .print-two2{
+            flex-wrap: unset !important;
+            }
+            .print-two2 > *{
+            max-width: 100% !important;
+            width: unset !important;
+            }
         }
-        .d-print-inline-block {
-        display: inline-block !important;
-        }
-        .d-print-block {
-        display: block !important;
-        }
-        .d-print-grid {
-        display: -ms-grid !important;
-        display: grid !important;
-        }
-        .d-print-table {
-        display: table !important;
-        }
-        .d-print-table-row {
-        display: table-row !important;
-        }
-        .d-print-table-cell {
-        display: table-cell !important;
-        }
-        .d-print-flex {
-        display: -webkit-box !important;
-        display: -ms-flexbox !important;
-        display: flex !important;
-        }
-        .d-print-inline-flex {
-        display: -webkit-inline-box !important;
-        display: -ms-inline-flexbox !important;
-        display: inline-flex !important;
-        }
-        .d-print-none {
-        display: none !important;
-        }
-        .sidebar-wrapper, .topbar, .page-footer{
-        display: none !important;
-        }
-        .page-wrapper{
-        margin-left:0px;
-        }
-        .modern-invoice3{
-        margin-top:-55px !important;
-        }
-        .print-row{
-        justify-content: space-between !important;
-        display: flex !important;
-        }
-        .print-two2{
-        flex-wrap: unset !important;
-        }
-        .print-two2 > *{
-        max-width: 100% !important;
-        width: unset !important;
-        }
-    }
      
 </style>
+    <div class="page-content">
+        <!--breadcrumb-->
+        <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+            <div class="breadcrumb-title pe-3">Student</div>
+            <div class="ps-3">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0 p-0">
+                        <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">Student List Print</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="d-print-none" style="margin: 0 5em;"> 
+                <a href="javascript:window.print()"class="btn-primary-fill btn btn-outline-primary" style="font-size: 18px;">
+                <i class="bx bx-printer"></i>
+                Print
+                </a>
+            </div>           
+            <div class="ms-auto">           
+                <div class="btn-group">
+                    <a href="{{route('studentIdcard')}}" class="btn btn-primary">ID Card List</a> 
+                </div>
+            </div>
+        </div>
+        <!--end breadcrumb-->
+
 @foreach($students_data as $student_data)
 <div class="" style="margin-left: 40px; margin-top: 25px; float: left;">
         <div class="padding">
@@ -238,16 +269,6 @@
     </div>
        
     </div>
-    
     @endforeach
-
-    <!-- invoice Bottom  -->
-<div class="text-center modern-bill-button">
-    <div class="d-print-none d-flex flex-column justify-content-center flex-wrap gap-10 mt-5"> 
-        <a href="javascript:window.print()" class="btn-primary-fill">
-            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512" style="width:40px;"><path d="M384 368h24a40.12 40.12 0 0040-40V168a40.12 40.12 0 00-40-40H104a40.12 40.12 0 00-40 40v160a40.12 40.12 0 0040 40h24" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></path><rect x="128" y="240" width="256" height="208" rx="24.32" ry="24.32" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect><path d="M384 128v-24a40.12 40.12 0 00-40-40H168a40.12 40.12 0 00-40 40v24" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></path><circle cx="392" cy="184" r="24" fill="currentColor"></circle></svg>
-        </a> 
-    </div>
 </div>
-
 @endsection

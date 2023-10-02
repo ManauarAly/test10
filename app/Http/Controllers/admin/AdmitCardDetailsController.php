@@ -21,7 +21,7 @@ class AdmitCardDetailsController extends Controller
 
         foreach($regs as $reg){
 
-            if(empty(StudentAdminCard::where('stu_reg_no', $reg))){
+            if(empty(StudentAdminCard::where('stu_reg_no', $reg)->first())){
 
                 $crtAdmtData = new StudentAdminCard();
                 $crtAdmtData->stu_reg_no = $reg;

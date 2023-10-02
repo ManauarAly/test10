@@ -95,7 +95,7 @@
                     <a href="{{route('admitCardDtails')}}"><i class="bx bx-right-arrow-alt"></i>Admit Card Details</a>
                 </li>
                 <li>
-                    <a href="{{route('Result')}}"><i class="bx bx-right-arrow-alt"></i>Result</a>
+                    <a href="{{route('adminResult')}}"><i class="bx bx-right-arrow-alt"></i>Result</a>
                 </li>
                 <li>
                     <a href="{{route('BranchAdmitCard')}}"><i class="bx bx-right-arrow-alt"></i>Branch Admit Card</a>

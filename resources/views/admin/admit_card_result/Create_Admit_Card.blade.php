@@ -24,7 +24,7 @@
     <div class="card">
         <div class="card-body">
         <div class="table-responsive">
-            <form action="{{route('admitCardForm')}}" method="post">
+            <form action="{{route('admitCardForm')}}" method="post" id="createAdmitCard">
                 @csrf
                 <input type="submit" value="Create Admit Card" class="btn btn-primary btn-md pull-left mb-1">
                 <table id="example" class="table table-striped table-bordered" style="width:100%">
@@ -83,3 +83,14 @@
         </div>
     </div>
     @endsection
+
+    @section('script')
+    <script>
+        $("#createAdmitCard").submit(function(e) {
+            if($('input[name="_stu_reg[]"]:checked').length == 0){
+                alert('Please checked the option');
+                return false;
+            }
+        });
+    </script>
+@endsection

@@ -68,6 +68,12 @@ class CertificateDetailsController extends Controller
         return view('admin.admit_card_result.disp_stud_marksheet')->with('students_data', $students_data);
     }
 
+    public function singleDispStudmarksheet($reg)
+    {
+        $students_data = MarksheetModel::where('reg_no', $reg)->get()->toArray();
+        return view('admin.admit_card_result.disp_stud_marksheet')->with('students_data', $students_data);
+    }
+
     public function branchcreateMarksheet($reg)
     {
         $data['student'] = StudentModel::where('reg', '=', $reg)->get()->toArray();

@@ -56,7 +56,7 @@
                                 <td>
                                     <div class="d-none">
                                         <a class="border p-1 px-2 text-center" href="student-profile/{{$stuData->id}}" title="View Student Profile"><i class="bx bx-low-vision" style="color:#2A5A74;"></i><p>Student Profile</p></a>
-                                        <a class="border p-1 px-2 text-center" href="marksheet_create?ncid={{$stuData->id}}" title="Marksheet Create"><i class="bx bx-book" style="color:#2A5A74;"></i><p>Print Marksheet</p></a>
+                                        <a class="border p-1 px-2 text-center" href="print-marksheet/{{$stuData->reg}}" title="Marksheet Create"><i class="bx bx-book" style="color:#2A5A74;"></i><p>Print Marksheet</p></a>
                                         <a class="border p-1 px-2 text-center delAdmStu" href="javascript:void(0)" data-id="{{$stuData->id}}" title="Delete Student"><i class="bx bx-trash" style="color:#FF0000;"></i><p>Delete Student</p></a>
                                         <a class="border p-1 px-2 text-center" href="admission-print/{{$stuData->id}}" target="_blank" title="View Details"><i class="bx bx-printer" style="color:#0066FF;"></i><p>Admission Print</p></a>
                                         <a class="border p-1 px-2 text-center" href="student-edit/{{$stuData->id}}" title="Edit Student Data"><i class="bx bx-edit" style="color:#009966;"></i><p>Edit Student</p></a>                                

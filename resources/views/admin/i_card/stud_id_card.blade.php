@@ -1,11 +1,8 @@
 @extends('admin.app')
+@section('title', 'ID Card')
 @section('main')
-<form action="{{route('dispStudIdCard')}}" target="_blank" method="post">
+<form action="{{route('dispStudIdCard')}}" target="_blank" method="post" id="id_card_print">
     @csrf                    
-    <div class="col-md-3">
-        <input type="submit" name="submit" value="Print" class="btn btn-primary btn-md pull-left">
-    </div>
-
     <div class="page-content">
         <!--breadcrumb-->
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
@@ -15,10 +12,16 @@
                     <ol class="breadcrumb mb-0 p-0">
                         <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">List All</li>
+                        <li class="breadcrumb-item active" aria-current="page">ID Card</li>
                     </ol>
                 </nav>
             </div>
+            <div class="d-print-none" style="margin: 0 5em;"> 
+                <button type="submit" name="submit" class="btn btn-outline-primary btn-md pull-left">
+                    <i class="bx bx-printer"></i>
+                    Print
+                </button>
+            </div> 
             <div class="ms-auto">
                 <div class="btn-group">
                     <a href="{{route('newStudent')}}" class="btn btn-primary">Add New Agent</a> 
@@ -79,5 +82,16 @@
         <!--end row-->
     </div>
 </form>
+@endsection
+
+@section('script')
+    <script>
+        $("#id_card_print").submit(function(e) {
+            if($('input[name="student_icard[]"]:checked').length == 0){
+                alert('Please checked the option');
+                return false;
+            }
+        });
+    </script>
 @endsection
 

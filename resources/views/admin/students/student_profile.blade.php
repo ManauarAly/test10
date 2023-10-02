@@ -1,4 +1,5 @@
 @extends('admin.app')
+@section('title', 'Student Profile')
 @section('main')
     <div class="page-content">
         <!--breadcrumb-->
@@ -15,7 +16,7 @@
             </div>
             <div class="ms-auto">
                 <div class="btn-group">
-                    <a href="" class="btn btn-primary">Add New Agent</a> 
+                    <a href="{{route('studentList')}}" class="btn btn-primary">Student List</a> 
                 </div>
             </div>
         </div>

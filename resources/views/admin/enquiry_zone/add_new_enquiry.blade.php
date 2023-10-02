@@ -49,9 +49,9 @@
                             <div class="col-md-3">
                                 <label for="enq_session" class="form-label">Session:  </label>
                                 <select class="single-select" name="enq_session" id="enq_session">
-                                    <option value="">Select </option>
-                                    @for ($i = 2012; $i <= 2030; $i++)
-                                        <option value="{{ $i }}">{{ $i }}</option>
+                                    <option value="">Select Session</option>
+                                    @for ($i = 2020; $i <= 2030; $i++)
+                                        <option value="{{ $i.'-'.$i+1 }}">{{ $i.'-'.$i+1 }}</option>
                                     @endfor
                                 </select>
                             </div>
@@ -125,7 +125,7 @@
 
                             <div class="col-md-3">
                                 <label for="enq_mobile_no" class="form-label">Mobile Number *</label>
-                                <input type="text" class="form-control" name="enq_mobile_no" id="enq_mobile_no" value="" placeholder="Enter guardian's mobile number" data-bv-field="enq_mobile_no">
+                                <input type="text" class="form-control" name="enq_mobile_no" id="enq_mobile_no" value="" placeholder="Enter mobile number" data-bv-field="enq_mobile_no">
                             </div>
 
                             <div class="col-md-9">

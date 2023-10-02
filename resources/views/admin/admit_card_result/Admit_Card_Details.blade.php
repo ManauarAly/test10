@@ -2,12 +2,6 @@
 @section('title', 'Admit Card')
 @section('main')
 
-<!-- @php 
-echo '<pre>';
-print_r($data_stu);
-echo '</pre>';
-@endphp -->
-
 <div class="page-content">
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
         <div class="breadcrumb-title pe-3">Admit Card </div>
@@ -48,7 +42,7 @@ echo '</pre>';
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($data_stu as $stuData)
+                    @foreach ($data_stu as $stuData)
                             <tr>
                                 <td> <input type="checkbox" name="_reg_no[]" value="{{$stuData['stu_reg_no']}}"> </td>
                                 <td>{{$stuData['stu_reg_no']}}</td>

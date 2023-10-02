@@ -5,6 +5,14 @@
 <style>
 
   @media print {
+    .page-breadcrumb{
+      display:none !important;
+    }
+
+    .stuList{
+      display: block !important;
+    }
+
     .d-print-inline {
       display: inline !important;
     }
@@ -61,6 +69,11 @@
       width: unset !important;
     }
   }
+
+  .stuList{
+    display:none;
+  }
+
   strong {
     font-weight: 600;
   }
@@ -685,6 +698,7 @@
     width: 100%;
   }
 </style>
+
     <div class="page-content">
         <!--breadcrumb-->
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
@@ -698,9 +712,10 @@
                     </ol>
                 </nav>
             </div>
-            <div class="d-print-none" style="margin: 0 17em;"> 
-                <a href="javascript:window.print()"class="btn-primary-fill">
-                <i class="bx bx-printer" style="color:#0066FF;font-size:30px"></i>
+            <div class="d-print-none" style="margin: 0 5em;"> 
+                <a href="javascript:window.print()"class="btn-primary-fill btn btn-outline-primary" style="font-size: 18px;">
+                <i class="bx bx-printer"></i>
+                Print
                 </a>
             </div>           
             <div class="ms-auto">           
@@ -710,6 +725,7 @@
             </div>
         </div>
         <!--end breadcrumb-->
+        <h4 class="text-center stuList">Student List</h4>
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
@@ -723,7 +739,7 @@
                                 <th>Gender</th>
                                 <th>DOB</th>
                                 <th>Mobile No</th>
-                                <th>Action</th>
+                                <!-- <th>Action</th> -->
                             </tr>
                         </thead>
                         <tbody>
@@ -736,7 +752,7 @@
                                 <td>{{$studList->gender}}</td>
                                 <td>{{$studList->dob}}</td>
                                 <td>{{$studList->mob}}</td>
-                                <td>
+                                <!-- <td>
                                     <a href="student-profile/{{$studList->id}}" title="View Student Profile"><i class="bx bx-low-vision" style="color:#2A5A74;"></i></a>
                                     <a href="marksheet_create?ncid={{$studList->id}}" title="Marksheet Create"><i class="bx bx-book" style="color:#2A5A74;"></i></a>
                                     <a href="javascript:void(0)" data-id="{{$studList->id}}" class="delAdmStu" title="Delete Student Data"><i class="bx bx-trash" style="color:#FF0000;"></i></a>
@@ -745,7 +761,7 @@
                                     <a href="admitCardCreate?ncid={{$studList->id}}" title="Admit Card Print" class="text-dark"><i class="bx bx-credit-card-front"></i></a>
                                     <a href="student_id_card?ncid={{$studList->id}}" title="Print ID Card"><i class="bx bx-book"></i></a>
                                     
-                                </td>
+                                </td> -->
                             </tr>
                             @endforeach
                         </tbody>
@@ -758,7 +774,7 @@
                                 <th>Gender</th>
                                 <th>DOB</th>
                                 <th>Mobile No</th>
-                                <th>Action</th>
+                                <!-- <th>Action</th> -->
                             </tr>
                         </tfoot>
                     </table>
