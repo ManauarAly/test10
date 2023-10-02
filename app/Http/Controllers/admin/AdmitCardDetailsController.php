@@ -56,5 +56,18 @@ class AdmitCardDetailsController extends Controller
         $stu_data = StudentAdminCard::with('stuAdminWithStudent')->get()->toArray();
         return view('admin.admit_card_result.Admit_Card_Details')->with('data_stu', $stu_data);
     }
+    
+    public function branchcreateAdmitCard()
+    {
+        $stuDatas = StudentModel::orderBy('id', 'DESC')->get();
+        return view('branch.admit_card_result.Create_Admit_Card')->with('stuDatas', $stuDatas);
+    }
+
+    public function branchadmitCardDtails()
+    {
+        $stu_data = StudentAdminCard::with('stuAdminWithStudent')->get()->toArray();
+
+        return view('branch.admit_card_result.Admit_Card_Details')->with('data_stu', $stu_data);
+    }
 
 }

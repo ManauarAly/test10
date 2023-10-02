@@ -11,4 +11,9 @@ class FeeReminderController extends Controller
     {
         return view('admin.pages.Fee_Reminder');
     }
+
+    public function branchFeeReminder()
+    {
+        return view('branch.fees_manage.Fee_Reminder');
+    }
 }

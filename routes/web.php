@@ -284,5 +284,31 @@ Route::group(['prefix' => 'branch'], function () {
         Route::get('Branch_Details', [NewBranchAddController::class, 'BranchDetails'])->name('BranchDetails');
         Route::get('Edit_Branch_Details/{id}', [NewBranchAddController::class, 'editBranchDetails'])->name('editBranchDetails');
         Route::put('updateBranch/{id}', [NewBranchAddController::class, 'updateBranch'])->name('updateBranch');
+
+        //Fee Management
+        Route::get('branch-fee-submission', [FeesManController::class, 'branchfeeSubmission'])->name('branchfeeSubmission');
+        Route::get('fee-payment/{id}', [FeesManController::class, 'branchfeePayment'])->name('branchfeePayment');
+        Route::get('Fee_Details/', [FeesManController::class, 'branchFeeDetails'])->name('branchFeeDetails');
+        Route::get('view-payment/{reg}', [FeesManController::class, 'branchviewPayment'])->name('branchviewPayment');
+        Route::get('today-fee-collection/', [FeesManController::class, 'branchtodayFeeCollection'])->name('branchtodayFeeCollection');
+        Route::get('due-Fee-report', [FeesManController::class, 'branchdueFeeReport'])->name('branchdueFeeReport');
+        Route::get('Fee_Reminder', [FeeReminderController::class, 'branchFeeReminder'])->name('branchFeeReminder');
+        Route::get('fee-payment-print/{id}/{reg}', [FeesManController::class, 'branchfeePaymentPrint'])->name('branchfeePaymentPrint');
+        
+        //admit card
+        Route::get('create-admit-card', [AdmitCardDetailsController::class, 'branchcreateAdmitCard'])->name('branchcreateAdmitCard');
+        Route::get('admit-card-details', [AdmitCardDetailsController::class, 'branchadmitCardDtails'])->name('branchadmitCardDtails');
+        Route::get('create-marksheet/{reg}', [CertificateDetailsController::class, 'branchcreateMarksheet'])->name('branchcreateMarksheet');
+        Route::get('Result', [CertificateDetailsController::class, 'branchviewMarksheet'])->name('branchviewMarksheet');
+        Route::get('Branch-Admit-Card', [BranchAdmitCardController::class, 'branchhAdmitCard'])->name('branchhAdmitCard');
+        
+        //marksheet
+        Route::get('create-marksheet/{reg}', [CertificateDetailsController::class, 'branchcreateMarksheet'])->name('branchcreateMarksheet');
+        Route::post('create-marksheet', [CertificateDetailsController::class, 'branchtoreMarksheet'])->name('branchtoreMarksheet');
+        Route::post('disp-stud-marksheet', [CertificateDetailsController::class, 'branchdispStudmarksheet'])->name('branchdispStudmarksheet');
+
+        Route::get('Result', [CertificateDetailsController::class, 'viewMarksheet'])->name('Result');
+        Route::post('disp-stud-marksheet', [CertificateDetailsController::class, 'dispStudmarksheet'])->name('dispStudmarksheet');
+
     });
 });

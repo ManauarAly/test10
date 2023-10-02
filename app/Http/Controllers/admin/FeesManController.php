@@ -86,4 +86,52 @@ class FeesManController extends Controller
     }
 
 
+    public function branchfeeSubmission()
+    {
+        $stuDatas = StudentModel::orderBy('id', 'DESC')->get();
+        return view('branch.fees_manage.fee_submission')->with('stuDatas', $stuDatas);
+    }
+    
+    public function branchfeePayment($reg_no)
+    {
+        $student = StudentModel::where('reg', '=', $reg_no)->get()->toArray();
+        $feesStudent = FeesMangModel::with('stuFeesManage')->where('reg', '=', $reg_no)->get()->toArray();
+        return view('branch.fees_manage.fees_payment')->with('student', $student)->with('feesStudent', $feesStudent);
+    }
+
+    public function branchFeeDetails()
+    {
+        $feesStudent = StudentModel::with('stuFeesManageWithStudent')->get()->toArray();
+        return view('branch.fees_manage.Fee_Details')->with('stuDatas', $feesStudent);
+    }
+
+    public function branchviewPayment($reg_no)
+    {
+        $data['student'] = StudentModel::where('reg', '=', $reg_no)->get()->toArray();
+        $data['fee_total'] = FeesMangModel::where('reg', '=', $reg_no)->get()->toArray();
+        $data['fee'] = FeesSubmissonModel::where('reg', '=', $reg_no)->get()->toArray();
+
+        return view('branch.fees_manage.fee_payment_view')->with('data', $data);
+    }
+
+    public function branchtodayFeeCollection()
+    {
+        $feesStudent = StudentModel::with('stuFeesManageWithStudent')->get()->toArray();
+        return view('branch.fees_manage.Today_Fee_Collection')->with('stuDatas', $feesStudent);
+    }
+
+    public function branchdueFeeReport()
+    {
+        $feesStudent = StudentModel::with('stuFeesManageWithStudent')->get()->toArray();
+        return view('branch.fees_manage.Due_Fee_Report')->with('stuDatas', $feesStudent);
+    }
+
+    public function branchfeePaymentPrint($reg_no, $id)
+    {
+        $data['student'] = StudentModel::where('reg', '=', $reg_no)->get()->toArray();
+        $data['fee'] = FeesSubmissonModel::where('id', '=', $id)->get()->toArray();
+        return view('branch.fees_manage.fee_payment_print')->with('data', $data);
+    }
+
+
 }

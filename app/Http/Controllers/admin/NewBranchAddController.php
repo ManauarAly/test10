@@ -5,6 +5,7 @@ use App\Models\BranchModel;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\AdminModel;
 
 class NewBranchAddController extends Controller
 {
@@ -15,10 +16,10 @@ class NewBranchAddController extends Controller
 
     public function storeNewBranchAdd(Request $branchdata)
     {
-        $branch = new BranchModel();
-        $branch->user_id = $branchdata['b_userid'];
-        $branch->password = $branchdata['b_pass'];
-        $branch->mobile = $branchdata['b_mob'];
+        $branch = new AdminModel();
+        $branch->usid = $branchdata['b_userid'];
+        $branch->pswd = md5( $branchdata['b_pass'] );
+        $branch->mob_no = $branchdata['b_mob'];
         $branch->email = $branchdata['b_email'];
         $branch->branch_address = $branchdata['b_add'];
         $branch->branch_head = $branchdata['b_head'];
@@ -30,9 +31,33 @@ class NewBranchAddController extends Controller
         }
     }
 
+    // public function storeNewBranchAdd(Request $branchdata)
+    // {
+    //     $branch = new BranchModel();
+    //     $branch->user_id = $branchdata['b_userid'];
+    //     $branch->password = $branchdata['b_pass'];
+    //     $branch->mobile = $branchdata['b_mob'];
+    //     $branch->email = $branchdata['b_email'];
+    //     $branch->branch_address = $branchdata['b_add'];
+    //     $branch->branch_head = $branchdata['b_head'];
+    //     $branch->save();
+    //     if($branch) {
+    //         return redirect('admin/New_Branch_Add')->with('status', "Insert successfully");
+    //     }else{
+    //         return redirect('admin/New_Branch_Add')->with('failed', "There are someting error, please try some time.");
+    //     }
+    // }
+
+    // public function BranchDetails()
+    // {
+    //     $branchsdata = BranchModel::all();
+    //     return view('admin.branch.Branch_Details')->with('branchsdata', $branchsdata);
+    // }
+
     public function BranchDetails()
     {
-        $branchsdata = BranchModel::all();
+        $branchsdata = AdminModel::all();
+
         return view('admin.branch.Branch_Details')->with('branchsdata', $branchsdata);
     }
 

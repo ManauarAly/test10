@@ -1,4 +1,4 @@
-@extends('admin.app')
+@extends('branch.app')
 @section('title', 'Create Marksheet')
 @section('main')
 
@@ -36,7 +36,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="p-4 border rounded"> 
-                        <form class="row g-3 needs-validation bv-form" method="post" id="enq_form" enctype="multipart/form-data" action="{{route('storeMarksheet')}}" novalidate="novalidate">
+                        <form class="row g-3 needs-validation bv-form" method="post" id="enq_form" enctype="multipart/form-data" action="{{route('branchstoreMarksheet')}}" novalidate="novalidate">
                             @csrf
                             <div class="col-md-6">
                                 <label for="_reg_no" class="form-label">Reg No *</label>

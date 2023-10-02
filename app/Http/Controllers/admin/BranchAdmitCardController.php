@@ -11,4 +11,9 @@ class BranchAdmitCardController extends Controller
     {
         return view('admin.pages.Branch_Admit_Card');
     }
+
+    public function branchhAdmitCard()
+    {
+      return view('branch.pages.Branch_Admit_Card');
+    }
 }

@@ -62,12 +62,12 @@
                 </thead>
                 <tbody>
                 @foreach ($branchsdata as $branchdata)
-                    <tr id="branchId-{{$branchdata->branch_id}}">
+                    <tr id="branchId-{{$branchdata->id}}">
                     <td>{{$branchdata->branch_head}}</td>
                     <td>{{$branchdata->branch_address}}</td>
                     <td>{{$branchdata->email}}</td>
                     <td>{{$branchdata->mobile}}</td>                    
-                    <td><a href="{{url('admin/Edit_Branch_Details/' . $branchdata->branch_id)}}" class="editBranch" title="Edit Branch Data">edit</a></td>                        
+                    <td><a href="{{url('admin/Edit_Branch_Details/' . $branchdata->id )}}" class="editBranch" title="Edit Branch Data">edit</a></td>                        
                 </tr>
                     @endforeach 
                    

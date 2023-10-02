@@ -1,7 +1,7 @@
 <div class="sidebar-wrapper" data-simplebar="true">
     <div class="sidebar-header">
         <div>
-            <img src="{{asset('web/assets/images/lite-logo.png')}}" class="logo-icon" alt="logo icon">
+            <img src="{{asset('assets/images/logo-icon.png')}}" class="logo-icon" alt="logo icon">
         </div>
         <div>
             <h4 class="logo-text">RTI Branch </h4>
@@ -89,21 +89,21 @@
             </a>
             <ul>
                 <li>
-                    <a href="{{route('createAdmitCard')}}"><i class="bx bx-right-arrow-alt"></i>Create Admit Card</a>
+                    <a href="{{route('branchcreateAdmitCard')}}"><i class="bx bx-right-arrow-alt"></i>Create Admit Card</a>
                 </li>
                 <li>
-                    <a href="{{route('admitCardDtails')}}"><i class="bx bx-right-arrow-alt"></i>Admit Card Details</a>
+                    <a href="{{route('branchadmitCardDtails')}}"><i class="bx bx-right-arrow-alt"></i>Admit Card Details</a>
+                </li>
+                <li> {{--{{route('branchviewMarksheet')}}--}}
+                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Result</a>
                 </li>
                 <li>
-                    <a href="{{route('Result')}}"><i class="bx bx-right-arrow-alt"></i>Result</a>
-                </li>
-                <li>
-                    <a href="{{route('BranchAdmitCard')}}"><i class="bx bx-right-arrow-alt"></i>Branch Admit Card</a>
+                    <a href="{{route('branchhAdmitCard')}}"><i class="bx bx-right-arrow-alt"></i>Branch Admit Card</a>
                 </li>
             </ul>
         </li>
 
-        <!-- <li>
+        <li>
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class="bx bx-rupee"></i>
                 </div>
@@ -111,22 +111,22 @@
             </a>
             <ul>
                 <li>
-                    <a href="{{route('FeeSubmission')}}"><i class="bx bx-right-arrow-alt"></i>Fee Submission</a>
+                    <a href="{{route('branchfeeSubmission')}}"><i class="bx bx-right-arrow-alt"></i>Fee Submission</a>
                 </li>
                 <li>
-                    <a href="{{route('FeeDetails')}}"><i class="bx bx-right-arrow-alt"></i>Fee Details</a>
+                    <a href="{{route('branchFeeDetails')}}"><i class="bx bx-right-arrow-alt"></i>Fee Details</a>
                 </li>
                 <li>
-                    <a href="{{route('todayFeeCollection')}}"><i class="bx bx-right-arrow-alt"></i>Today Fee Collection</a>
+                    <a href="{{route('branchtodayFeeCollection')}}"><i class="bx bx-right-arrow-alt"></i>Today Fee Collection</a>
                 </li>
                 <li>
-                    <a href="{{route('dueFeeReport')}}"><i class="bx bx-right-arrow-alt"></i>Due Fee Report</a>
+                    <a href="{{route('branchdueFeeReport')}}"><i class="bx bx-right-arrow-alt"></i>Due Fee Report</a>
                 </li>
                 <li>
-                    <a href="{{route('FeeReminder')}}"><i class="bx bx-right-arrow-alt"></i>Fee Reminder</a>
+                    <a href="{{route('branchFeeReminder')}}"><i class="bx bx-right-arrow-alt"></i>Fee Reminder</a>
                 </li>
             </ul>
-        </li> -->
+        </li>
 
         <!-- <li>
             <a href="javascript:;" class="has-arrow">
@@ -258,7 +258,7 @@
             </ul>
         </li> -->
 
-        <li>
+        <!-- <li>
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class="bx bx-git-branch"></i>
                 </div>
@@ -272,7 +272,7 @@
                     <a href="{{route('BranchDetails')}}"><i class="bx bx-right-arrow-alt"></i>Branch Details</a>
                 </li>
             </ul>
-        </li>
+        </li> -->
 
         <!-- <li>
             <a href="javascript:;" class="has-arrow">
@@ -305,7 +305,7 @@
                 </li>
             </ul>
         </li> -->
-
+<!-- 
         <li>
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class="bx bx-git-branch"></i>
@@ -323,7 +323,7 @@
                     <a href="#"><i class="bx bx-right-arrow-alt"></i>All Student Of Branch Details</a>
                 </li>
             </ul>
-        </li>
+        </li> -->
 
         <!-- <li>
             <a href="javascript:;" class="has-arrow">
