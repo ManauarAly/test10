@@ -215,7 +215,7 @@ Route::group(['prefix' => 'admin'], function () {
         // Route::get('new-blog', [BlogController::class, 'addblog'])->name('addblog');
         Route::get('blog-list', [bloglistController::class, 'bloglist'])->name('bloglist');
         // Route::get('Create-Admit-Card', [CreateAdmitCardController::class, 'CreateAdmitCard'])->name('CreateAdmitCard');
-        Route::get('Result', [ResultController::class, 'Result'])->name('Result');
+        // Route::get('Result', [ResultController::class, 'Result'])->name('Result');
         Route::get('Branch-Admit-Card', [BranchAdmitCardController::class, 'BranchAdmitCard'])->name('BranchAdmitCard');
 
         Route::get('Fee_Reminder', [FeeReminderController::class, 'FeeReminder'])->name('FeeReminder');
@@ -304,7 +304,7 @@ Route::group(['prefix' => 'branch'], function () {
         
         //marksheet
         Route::get('create-marksheet/{reg}', [CertificateDetailsController::class, 'branchcreateMarksheet'])->name('branchcreateMarksheet');
-        Route::post('create-marksheet', [CertificateDetailsController::class, 'branchtoreMarksheet'])->name('branchtoreMarksheet');
+        Route::post('create-marksheet', [CertificateDetailsController::class, 'branchstoreMarksheet'])->name('branchstoreMarksheet');
         Route::post('disp-stud-marksheet', [CertificateDetailsController::class, 'branchdispStudmarksheet'])->name('branchdispStudmarksheet');
 
         Route::get('Result', [CertificateDetailsController::class, 'viewMarksheet'])->name('Result');
