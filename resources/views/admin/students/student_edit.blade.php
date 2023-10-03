@@ -1,4 +1,5 @@
 @extends('admin.app')
+@section('title', 'Edit student')
 @section('main')
     <div class="page-content">
         <!--breadcrumb-->

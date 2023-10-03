@@ -29,7 +29,7 @@ class LoginController extends Controller
     {
         $validate = $request->validate([
                         'username' => 'required|min:3',
-                        'password' => 'required|min:8',
+                        'password' => 'required|min:5',
                     ]);
 
         if($validate == true){

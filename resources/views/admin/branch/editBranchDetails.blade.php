@@ -16,12 +16,13 @@
         </div>
         <div class="ms-auto">
             <div class="btn-group">
-                <a href="http://127.0.0.1:8000/admin/list-enquiry" class="btn btn-primary">List Enquiry</a>
+                <a href="{{route('BranchDetails')}}" class="btn btn-primary">List Branch</a>
             </div>
         </div>
     </div>
     <section class="content-header">
-    @if (session('status'))
+
+        @if (session('status'))
             <div class="alert alert-success alert-dismissible">
                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                 <strong>Success!</strong> {{ session('status') }}
@@ -32,8 +33,9 @@
                 <strong>Success!</strong> {{ session('failed') }}
             </div>
         @endif
+
         <div class="box box-default card">
-            <form action="{{url('admin/updateBranch/'.$singlebranch->branch_id)}}" name="myform" method="post" enctype="multipart/form-data">
+            <form action="{{url('admin/updateBranch/'.$singlebranch->id)}}" name="myform" method="post" id="editNewBranch" enctype="multipart/form-data">
             @csrf
             @method('PUT')
                 <div class="card-body">
@@ -41,17 +43,17 @@
                             <div class="row">
 
                                 <div class="col-md-3">
-                                    <label>User Id* </label>
-                                    <input type="text" name="b_userid" class="form-control mb-3" value="{{$singlebranch->user_id}}">
+                                    <label>Username *</label>
+                                    <input type="text" name="b_userid" class="form-control mb-3" value="{{$singlebranch->username}}" readonly>
                                 </div>
 
-                                <div class="col-md-3">
+                                {{-- <div class="col-md-3">
                                     <label> Password* </label>
                                     <input type="text" name="b_pass" class="form-control mb-3" value="{{$singlebranch->password}}">
-                                </div>
+                                </div> --}}
                                 <div class="col-md-3">
                                     <label> Mobile No </label>
-                                    <input type="number" name="b_mob" class="form-control mb-3" value="{{$singlebranch->mobile}}">
+                                    <input type="number" name="b_mob" class="form-control mb-3" value="{{$singlebranch->mob_no}}">
                                 </div>
 
                                 <div class="col-md-3">
@@ -65,27 +67,77 @@
                                 </div>
 
                                 <div class="col-md-3">
-                                    <label> Branch Head </label>
+                                    <label> Branch Name </label>
                                     <input type="text" name="b_head" class="form-control mb-3" value="{{$singlebranch->branch_head}}">
                                 </div>                               
 
                                 <div class="clearfix"></div>
                                 <br><br>                        
                                 <div class="clearfix"></div>
-                                <center>
-                                    <div class="col-md-2">
+                                    <div class="col-md-2 text-center">
                                         <div class="form-group">
-                                            <button type="submit" name="entry" style="margin-top: 15px;" class="btn-facebook form-control">Update </button>
-
+                                            <button type="submit" name="entry" id="update_branch_btn" style="margin-top: 15px;" class="btn-facebook form-control">Update </button>
                                         </div>
                                     </div>
-                                </center>
-                            </div>
-                        </div>                    
+                                </div>
+                            </div>                    
+                        </div>
+                    </form>
                 </div>
-                </form>
+            </section>
         </div>
-    </section>
+@endsection
 
-</div>
+@section('script')
+    <script>
+        $(document).ready(function() {
+            $('#update_branch_btn').attr('disabled', true);
+            $('#editNewBranch').bootstrapValidator({
+                fields: {
+                    b_userid: {
+                        validators: {
+                            notEmpty: {
+                                // message: 'Username is requred.'
+                            }
+                        }
+                    },
+                    b_pass: {
+                        validators: {
+                            notEmpty: {
+                                // message: 'Password is requred.'
+                            }
+                        }
+                    },
+                    b_mob: {
+                        validators: {
+                            notEmpty: {
+                                // message: 'Mobile no is requred.'
+                            }
+                        }
+                    },
+                    b_email: {
+                        validators: {
+                            notEmpty: {
+                                // message: 'email id is requred.'
+                            }
+                        }
+                    },
+                    b_add: {
+                        validators: {
+                            notEmpty: {
+                                // message: 'Branch address is requred.'
+                            }
+                        }
+                    },
+                    b_head: {
+                        validators: {
+                            notEmpty: {
+                                // message: 'Branch head is requred.'
+                            }
+                        }
+                    }
+                }
+            })
+        });
+    </script>
 @endsection

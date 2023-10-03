@@ -196,8 +196,8 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('New_Branch_Add', [NewBranchAddController::class, 'NewBranchAdd'])->name('NewBranchAdd');
         Route::post('New_Branch_Add', [NewBranchAddController::class, 'storeNewBranchAdd'])->name('storeNewBranchAdd');
         Route::get('Branch_Details', [NewBranchAddController::class, 'BranchDetails'])->name('BranchDetails');
-        Route::get('/Edit_Branch_Details/{id}', [NewBranchAddController::class, 'editBranchDetails'])->name('editBranchDetails');
-        Route::put('/updateBranch/{id}', [NewBranchAddController::class, 'updateBranch'])->name('updateBranch');
+        Route::get('Edit_Branch_Details/{id}', [NewBranchAddController::class, 'editBranchDetails'])->name('editBranchDetails');
+        Route::put('updateBranch/{id}', [NewBranchAddController::class, 'updateBranch'])->name('updateBranch');
 
         //blog
         Route::get('new-blog', [BlogController::class, 'addblog'])->name('addblog');
@@ -289,7 +289,7 @@ Route::group(['prefix' => 'branch'], function () {
         Route::post('disp-stud-id-card', [StudentController::class, 'branchdispStudIdCard'])->name('branchdispStudIdCard');
 
         Route::get('Branch_Details', [NewBranchAddController::class, 'BranchDetails'])->name('BranchDetails');
-        Route::get('Edit_Branch_Details/{id}', [NewBranchAddController::class, 'editBranchDetails'])->name('editBranchDetails');
+        // Route::get('Edit_Branch_Details/{id}', [NewBranchAddController::class, 'editBranchDetails'])->name('editBranchDetails');
         Route::put('updateBranch/{id}', [NewBranchAddController::class, 'updateBranch'])->name('updateBranch');
 
         //Fee Management

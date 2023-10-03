@@ -9,5 +9,4 @@ class BranchModel extends Model
 {
     use HasFactory;
     protected $table = 'branch';
-    protected $primaryKey = 'branch_id';
 }

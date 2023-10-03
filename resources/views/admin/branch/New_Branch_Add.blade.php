@@ -2,6 +2,12 @@
 @section('title', 'New Branch Add')
 @section('main')
 
+<style>
+    small.help-block {
+        color: red;
+    }
+</style>
+
 <div class="page-content">
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
         <div class="breadcrumb-title pe-3">Branch Website Add</div>
@@ -33,58 +39,107 @@
             </div>
         @endif
         <div class="box box-default card">
-            <form action="{{route('storeNewBranchAdd')}}" name="myform" method="post" enctype="multipart/form-data">
+            <form action="{{route('storeNewBranchAdd')}}" name="myform" method="post" id="addNewBranch" enctype="multipart/form-data">
             @csrf
                 <div class="card-body">
                         <div class="box-body">
                             <div class="row">
 
-                                <div class="col-md-3">
-                                    <label>User Id* </label>
-                                    <input type="text" name="b_userid" class="form-control mb-3">
+                                <div class="col-md-3  mb-3">
+                                    <label>Username *</label>
+                                    <input type="text" name="b_userid" class="form-control" placeholder="Enter username">
                                 </div>
 
-                                <div class="col-md-3">
+                                <div class="col-md-3  mb-3">
                                     <label> Password* </label>
-                                    <input type="text" name="b_pass" class="form-control mb-3">
+                                    <input type="text" name="b_pass" class="form-control" placeholder="Enter password">
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3  mb-3">
                                     <label> Mobile No </label>
-                                    <input type="number" name="b_mob" class="form-control mb-3">
+                                    <input type="number" name="b_mob" class="form-control" placeholder="Enter mobile no">
                                 </div>
 
-                                <div class="col-md-3">
+                                <div class="col-md-3  mb-3">
                                     <label> Email </label>
-                                    <input type="email" name="b_email" class="form-control mb-3">
+                                    <input type="email" name="b_email" class="form-control" placeholder="Enter Email" >
                                 </div>
 
-                                <div class="col-md-3">
+                                <div class="col-md-3 mb-3">
                                     <label> Branch Address </label>
-                                    <input type="text" name="b_add" class="form-control mb-3">
+                                    <input type="text" name="b_add" class="form-control" placeholder="Enter branch address">
                                 </div>
 
-                                <div class="col-md-3">
-                                    <label> Branch Head </label>
-                                    <input type="text" name="b_head" class="form-control mb-3">
+                                <div class="col-md-3  mb-3">
+                                    <label> Branch Name </label>
+                                    <input type="text" name="b_head" class="form-control" placeholder="Enter branch name">
                                 </div>                               
 
                                 <div class="clearfix"></div>
                                 <br><br>                        
                                 <div class="clearfix"></div>
-                                <center>
-                                    <div class="col-md-2">
+                                    <div class="col-md-2 text-center">
                                         <div class="form-group">
                                             <button type="submit" name="entry" style="margin-top: 15px;" class="btn-facebook form-control">Submit </button>
-
                                         </div>
                                     </div>
-                                </center>
-                            </div>
-                        </div>                    
+                                </div>
+                            </div>                    
+                        </div>
+                    </form>
                 </div>
-                </form>
+            </section>
         </div>
-    </section>
+@endsection
 
-</div>
+@section('script')
+    <script>
+        $(document).ready(function() {
+            $('#addNewBranch').bootstrapValidator({
+                fields: {
+                    b_userid: {
+                        validators: {
+                            notEmpty: {
+                                message: 'Username is requred.'
+                            }
+                        }
+                    },
+                    b_pass: {
+                        validators: {
+                            notEmpty: {
+                                message: 'Password is requred.'
+                            }
+                        }
+                    },
+                    b_mob: {
+                        validators: {
+                            notEmpty: {
+                                message: 'Mobile no is requred.'
+                            }
+                        }
+                    },
+                    b_email: {
+                        validators: {
+                            notEmpty: {
+                                message: 'email id is requred.'
+                            }
+                        }
+                    },
+                    b_add: {
+                        validators: {
+                            notEmpty: {
+                                message: 'Branch address is requred.'
+                            }
+                        }
+                    },
+                    b_head: {
+                        validators: {
+                            notEmpty: {
+                                message: 'Branch head is requred.'
+                            }
+                        }
+                    }
+                }
+            })
+        });
+    </script>
 @endsection

@@ -18,11 +18,15 @@ class NewBranchAddController extends Controller
     {
         $branch = new AdminModel();
         $branch->usid = $branchdata['b_userid'];
+        $branch->username = $branchdata['b_userid'];
+        $branch->name = $branchdata['b_head'];
         $branch->pswd = md5( $branchdata['b_pass'] );
         $branch->mob_no = $branchdata['b_mob'];
         $branch->email = $branchdata['b_email'];
         $branch->branch_address = $branchdata['b_add'];
         $branch->branch_head = $branchdata['b_head'];
+        $branch->typ = 'branch';
+        $branch->status = 'active';
         $branch->save();
         if($branch) {
             return redirect('admin/New_Branch_Add')->with('status', "Insert successfully");
@@ -63,15 +67,13 @@ class NewBranchAddController extends Controller
 
     public function editBranchDetails($id)
     {
-        $singlebranch = BranchModel::find($id);
+        $singlebranch = AdminModel::find($id);
         return view('admin.branch.editBranchDetails')->with('singlebranch', $singlebranch);
     }
 
     public function updateBranch(Request $request, $id){
-        $updatebranch = BranchModel::find($id);
-        $updatebranch->user_id = $request['b_userid'];
-        $updatebranch->password = $request['b_pass'];
-        $updatebranch->mobile = $request['b_mob'];
+        $updatebranch = AdminModel::find($id);
+        $updatebranch->mob_no = $request['b_mob'];
         $updatebranch->email = $request['b_email'];
         $updatebranch->branch_address = $request['b_add'];
         $updatebranch->branch_head = $request['b_head'];
