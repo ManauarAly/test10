@@ -8,6 +8,7 @@ use App\Models\StudentModel;
 use App\Models\FeesMangModel;
 use App\Models\FeesSubmissonModel;
 use DB;
+use Session;
 
 class FeesManController extends Controller
 {
@@ -87,8 +88,12 @@ class FeesManController extends Controller
 
 
     public function branchfeeSubmission()
-    {
-        $stuDatas = StudentModel::orderBy('id', 'DESC')->get();
+    { 
+        if(Session::get('type') == 'branch'){
+            $loggedinId = Session::get('branchId');
+        }
+
+        $stuDatas = StudentModel::where('branch_id', $loggedinId)->orderBy('id', 'DESC')->get();
         return view('branch.fees_manage.fee_submission')->with('stuDatas', $stuDatas);
     }
     
@@ -101,7 +106,11 @@ class FeesManController extends Controller
 
     public function branchFeeDetails()
     {
-        $feesStudent = StudentModel::with('stuFeesManageWithStudent')->get()->toArray();
+        if(Session::get('type') == 'branch'){
+            $loggedinId = Session::get('branchId');
+        }
+
+        $feesStudent = StudentModel::with('stuFeesManageWithStudent')->where('branch_id', $loggedinId)->get()->toArray();
         return view('branch.fees_manage.Fee_Details')->with('stuDatas', $feesStudent);
     }
 

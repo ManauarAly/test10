@@ -134,7 +134,16 @@ class EnquiryController extends Controller
     
     public function branchlistEnquiry()
     {
-        $stuEnqDatas = StuEnqModel::orderBy('id', 'DESC')->get();
+
+        // if(Session::get('type') == 'admin'){
+        //     $loggedinId = Session::get('adminId');
+        // }
+
+        if(Session::get('type') == 'branch'){
+            $loggedinId = Session::get('branchId');
+        }
+
+        $stuEnqDatas = StuEnqModel::where('branch_id', $loggedinId)->orderBy('id', 'DESC')->get();
         return view('branch.enquiry_zone.enquriy_list')->with('stuEnqDatas', $stuEnqDatas);
     }
 

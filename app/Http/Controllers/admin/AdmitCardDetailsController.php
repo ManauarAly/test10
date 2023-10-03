@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\StudentModel;
 use App\Models\StudentAdminCard;
+use Session;
 
 class AdmitCardDetailsController extends Controller
 {
@@ -57,9 +58,13 @@ class AdmitCardDetailsController extends Controller
         return view('admin.admit_card_result.Admit_Card_Details')->with('data_stu', $stu_data);
     }
     
-    public function branchcreateAdmitCard()
+    public function branchcreateAdmitCard() 
     {
-        $stuDatas = StudentModel::orderBy('id', 'DESC')->get();
+        if(Session::get('type') == 'branch'){
+            $loggedinId = Session::get('branchId');
+        }
+
+        $stuDatas = StudentModel::where('branch_id', $loggedinId)->orderBy('id', 'DESC')->get();
         return view('branch.admit_card_result.Create_Admit_Card')->with('stuDatas', $stuDatas);
     }
 

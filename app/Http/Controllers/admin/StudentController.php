@@ -308,7 +308,11 @@ class StudentController extends Controller
 
     public function branchstudentList()
     {
-        $stuDatas = StudentModel::orderBy('id', 'DESC')->get();
+        if(Session::get('type') == 'branch'){
+            $loggedinId = Session::get('branchId');
+        }
+
+        $stuDatas = StudentModel::where('branch_id', $loggedinId)->orderBy('id', 'DESC')->get();
         return view('branch.students.list_student')->with('stuDatas', $stuDatas);
     }
 
@@ -316,18 +320,32 @@ class StudentController extends Controller
     {
         $sevendaysafter = date('Y-m-d', strtotime('+7 days') );
         $sevendaysbefore = date('Y-m-d', strtotime('-7 days') );
-        $stubdayDatas = StudentModel::whereBetween('dob', [$sevendaysbefore, $sevendaysafter])->get();
+
+        if(Session::get('type') == 'branch'){
+            $loggedinId = Session::get('branchId');
+        }
+
+        $stubdayDatas = StudentModel::whereBetween('dob', [$sevendaysbefore, $sevendaysafter])->where('branch_id', $loggedinId)->get();
         return view('branch.students.student_bday')->with('stubdayDatas', $stubdayDatas);
     }
 
     public function branchstudentListprint(){
-        $studlists = StudentModel::all();
+
+        if(Session::get('type') == 'branch'){
+            $loggedinId = Session::get('branchId');
+        }
+
+        $studlists = StudentModel::where('branch_id', $loggedinId)->get();
         return view('branch.students.student_list_print')->with('studlists', $studlists);
     }
 
     public function branchstudentIdcard()
     {
-        $studlists = StudentModel::all()->take(5);
+        if(Session::get('type') == 'branch'){
+            $loggedinId = Session::get('branchId');
+        }
+
+        $studlists = StudentModel::where('branch_id', $loggedinId)->get()->take(5);
         return view('branch.i_card.stud_id_card')->with('studlists', $studlists);
     }
 

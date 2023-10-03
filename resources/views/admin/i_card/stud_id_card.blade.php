@@ -81,7 +81,7 @@
         </div>
         <!--end row-->
     </div>
-</form>
+</form> 
 @endsection
 
 @section('script')

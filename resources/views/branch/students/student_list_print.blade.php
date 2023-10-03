@@ -4,7 +4,15 @@
 
 <style>
 
-  @media print {
+@media print {
+    .page-breadcrumb{
+      display:none !important;
+    }
+
+    .stuList{
+      display: block !important;
+    }
+
     .d-print-inline {
       display: inline !important;
     }
@@ -61,6 +69,11 @@
       width: unset !important;
     }
   }
+
+  .stuList{
+    display:none;
+  }
+
   strong {
     font-weight: 600;
   }
@@ -698,18 +711,20 @@
                     </ol>
                 </nav>
             </div>
-            <div class="d-print-none" style="margin: 0 17em;"> 
-                <a href="javascript:window.print()"class="btn-primary-fill">
-                <i class="bx bx-printer" style="color:#0066FF;font-size:30px"></i>
+            <div class="d-print-none" style="margin: 0 5em;"> 
+                <a href="javascript:window.print()"class="btn-primary-fill btn btn-outline-primary" style="font-size: 18px;">
+                <i class="bx bx-printer"></i>
+                Print
                 </a>
-            </div>           
+            </div>          
             <div class="ms-auto">           
                 <div class="btn-group">
                     <a href="{{route('newStudent')}}" class="btn btn-primary">Student List</a> 
                 </div>
             </div>
-        </div>
+        </div> 
         <!--end breadcrumb-->
+        <h4 class="text-center stuList">Student List</h4>
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">

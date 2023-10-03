@@ -50,8 +50,8 @@
                                 <label for="enq_session" class="form-label">Session:  </label>
                                 <select class="single-select" name="enq_session" id="enq_session">
                                     <option value="">Select </option>
-                                    @for ($i = 2012; $i <= 2024; $i++)
-                                        <option value="2016-2017">{{ $i }} </option>
+                                    @for ($i = 2020; $i <= 2030; $i++)
+                                        <option value="{{ $i.'-'.$i+1 }}">{{ $i.'-'.$i+1 }}</option>
                                     @endfor
                                 </select>
                             </div>

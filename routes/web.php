@@ -281,7 +281,7 @@ Route::group(['prefix' => 'branch'], function () {
         Route::get('branch-student-list-print', [StudentController::class, 'branchstudentListprint'])->name('branchstudentListprint');
 
         //course
-        Route::get('branch-course-management/', [CourseMangController::class, 'branchcourseManage'])->name('branchcourseManage');
+        Route::get('branch-course-management', [CourseMangController::class, 'branchcourseManage'])->name('branchcourseManage');
         Route::post('branch-store-course-manage', [CourseMangController::class, 'storebranchCourseManage'])->name('storebranchCourseManage');
 
         //i-card
@@ -305,6 +305,7 @@ Route::group(['prefix' => 'branch'], function () {
         //admit card
         Route::get('create-admit-card', [AdmitCardDetailsController::class, 'branchcreateAdmitCard'])->name('branchcreateAdmitCard');
         Route::get('admit-card-details', [AdmitCardDetailsController::class, 'branchadmitCardDtails'])->name('branchadmitCardDtails');
+        
         Route::get('create-marksheet/{reg}', [CertificateDetailsController::class, 'branchcreateMarksheet'])->name('branchcreateMarksheet');
         Route::get('Result', [CertificateDetailsController::class, 'branchviewMarksheet'])->name('branchviewMarksheet');
         Route::get('Branch-Admit-Card', [BranchAdmitCardController::class, 'branchhAdmitCard'])->name('branchhAdmitCard');
