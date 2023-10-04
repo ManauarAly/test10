@@ -26,7 +26,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="p-4 border rounded"> 
-                    <form class="row g-3 needs-validation bv-form" method="post" id="enq_form" enctype="multipart/form-data" action="{{route('admitCardPrint')}}" novalidate="novalidate">
+                    <form class="row g-3 needs-validation bv-form" method="post" id="enq_form" enctype="multipart/form-data" action="{{route('branchAdmitCardPrint')}}" novalidate="novalidate">
                         @csrf
                             <div class="col-md-3">
                                 <label for="adc_exam_name" class="form-label">Exam Name *</label>

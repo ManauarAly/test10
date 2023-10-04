@@ -94,8 +94,8 @@
                 <li>
                     <a href="{{route('branchadmitCardDtails')}}"><i class="bx bx-right-arrow-alt"></i>Admit Card Details</a>
                 </li>
-                <li> {{--{{route('branchviewMarksheet')}}--}}
-                    <a href="#"><i class="bx bx-right-arrow-alt"></i>Result</a>
+                <li>
+                    <a href="{{route('branchviewMarksheet')}}"><i class="bx bx-right-arrow-alt"></i>Result</a>
                 </li>
                 <li>
                     <a href="{{route('branchhAdmitCard')}}"><i class="bx bx-right-arrow-alt"></i>Branch Admit Card</a>

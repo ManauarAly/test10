@@ -2,7 +2,7 @@
 @section('title', 'Marksheet Print')
 @section('main')
 
-<style>
+<style> 
         .mark{
             position: relative !important;
             background-color:unset;

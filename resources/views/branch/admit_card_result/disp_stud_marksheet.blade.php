@@ -1,6 +1,11 @@
+@extends('branch.app')
+@section('title', 'Marksheet Print')
+@section('main')
+
 <style>
         .mark{
             position: relative !important;
+            background-color:unset;
         }
         img{
             position: relative;
@@ -160,3 +165,5 @@
         <div class="totalObt">{{$student_data['total_obt']}}</div>
     </div>
 @endforeach
+
+@endsection

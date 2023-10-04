@@ -24,7 +24,7 @@
     <div class="card">
         <div class="card-body">
         <div class="table-responsive">
-            <form action="{{route('admitCardForm')}}" method="post">
+            <form action="{{route('branchAdmitCardForm')}}" method="post">
                 @csrf
                 <input type="submit" value="Create Admit Card" class="btn btn-primary btn-md pull-left mb-1">
                 <table id="example" class="table table-striped table-bordered" style="width:100%">

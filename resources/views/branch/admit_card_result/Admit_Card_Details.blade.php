@@ -30,7 +30,7 @@ echo '</pre>';
     <div class="card">
         <div class="card-body">
         <div class="table-responsive">
-            <form action="{{route('admitCardPrint')}}" method="post">
+            <form action="{{route('branchAdmitCardPrint')}}" method="post">
                 @csrf
                 <input type="submit" value="Print Admit Card" class="btn btn-primary btn-md pull-left mb-1">
                 <table id="example" class="table table-striped table-bordered" style="width:100%">
@@ -58,7 +58,13 @@ echo '</pre>';
                                 <td>{{$stuData['stu_admin_with_student'][0]['gender']}}</td>
                                 <td>{{$stuData['stu_admin_with_student'][0]['dob']}}</td>
                                 <td>{{$stuData['stu_admin_with_student'][0]['mob']}}</td>
-                                <td> <a href="{{url('branch/create-marksheet').'/'.$stuData['stu_admin_with_student'][0]['reg']}}" class=""><i class="bx bx-plus" style="font-size: 20px;font-weight: bold;"></i></a> </td>
+                                <td> 
+                                    @if($stuData['marksheet_status'] == 0)
+                                        <a href="{{url('branch/create-marksheet').'/'.$stuData['stu_admin_with_student'][0]['reg']}}" class="btn btn-sm btn-outline-primary"><i class="bx bx-plus" ></i>Marksheet</a>
+                                    @elseif($stuData['marksheet_status'] == 1)
+                                        <a href="#" class="btn btn-sm btn-outline-primary"><i class="bx bx-pencil" ></i>Edit Marksheet</a>
+                                    @endif
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -80,4 +86,5 @@ echo '</pre>';
         </div>
         </div>
     </div>
+
     @endsection
