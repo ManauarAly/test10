@@ -53,6 +53,7 @@
                                 <th scope="col">Student</th>
                                 <th scope="col">Total Mark</th>
                                 <th scope="col">Total Obtain</th>
+                                <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -64,9 +65,21 @@
                             <td>{{$marksheetData->stud_name}}</td>
                             <td>{{$marksheetData->total_mark}}</td>
                             <td>{{$marksheetData->total_obt}}</td>
+                            <td><a href="#" class="btn btn-sm btn-outline-primary"><i class="bx bx-pencil" ></i>Edit Marksheet</a></td>
                         </tr>
                         @endforeach                   
                         </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th scope="col">Print</th>
+                                    <th scope="col">Roll No</th>
+                                    <th scope="col">Exam Name</th>
+                                    <th scope="col">Student</th>
+                                    <th scope="col">Total Mark</th>
+                                    <th scope="col">Total Obtain</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </tfoot>
                     </table>
                 </div>
             </div>

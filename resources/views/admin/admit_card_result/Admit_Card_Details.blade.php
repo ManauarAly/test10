@@ -52,7 +52,13 @@
                                 <td>{{$stuData['stu_admin_with_student'][0]['gender']}}</td>
                                 <td>{{$stuData['stu_admin_with_student'][0]['dob']}}</td>
                                 <td>{{$stuData['stu_admin_with_student'][0]['mob']}}</td>
-                                <td> <a href="{{url('admin/create-marksheet').'/'.$stuData['stu_admin_with_student'][0]['reg']}}" class=""><i class="bx bx-plus" style="font-size: 20px;font-weight: bold;"></i></a> </td>
+                                <td>
+                                    @if($stuData['marksheet_status'] == 0)
+                                        <a href="{{url('admin/create-marksheet').'/'.$stuData['stu_admin_with_student'][0]['reg']}}" class="btn btn-sm btn-outline-primary"><i class="bx bx-plus" ></i>Marksheet</a>
+                                    @elseif($stuData['marksheet_status'] == 1)
+                                        <a href="#" class="btn btn-sm btn-outline-primary"><i class="bx bx-pencil" ></i>Edit Marksheet</a>
+                                    @endif
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
