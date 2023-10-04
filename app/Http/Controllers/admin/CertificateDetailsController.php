@@ -56,7 +56,10 @@ class CertificateDetailsController extends Controller
 
             StudentAdminCard::where('stu_reg_no', $request['reg_no'])->update(['marksheet_status' => 1]);
 
-            return redirect('admin/Result')->with('status', "Insert successfully");
+            $students_data = MarksheetModel::where('reg_no', $request['reg_no'])->get()->toArray();
+            return view('admin.admit_card_result.disp_stud_marksheet')->with('students_data', $students_data);
+
+            // return redirect('admin/Result')->with('status', "Insert successfully");
         }else{
          return redirect('admin/Result')->with('failed', "There are someting error, please try some time.");
         }
@@ -70,7 +73,6 @@ class CertificateDetailsController extends Controller
 
     public function dispStudmarksheet(request $request)
     {
-        $data = $request->input();
         $checkbox_ids = $request['admit_card'];
         $students_data = MarksheetModel::whereIn('reg_no', $checkbox_ids)->get()->toArray();
         return view('admin.admit_card_result.disp_stud_marksheet')->with('students_data', $students_data);
@@ -90,7 +92,11 @@ class CertificateDetailsController extends Controller
 
     public function branchviewMarksheet()
     {
-        $marksheetDatas = MarksheetModel::all();
+        if(Session::get('type') == 'branch'){
+            $loggedinId = Session::get('branchId');
+        }
+
+        $marksheetDatas = MarksheetModel::where('branch_id', $loggedinId)->get();
         return view('branch.admit_card_result.result')->with('marksheetDatas', $marksheetDatas);
     }
 
